@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
-/* ----------------------------- Design tokens ----------------------------- */
+/* ---------------------------------------------------------------------------
+   Design tokens — "workshop" palette (grounded fintech for trades)
+   Committed strategy: pure-white surface, near-black ink, a deep petrol-teal
+   brand color, and a warm amber signal reserved for urgency moments.
+   All color in OKLCH. Token names are kept stable (paper/mist/ink/slate/line/
+   accent) so existing components keep compiling; `accent` is now the committed
+   brand color and `signal` is the new high-visibility accent.
+--------------------------------------------------------------------------- */
 @theme {
-  --color-ink: #0e0e10; /* near-black: primary text, dark bands */
-  --color-paper: #ffffff;
-  --color-mist: #f5f5f7; /* light section backgrounds */
-  --color-slate: #6b7280; /* secondary text */
-  --color-line: #e5e7eb; /* hairline borders */
-  --color-accent: #2563eb; /* electric blue — CTAs, links, highlights only */
-  --color-accent-hover: #1d4ed8;
+  --color-ink: oklch(0.205 0.02 220); /* near-black, faint cool tint — primary text + dark bands */
+  --color-paper: oklch(1 0 0); /* pure white — primary surface */
+  --color-mist: oklch(0.972 0.005 215); /* faint cool band — alternating sections */
+  --color-slate: oklch(0.475 0.018 220); /* secondary text — ~5:1 on white */
+  --color-line: oklch(0.905 0.006 220); /* hairline borders */
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-accent: oklch(0.45 0.085 205); /* deep petrol-teal — the committed brand color */
+  --color-accent-hover: oklch(0.39 0.085 205);
 
-  --container-site: 1180px;
+  --color-signal: oklch(0.8 0.135 75); /* warm amber — urgency highlights, "missed call" marks (dark text on it) */
+  --color-signal-soft: oklch(0.93 0.06 80); /* amber wash for tinted highlights */
+
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-public-sans), ui-sans-serif, sans-serif;
+
+  --container-site: 1200px;
 }
 
 /* ------------------------------ Base styles ------------------------------ */
@@ -28,6 +40,7 @@
     font-size: 17px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   @media (min-width: 768px) {
@@ -38,10 +51,17 @@
 
   h1,
   h2,
-  h3 {
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
     text-wrap: balance;
+    font-weight: 800;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   a {
@@ -55,8 +75,8 @@
     opacity: 0;
     transform: translateY(16px);
     transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
 

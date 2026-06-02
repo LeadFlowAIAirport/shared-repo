@@ -3,9 +3,9 @@ import TradePageView from "@/components/sections/TradePageView";
 import { electrical } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Electrical Growth System",
+  title: "For Electrical Companies",
   description:
-    "A done-for-you lead and appointment system built for electrical companies — recover missed calls, respond instantly, and book more panel upgrades, rewires, EV installs, and service calls.",
+    "A lead and appointment system set up for electrical companies — missed-call text-back, fast response, follow-up, and local visibility to help more leads become booked jobs.",
 };
 
 export default function ElectricalPage() {

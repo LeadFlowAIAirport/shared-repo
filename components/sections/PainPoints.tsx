@@ -24,12 +24,12 @@ export default function PainPoints({
       <ul className="mt-10 grid gap-4 md:grid-cols-2">
         {pains.map((pain, i) => (
           <Reveal key={i} delay={(i % 2) * 70}>
-            <li className="flex h-full items-start gap-3 rounded-xl border border-line bg-paper p-5">
+            <li className="flex h-full items-start gap-3 rounded-lg border border-line bg-paper p-5">
               <AlertTriangle
                 aria-hidden
-                className="mt-0.5 size-5 shrink-0 text-red-500"
+                className="mt-0.5 size-5 shrink-0 text-ink/45"
               />
-              <span className="text-slate">{pain}</span>
+              <span className="text-ink/80">{pain}</span>
             </li>
           </Reveal>
         ))}

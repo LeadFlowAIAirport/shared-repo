@@ -1,21 +1,33 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Display: sturdy, characterful grotesque for headings.
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+});
+
+// Body: plainspoken, utilitarian humanist sans.
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "LeadFlow — More Booked Jobs for Plumbing & Electrical Companies",
+    default:
+      "LeadFlow — More Booked Jobs for Local Plumbing & Electrical Companies",
     template: "%s · LeadFlow",
   },
   description:
-    "Done-for-you lead and appointment systems for local plumbing and electrical companies — missed-call recovery, instant response, and automated follow-up that turn more leads into booked jobs.",
+    "An AI automation agency for local service businesses. We help plumbing and electrical companies capture more leads, respond faster, and book more jobs — with lead generation, an AI receptionist, and local visibility systems.",
 };
 
 export default function RootLayout({
@@ -24,7 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${bricolage.variable} ${publicSans.variable} h-full antialiased`}
+    >
       <head>
         {/* Fail-visible: if JS is disabled, scroll-reveal never runs, so show
             all content immediately rather than leaving it at opacity:0. */}

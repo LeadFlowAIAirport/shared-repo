@@ -3,9 +3,9 @@ import TradePageView from "@/components/sections/TradePageView";
 import { plumbing } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Plumbing Growth System",
+  title: "For Plumbing Companies",
   description:
-    "A done-for-you lead and appointment system built for plumbing companies — recover missed calls, respond in seconds, and book more emergency, service, and big-ticket jobs.",
+    "A lead and appointment system set up for plumbing companies — missed-call text-back, fast response, follow-up, and local visibility to help more leads become booked jobs.",
 };
 
 export default function PlumbingPage() {

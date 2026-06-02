@@ -12,6 +12,9 @@ export default function Footer() {
             {site.brand}
           </div>
           <p className="mt-4 text-slate">{site.footer.pitch}</p>
+          <p className="mt-4 text-sm font-medium text-ink/70">
+            {site.footer.note}
+          </p>
         </div>
 
         <div>
