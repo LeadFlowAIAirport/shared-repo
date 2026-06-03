@@ -34,7 +34,7 @@ export default function HomePage() {
           <p className="mt-4 text-lg text-slate">{home.whoIntro}</p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-3">
-          {home.whoTrades.primary.map((trade) => (
+          {home.whoTrades.industries.map((trade) => (
             <Reveal key={trade}>
               <span className="inline-flex items-center rounded-md bg-accent px-4 py-2 font-semibold text-white">
                 {trade}
@@ -42,21 +42,6 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
-        <Reveal>
-          <p className="mt-8 text-sm font-medium text-slate">
-            {home.whoTrades.alsoLabel}
-          </p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {home.whoTrades.also.map((trade) => (
-              <li
-                key={trade}
-                className="rounded-full border border-line px-3 py-1 text-sm text-ink/80"
-              >
-                {trade}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </Section>
 
       <Checklist heading={home.whyHeading} items={home.why} bg="paper" columns />

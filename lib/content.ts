@@ -54,12 +54,14 @@ export const site = {
     { label: "Home", href: "/" },
     { label: "Plumbing", href: "/plumbing" },
     { label: "Electrical", href: "/electrical" },
+    { label: "HVAC", href: "/hvac" },
+    { label: "Pest Control", href: "/pest-control" },
     { label: "How It Works", href: "/how-it-works" },
   ],
   headerCta: { label: "Book a Call", href: "/book" },
   footer: {
     pitch:
-      "An AI automation agency for local service businesses. We help plumbing and electrical companies capture more leads, respond faster, and book more jobs.",
+      "An AI automation agency for local service businesses. We help plumbing, electrical, HVAC, and pest control companies capture more leads, respond faster, and book more jobs.",
     // PLACEHOLDER — replace with the real partner/contact names before launch.
     partners: ["[Partner Name]", "[Partner Name]"],
     // PLACEHOLDER — replace with a real contact email.
@@ -76,7 +78,7 @@ export const home = {
   hero: {
     headline: "More of Your Leads, Booked as Jobs",
     subheadline:
-      "We help local plumbing and electrical companies capture more leads, answer them faster, and turn more of them into booked appointments — using AI-powered lead generation, an AI receptionist, and local visibility systems.",
+      "We help local plumbing, electrical, HVAC, and pest control companies capture more leads, answer them faster, and turn more of them into booked appointments — using AI-powered lead generation, an AI receptionist, and local visibility systems.",
     primaryCta: { label: "Book a Call", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine:
@@ -169,19 +171,13 @@ export const home = {
 
   whoHeading: "Who It's For",
   whoIntro:
-    "We're focused on local plumbing and electrical companies first, because we know those jobs, customers, and busy seasons best.",
+    "We work with local home-service companies — plumbing, electrical, HVAC, and pest control — because we know how those jobs, customers, and busy seasons work.",
   whoTrades: {
-    primary: ["Plumbing companies", "Electrical companies"],
-    alsoLabel:
-      "The same systems fit other year-round local trades, including:",
-    also: [
-      "HVAC",
-      "Roofing",
-      "Cleaning",
-      "Landscaping",
-      "Painting",
-      "Junk removal",
-      "Pressure washing",
+    industries: [
+      "Plumbing companies",
+      "Electrical companies",
+      "HVAC companies",
+      "Pest control companies",
     ],
   },
 
@@ -189,7 +185,7 @@ export const home = {
   why: [
     {
       lead: "We focus on home services.",
-      rest: " Our attention is on plumbing and electrical work, so the systems are shaped around how those jobs actually come in.",
+      rest: " Our attention is on home-service trades — plumbing, electrical, HVAC, and pest control — so the systems are shaped around how those jobs actually come in.",
     },
     {
       lead: "It's done for you.",
@@ -225,6 +221,16 @@ export const home = {
         title: "For Electrical Companies",
         body: "Lead and appointment systems shaped around electrical work — panel upgrades, rewires, EV chargers, and service calls. If leads slip through slow follow-up, start here.",
         cta: { label: "See the Electrical Setup", href: "/electrical" },
+      },
+      {
+        title: "For HVAC Companies",
+        body: "Lead and appointment systems shaped around HVAC work — no-heat and no-cool emergencies, maintenance visits, and system replacement quotes. If urgent calls and quotes slip away, start here.",
+        cta: { label: "See the HVAC Setup", href: "/hvac" },
+      },
+      {
+        title: "For Pest Control Companies",
+        body: "Lead and appointment systems shaped around pest control work — inspections, urgent infestations, and recurring service plans. If leads slip through slow follow-up, start here.",
+        cta: { label: "See the Pest Control Setup", href: "/pest-control" },
       },
     ],
   },
@@ -512,6 +518,234 @@ export const electrical: TradePage = {
     emphasis:
       "Book a free call. It's quick, it's free, and you'll leave knowing where your leads are slipping and how to keep more of them.",
     cta: { label: "Book an Electrical Call", href: "/book" },
+  },
+};
+
+/* ----------------------------------- HVAC ---------------------------------- */
+
+export const hvac: TradePage = {
+  hero: {
+    headline: "Catch More HVAC Leads — Without Missing the No-Heat Calls",
+    subheadline:
+      "We set up a lead and appointment system shaped around HVAC companies, so missed calls get a fast reply, no-heat and no-cool emergencies get answered quickly, and more tune-ups, repairs, and system quotes have a chance to land on your calendar.",
+    primaryCta: { label: "Book an HVAC Call", href: "/book" },
+    secondaryCta: { label: "See How It Works", href: "/how-it-works" },
+    trustLine: "Built for HVAC pros. Set up and run for you. No tech to learn.",
+  },
+  painHeading: "Sound Familiar?",
+  pains: [
+    "You're mid-install on a rooftop when three calls come in — and you can't answer any of them.",
+    "A no-heat call comes in at 10 PM, gets voicemail, and rings the next company on the list.",
+    "A quote for a full system replacement goes out, no one follows up, and it quietly disappears.",
+    "You spend on ads, but some of the leads never get a fast enough callback.",
+    "New customers searching nearby find other companies before they find you.",
+  ],
+  painClosing:
+    "When the heat or AC is out, customers book whoever responds first. When you're on the tools, you can't be the fastest — but a system can answer the moment a call comes in.",
+  offerHeading: "Your HVAC Lead & Appointment Setup",
+  offerIntro:
+    "We set up and run a system designed to capture, respond to, and help book more of your HVAC leads:",
+  offer: [
+    { lead: "Missed-Call Text-Back", rest: " so no-heat and no-cool calls don't go cold" },
+    { lead: "Around-the-Clock AI Receptionist", rest: " to answer questions and capture job details after hours" },
+    { lead: "Fast Lead Response", rest: " for every form, ad lead, and inquiry" },
+    { lead: "Automated Follow-Up", rest: " that keeps maintenance and system quotes from getting forgotten" },
+    { lead: "Appointment Setting", rest: " that helps fill your calendar with real jobs" },
+    { lead: "Local Visibility", rest: " improvements so more nearby homeowners find you" },
+  ],
+  offerClosing: "You stay on the job. The system handles the catching and following up.",
+  stepsHeading: "How the HVAC Setup Works",
+  steps: [
+    {
+      title: "Lead Audit",
+      body: "We review how calls, forms, and ad leads come into your HVAC business and pinpoint where jobs are slipping away.",
+    },
+    {
+      title: "System Install",
+      body: "We set up missed-call text-back, fast response, your AI receptionist, follow-up, and local visibility — done for you.",
+    },
+    {
+      title: "Booked Jobs",
+      body: "Leads get answered and followed up quickly, so more emergency calls, tune-ups, and system replacements have the chance to become appointments.",
+    },
+  ],
+  whyLose: {
+    heading: "It's Usually Not the Marketing — It's the Handoff",
+    intro: [
+      "Most HVAC companies don't lose leads because their ads are bad. They lose them because:",
+    ],
+    bullets: [
+      "They physically can't answer the phone while working.",
+      "After-hours and overflow calls go to voicemail and don't get returned.",
+      "System-replacement quotes get sent and then forgotten — no follow-up.",
+      "Web and ad leads sit for hours before anyone responds.",
+      "A competitor simply called back first.",
+    ],
+  },
+  whyLoseClosing:
+    "HVAC customers — especially no-heat and no-cool emergencies — tend to book whoever responds fastest. The system is built so that can be you.",
+  helpsHeading: "How the System Helps With HVAC Jobs",
+  helps: [
+    { lead: "Emergency calls get a fast reply", rest: ", even when you're on a job, so urgent work doesn't walk." },
+    { lead: "System quotes get followed up automatically", rest: ", so fewer big-ticket jobs go quiet." },
+    { lead: "After-hours leads get answered", rest: ", instead of waiting in a voicemail box until morning." },
+    { lead: "Ad leads get worked harder", rest: ", giving your existing marketing spend a better shot." },
+    { lead: "You show up more in local search", rest: ", putting your business in front of more nearby homeowners." },
+  ],
+  helpsClosing:
+    "It's built to plug the leaks, so more of the leads you already get have a chance to become paid work.",
+  midCta: {
+    heading: "Let's Look at Where HVAC Jobs Are Slipping",
+    body: "Book a free call. We'll walk through your current lead flow and show you how the HVAC setup would work for your business.",
+    primaryCta: { label: "Book an HVAC Call", href: "/book" },
+    secondaryCta: { label: "See How It Works", href: "/how-it-works" },
+  },
+  faqHeading: "Common Questions",
+  faq: [
+    {
+      q: "Will this work for no-heat and after-hours emergency calls?",
+      a: "Yes — that's a big part of the point. Missed-call text-back and the AI receptionist are set up to catch late-night and overflow calls instead of losing them to voicemail.",
+    },
+    {
+      q: "Do I have to change how my team takes calls?",
+      a: "No. The system works behind your current phone and website. It steps in to catch what you'd otherwise miss.",
+    },
+    {
+      q: "Can it help with seasonal maintenance and tune-up bookings?",
+      a: "Yes. It can respond to and follow up with maintenance and tune-up inquiries so more of them get onto your calendar, including during busy seasons.",
+    },
+    {
+      q: "When does it start working?",
+      a: "Once the system is live, it starts catching missed calls and responding to new leads right away.",
+    },
+    {
+      q: "Is there a long contract?",
+      a: "No long-term lock-in. We're new and would rather earn the relationship.",
+    },
+  ],
+  closing: {
+    heading: "A Missed Call Can Be a Job That Went Elsewhere",
+    body: [
+      "You spend time, money, and effort to make the phone ring. Slow follow-up can hand those jobs to the company across town.",
+      "We'll set up a system built to catch leads, respond quickly, and follow up — so more of your hard-earned marketing has the chance to turn into booked work.",
+    ],
+    emphasis:
+      "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
+    cta: { label: "Book an HVAC Call", href: "/book" },
+  },
+};
+
+/* ------------------------------- PEST CONTROL ------------------------------ */
+
+export const pestControl: TradePage = {
+  hero: {
+    headline: "Catch More Pest Control Leads — Without Letting Calls Slip Past",
+    subheadline:
+      "We set up a lead and appointment system shaped around pest control companies, so missed calls get a fast reply, urgent infestations get answered quickly, and more inspections and recurring-service jobs have a chance to land on your calendar.",
+    primaryCta: { label: "Book a Pest Control Call", href: "/book" },
+    secondaryCta: { label: "See How It Works", href: "/how-it-works" },
+    trustLine: "Built for pest control pros. Set up and run for you. No tech to learn.",
+  },
+  painHeading: "Sound Familiar?",
+  pains: [
+    "You're mid-treatment at a customer's home when calls stack up — and there's no one free to answer.",
+    "A homeowner who just spotted a serious infestation calls, gets voicemail, and hires whoever picks up.",
+    "A quote for a recurring service plan goes out, no one follows up, and it quietly disappears.",
+    "Your ads bring in leads, but slow callbacks let some go cold.",
+    "Customers searching nearby find other companies before they find you.",
+  ],
+  painClosing:
+    "When there's a pest problem, customers want it handled now and tend to book whoever responds first. When you're on a job, you can't be the fastest — but a system can answer the moment a call comes in.",
+  offerHeading: "Your Pest Control Lead & Appointment Setup",
+  offerIntro:
+    "We set up and run a system designed to capture, respond to, and help book more of your pest control leads:",
+  offer: [
+    { lead: "Missed-Call Text-Back", rest: " so urgent infestation calls don't go cold" },
+    { lead: "Around-the-Clock AI Receptionist", rest: " to answer questions and capture job details after hours" },
+    { lead: "Fast Lead Response", rest: " for every form, ad lead, and inquiry" },
+    { lead: "Automated Follow-Up", rest: " that keeps inspection and recurring-plan quotes from getting forgotten" },
+    { lead: "Appointment Setting", rest: " that helps fill your calendar with real jobs" },
+    { lead: "Local Visibility", rest: " improvements so more nearby homeowners find you" },
+  ],
+  offerClosing: "You stay on the job. The system handles the catching and following up.",
+  stepsHeading: "How the Pest Control Setup Works",
+  steps: [
+    {
+      title: "Lead Audit",
+      body: "We review how calls, forms, and ad leads come into your pest control business and pinpoint where jobs are slipping away.",
+    },
+    {
+      title: "System Install",
+      body: "We set up missed-call text-back, fast response, your AI receptionist, follow-up, and local visibility — done for you.",
+    },
+    {
+      title: "Booked Jobs",
+      body: "Leads get answered and followed up quickly, so more inspections, one-time treatments, and recurring-service plans have the chance to become appointments.",
+    },
+  ],
+  whyLose: {
+    heading: "It's Usually Not the Marketing — It's the Handoff",
+    intro: [
+      "Most pest control companies don't lose leads because their ads are bad. They lose them because:",
+    ],
+    bullets: [
+      "They physically can't answer the phone while treating a property.",
+      "After-hours and overflow calls go to voicemail and don't get returned.",
+      "Recurring-plan and inspection quotes get sent and then forgotten — no follow-up.",
+      "Web and ad leads sit for hours before anyone responds.",
+      "A competitor simply called back first.",
+    ],
+  },
+  whyLoseClosing:
+    "Pest control customers — especially urgent infestations — tend to book whoever responds fastest. The system is built so that can be you.",
+  helpsHeading: "How the System Helps With Pest Control Jobs",
+  helps: [
+    { lead: "Urgent infestation calls get a fast reply", rest: ", even when you're on a job, so the work doesn't walk." },
+    { lead: "Recurring-plan quotes get followed up automatically", rest: ", so fewer ongoing jobs go quiet." },
+    { lead: "After-hours leads get answered", rest: ", instead of waiting in a voicemail box until morning." },
+    { lead: "Ad leads get worked harder", rest: ", giving your existing marketing spend a better shot." },
+    { lead: "You show up more in local search", rest: ", putting your business in front of more nearby homeowners." },
+  ],
+  helpsClosing:
+    "It's built to plug the leaks, so more of the leads you already get have a chance to become paid work.",
+  midCta: {
+    heading: "Let's Look at Where Pest Control Jobs Are Slipping",
+    body: "Book a free call. We'll walk through your current lead flow and show you how the pest control setup would work for your business.",
+    primaryCta: { label: "Book a Pest Control Call", href: "/book" },
+    secondaryCta: { label: "See How It Works", href: "/how-it-works" },
+  },
+  faqHeading: "Common Questions",
+  faq: [
+    {
+      q: "Will this work for urgent infestations and after-hours calls?",
+      a: "Yes — that's a big part of the point. Missed-call text-back and the AI receptionist are set up to catch late-night and overflow calls instead of losing them to voicemail.",
+    },
+    {
+      q: "Do I have to change how my team takes calls?",
+      a: "No. The system works behind your current phone and website. It steps in to catch what you'd otherwise miss.",
+    },
+    {
+      q: "Can it help book recurring and seasonal service plans?",
+      a: "Yes. It can respond to and follow up with inquiries about recurring or seasonal plans so more of them get onto your calendar.",
+    },
+    {
+      q: "When does it start working?",
+      a: "Once the system is live, it starts catching missed calls and responding to new leads right away.",
+    },
+    {
+      q: "Is there a long contract?",
+      a: "No long-term lock-in. We're new and would rather earn the relationship.",
+    },
+  ],
+  closing: {
+    heading: "A Missed Call Can Be a Job That Went Elsewhere",
+    body: [
+      "You spend time, money, and effort to make the phone ring. Slow follow-up can hand those jobs to the company across town.",
+      "We'll set up a system built to catch leads, respond quickly, and follow up — so more of your hard-earned marketing has the chance to turn into booked work.",
+    ],
+    emphasis:
+      "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
+    cta: { label: "Book a Pest Control Call", href: "/book" },
   },
 };
 

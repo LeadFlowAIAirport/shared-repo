@@ -58,7 +58,8 @@ export default function Footer() {
       <div className="border-t border-line">
         <div className="mx-auto flex w-full max-w-(--container-site) flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-slate sm:flex-row sm:px-6">
           <p>
-            © {site.brand}. Built for plumbing &amp; electrical companies.
+            © {site.brand}. Built for plumbing, electrical, HVAC &amp; pest
+            control companies.
           </p>
           <ul className="flex gap-6">
             {site.footer.legal.map((label) => (

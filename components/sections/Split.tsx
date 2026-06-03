@@ -1,11 +1,12 @@
-import { Wrench, Zap, ArrowRight, type LucideIcon } from "lucide-react";
+import { Wrench, Zap, Wind, Bug, ArrowRight, type LucideIcon } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 import Link from "next/link";
 import type { home } from "@/lib/content";
 
-const icons: LucideIcon[] = [Wrench, Zap]; // plumbing, electrical
+// Order matches home.split.cards: plumbing, electrical, HVAC, pest control.
+const icons: LucideIcon[] = [Wrench, Zap, Wind, Bug];
 
 export default function Split({ content }: { content: typeof home.split }) {
   return (

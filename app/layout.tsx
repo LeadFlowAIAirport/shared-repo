@@ -23,11 +23,11 @@ const publicSans = Public_Sans({
 export const metadata: Metadata = {
   title: {
     default:
-      "LeadFlow — More Booked Jobs for Local Plumbing & Electrical Companies",
+      "LeadFlow — More Booked Jobs for Local Home-Service Companies",
     template: "%s · LeadFlow",
   },
   description:
-    "An AI automation agency for local service businesses. We help plumbing and electrical companies capture more leads, respond faster, and book more jobs — with lead generation, an AI receptionist, and local visibility systems.",
+    "An AI automation agency for local service businesses. We help plumbing, electrical, HVAC, and pest control companies capture more leads, respond faster, and book more jobs — with lead generation, an AI receptionist, and local visibility systems.",
 };
 
 export default function RootLayout({
