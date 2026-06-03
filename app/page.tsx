@@ -14,7 +14,12 @@ import { home } from "@/lib/content";
 export default function HomePage() {
   return (
     <>
-      <Hero content={home.hero} media={<CallDemo />} />
+      <Hero
+        content={home.hero}
+        media={<CallDemo />}
+        secondaryCtaGlow
+        primaryCtaPulse
+      />
       <Prose content={home.problem} bg="mist" />
       <Prose content={home.solution} bg="paper" />
       <Systems
@@ -34,8 +39,8 @@ export default function HomePage() {
           <p className="mt-4 text-lg text-slate">{home.whoIntro}</p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-3">
-          {home.whoTrades.industries.map((trade) => (
-            <Reveal key={trade}>
+          {home.whoTrades.industries.map((trade, i) => (
+            <Reveal key={trade} delay={i * 60} variant="scale">
               <span className="inline-flex items-center rounded-md bg-accent px-4 py-2 font-semibold text-white">
                 {trade}
               </span>

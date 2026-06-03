@@ -827,16 +827,60 @@ export const howItWorks = {
 /* ---------------------------------- BOOK ----------------------------------- */
 
 export const book = {
+  // Small uppercase label above the heading — frames the call as a focused
+  // review of the prospect's lead flow, not a generic sales consultation.
+  eyebrow: "Free Lead Flow Review · 15–30 Minutes",
   heading: "Book a Call",
-  body: "We'll walk through how leads come into your business today and show you how the systems would work for you — no pressure, no obligation, and no promises about specific results.",
-  trustLine: "Built for local service businesses. No long contracts. No tech for you to learn.",
-  // PLACEHOLDER — replace with your real Calendly (or other booking) URL.
-  calendlyUrl: "https://calendly.com/your-handle/intro-call",
+  body: "We'll take a look at how leads currently come into your business, where response time or follow-up may be costing you opportunities, and how our system could help you capture, qualify, and book more appointments — without pressure or hard selling.",
+  trustLine: "Built for local service businesses. No long contracts. No complicated tech for you to learn.",
   // What to expect on the call (sets honest expectations, no outcome claims).
   expect: [
-    "A look at how calls and leads reach you now",
-    "Where opportunities are most likely slipping",
-    "A walkthrough of which systems would fit",
-    "Straight answers — no hard sell",
+    "A quick look at how calls, forms, and messages reach your business today",
+    "A discussion about where leads may be getting missed, delayed, or forgotten",
+    "A simple breakdown of how our full lead-generation and appointment-setting package works",
+    "Straight answers about whether this would actually make sense for your business",
   ],
+
+  // How visitors can choose to meet. Each option links to its own booking link.
+  // PLACEHOLDER booking links — replace the three `href` values below with your
+  // real scheduler/links. They are the single place to update these.
+  meeting: {
+    heading: "Choose how you'd like to meet",
+    intro:
+      "Pick whatever is easiest for you. Every option is a no-pressure conversation about your business and how the systems would fit.",
+    options: [
+      {
+        id: "phone",
+        title: "Phone Call",
+        description:
+          "Quick 15–30 minute call to understand your business, lead flow, and appointment-setting needs.",
+        cta: "Book a Phone Call",
+        href: "[ADD PHONE CALL BOOKING LINK]",
+      },
+      {
+        id: "zoom",
+        title: "Zoom Meeting",
+        description:
+          "Screen-share walkthrough where we can explain the system, show examples, and answer questions.",
+        cta: "Book a Zoom Meeting",
+        href: "[ADD ZOOM BOOKING LINK]",
+      },
+      {
+        id: "in-person",
+        title: "In-Person Meeting",
+        description:
+          "For local businesses that prefer to meet face-to-face. Available by request in our service area.",
+        cta: "Request In-Person Meeting",
+        href: "[ADD IN-PERSON REQUEST LINK]",
+      },
+    ],
+    // Contact form — fields, choices, and labels.
+    form: {
+      heading: "Prefer we reach out? Request a meeting",
+      note: "Tell us a bit about your business and how you'd like to meet, and we'll follow up to set a time.",
+      industries: ["Plumbing", "Electrical", "HVAC", "Pest Control"],
+      meetingTypes: ["Phone Call", "Zoom Meeting", "In-Person Meeting"],
+      submitLabel: "Request Meeting",
+    },
+  },
 };

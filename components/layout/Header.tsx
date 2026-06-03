@@ -22,10 +22,23 @@ export default function Header() {
 
   const closeMenu = () => setOpen(false);
 
+  // Faint green radial aura placed behind a nav link's text (via ::before, kept
+  // under the text with -z-10 in an isolated stacking context). Used only on the
+  // "How It Works" link so it reads as gently highlighted, not dramatic.
+  const howAura =
+    "relative isolate before:pointer-events-none before:absolute before:-inset-x-3 before:-inset-y-2 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,rgba(47,125,104,0.18),rgba(47,125,104,0.07)_55%,transparent)] before:content-['']";
+
+  // Animated underline that wipes in from the left on hover (and stays for the
+  // active page). Pure transform on a ::after pseudo — no layout shift.
+  const navUnderline =
+    "relative after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-brand-green after:transition-transform after:duration-200 after:ease-out-quint hover:after:scale-x-100 motion-reduce:after:transition-none";
+
   return (
     <header
-      className={`sticky top-0 z-50 bg-paper/90 backdrop-blur transition-shadow ${
-        scrolled ? "border-b border-line shadow-sm" : "border-b border-transparent"
+      className={`sticky top-0 z-50 bg-paper/90 backdrop-blur transition-[box-shadow,border-color,background-color] duration-300 ${
+        scrolled
+          ? "border-b border-line bg-paper/95 shadow-sm"
+          : "border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-(--container-site) items-center justify-between px-5 sm:px-6">
@@ -45,13 +58,16 @@ export default function Header() {
               item.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
+            const isHow = item.href === "/how-it-works";
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-base font-medium transition-colors hover:text-accent ${
-                  active ? "text-accent" : "text-ink"
-                }`}
+                className={`text-base font-medium transition-colors duration-200 hover:text-brand-green ${navUnderline} ${
+                  active
+                    ? "text-accent after:scale-x-100 after:bg-accent"
+                    : "text-ink"
+                } ${isHow ? howAura : ""}`}
               >
                 {item.label}
               </Link>
@@ -79,7 +95,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-line bg-paper md:hidden">
+        <div className="animate-menu-in border-t border-line bg-paper md:hidden">
           <nav
             className="mx-auto flex w-full max-w-(--container-site) flex-col gap-1 px-5 py-4"
             aria-label="Mobile"
@@ -89,7 +105,9 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className="rounded-lg px-3 py-3 text-lg font-medium hover:bg-mist"
+                className={`rounded-lg px-3 py-3 text-lg font-medium transition-colors duration-200 hover:bg-mist hover:text-brand-green ${
+                  item.href === "/how-it-works" ? howAura : ""
+                }`}
               >
                 {item.label}
               </Link>

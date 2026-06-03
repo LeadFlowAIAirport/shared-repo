@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import Systems from "@/components/sections/Systems";
+import SystemDemos from "@/components/sections/SystemDemos";
 import Checklist from "@/components/sections/Checklist";
 import Prose from "@/components/sections/Prose";
 import CTABand from "@/components/sections/CTABand";
@@ -39,7 +40,7 @@ export default function HowItWorksPage() {
 
         <ol className="mt-12 space-y-px overflow-hidden rounded-lg border border-line bg-line">
           {howItWorks.flow.map((step, i) => (
-            <Reveal key={step.title}>
+            <Reveal key={step.title} delay={i * 80}>
               <li className="flex items-start gap-5 bg-paper p-6 md:p-7">
                 <span className="font-display text-2xl font-extrabold tabular-nums text-accent">
                   {String(i + 1).padStart(2, "0")}
@@ -60,6 +61,9 @@ export default function HowItWorksPage() {
         systems={home.systems}
         bg="paper"
       />
+
+      {/* Clickable demos of each system (System 1 live; 2 & 3 coming soon) */}
+      <SystemDemos bg="mist" />
 
       {/* What working with us looks like */}
       <Checklist

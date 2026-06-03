@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Zap } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 import { site } from "@/lib/content";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-mist">
-      <div className="mx-auto grid w-full max-w-(--container-site) gap-10 px-5 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr]">
+      <Reveal variant="fade" className="mx-auto grid w-full max-w-(--container-site) gap-10 px-5 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr]">
         <div className="max-w-sm">
           <div className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
             <Zap aria-hidden className="size-6 text-accent" />
@@ -53,7 +54,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-      </div>
+      </Reveal>
 
       <div className="border-t border-line">
         <div className="mx-auto flex w-full max-w-(--container-site) flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-slate sm:flex-row sm:px-6">

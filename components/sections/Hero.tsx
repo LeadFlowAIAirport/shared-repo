@@ -7,9 +7,23 @@ type Props = {
   content: HeroContent;
   /** Optional visual; when present the hero becomes a left-aligned two-column layout. */
   media?: ReactNode;
+  /** Adds a faint green halo behind the secondary ("See How It Works") button. */
+  secondaryCtaGlow?: boolean;
+  /** Adds a slow breathing glow behind the primary CTA (homepage only). */
+  primaryCtaPulse?: boolean;
 };
 
-export default function Hero({ content, media }: Props) {
+// Soft green aura behind the secondary CTA — a halo only, leaves size/position intact.
+const secondaryGlow = "shadow-[0_0_24px_rgba(47,125,104,0.18)]";
+
+export default function Hero({
+  content,
+  media,
+  secondaryCtaGlow,
+  primaryCtaPulse,
+}: Props) {
+  const glow = secondaryCtaGlow ? secondaryGlow : "";
+  const pulse = primaryCtaPulse ? "cta-pulse" : "";
   if (media) {
     return (
       <section className="bg-paper">
@@ -29,14 +43,14 @@ export default function Hero({ content, media }: Props) {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button
                   href={content.primaryCta.href}
-                  className="w-full sm:w-auto"
+                  className={`w-full sm:w-auto ${pulse}`}
                 >
                   {content.primaryCta.label}
                 </Button>
                 <Button
                   href={content.secondaryCta.href}
                   variant="secondary"
-                  className="w-full sm:w-auto"
+                  className={`w-full sm:w-auto ${glow}`}
                 >
                   {content.secondaryCta.label}
                 </Button>
@@ -49,7 +63,9 @@ export default function Hero({ content, media }: Props) {
             </Reveal>
           </div>
 
-          <Reveal delay={140}>{media}</Reveal>
+          <Reveal delay={140} variant="scale">
+            {media}
+          </Reveal>
         </div>
       </section>
     );
@@ -72,13 +88,16 @@ export default function Hero({ content, media }: Props) {
           </Reveal>
           <Reveal delay={160}>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href={content.primaryCta.href} className="w-full sm:w-auto">
+              <Button
+                href={content.primaryCta.href}
+                className={`w-full sm:w-auto ${pulse}`}
+              >
                 {content.primaryCta.label}
               </Button>
               <Button
                 href={content.secondaryCta.href}
                 variant="secondary"
-                className="w-full sm:w-auto"
+                className={`w-full sm:w-auto ${glow}`}
               >
                 {content.secondaryCta.label}
               </Button>

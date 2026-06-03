@@ -18,6 +18,8 @@
   --color-accent: oklch(0.45 0.085 205); /* deep petrol-teal — the committed brand color */
   --color-accent-hover: oklch(0.39 0.085 205);
 
+  --color-brand-green: oklch(0.535 0.083 172.3); /* muted sea-green (~#2f7d68) — nav link hover + faint auras */
+
   --color-signal: oklch(0.8 0.135 75); /* warm amber — urgency highlights, "missed call" marks (dark text on it) */
   --color-signal-soft: oklch(0.93 0.06 80); /* amber wash for tinted highlights */
 
@@ -25,6 +27,13 @@
   --font-display: var(--font-bricolage), var(--font-public-sans), ui-sans-serif, sans-serif;
 
   --container-site: 1200px;
+
+  /* Motion easing — natural deceleration curves (no bounce/elastic). Exposed as
+     both `--ease-*` vars (used in keyframes/transitions below) and `ease-*`
+     Tailwind utilities. */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ------------------------------ Base styles ------------------------------ */
@@ -75,14 +84,70 @@
     opacity: 0;
     transform: translateY(16px);
     transition:
-      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.6s var(--ease-out-expo),
+      transform 0.6s var(--ease-out-expo);
     will-change: opacity, transform;
+  }
+
+  /* Reveal variants — swap only the resting transform; everything settles to
+     `none` when `.is-visible`. `scale` is used for the hero media (a confident
+     entrance); `fade` is opacity-only for quiet supporting text. */
+  .reveal-scale {
+    transform: translateY(10px) scale(0.97);
+  }
+  .reveal-fade {
+    transform: none;
   }
 
   .reveal.is-visible {
     opacity: 1;
     transform: none;
+  }
+
+  /* Soft "breathing" glow for the single primary CTA on the homepage hero.
+     Lives on a ::after pseudo so it draws the eye without affecting layout. */
+  .cta-pulse {
+    position: relative;
+  }
+  .cta-pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* ------------------------------- Keyframes -------------------------------- */
+@keyframes cta-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 16px 1px color-mix(in oklch, var(--color-accent) 30%, transparent);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Motion-only enhancements (skipped entirely under reduced-motion). */
+@media (prefers-reduced-motion: no-preference) {
+  .cta-pulse::after {
+    animation: cta-breathe 3s ease-in-out infinite;
+  }
+  .animate-menu-in {
+    animation: menu-in 0.22s var(--ease-out-quint) both;
   }
 }
 
@@ -90,9 +155,22 @@
   html {
     scroll-behavior: auto;
   }
-  .reveal {
+  /* Keep revealed content visible — without this, disabling the transition
+     below would freeze elements at opacity:0. */
+  .reveal,
+  .reveal-scale,
+  .reveal-fade {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  /* Blanket fallback: neutralize every other transition/animation for users
+     who opt out of motion. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

@@ -3,15 +3,18 @@ import type { ComponentProps } from "react";
 
 type Variant = "primary" | "secondary" | "secondary-light";
 
+// Micro-interaction: subtle lift on hover, quick press-down on click. Transform
+// is disabled under reduced-motion (colour/shadow still respond, no movement).
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-md px-6 min-h-12 text-base font-semibold tracking-tight transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  "inline-flex items-center justify-center gap-2 rounded-md px-6 min-h-12 text-base font-semibold tracking-tight transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-out-quint hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
 const variants: Record<Variant, string> = {
   // Primary CTA — brand fill. Used everywhere conversions matter.
-  primary: "bg-accent text-white hover:bg-accent-hover",
+  primary:
+    "bg-accent text-white shadow-sm hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/25",
   // Secondary — sturdy outline on light backgrounds.
   secondary:
-    "border-2 border-ink/15 text-ink hover:border-ink/35 hover:bg-mist",
+    "border-2 border-ink/15 text-ink hover:border-ink/35 hover:bg-mist hover:shadow-md hover:shadow-ink/5",
   // Secondary — outline/ghost on dark (ink) bands.
   "secondary-light": "border-2 border-white/25 text-white hover:bg-white/10",
 };
