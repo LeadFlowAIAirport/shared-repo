@@ -10,11 +10,12 @@ const icons: LucideIcon[] = [Wrench, Zap, Wind, Bug];
 
 export default function Split({ content }: { content: typeof home.split }) {
   return (
-    <Section bg="mist">
-      <Reveal>
-        <h2 className="text-center text-3xl font-bold sm:text-4xl">
-          {content.heading}
-        </h2>
+    <Section bg="mist" id="industries">
+      <Reveal className="mx-auto max-w-2xl text-center">
+        <h2 className="text-3xl font-bold sm:text-4xl">{content.heading}</h2>
+        {content.intro && (
+          <p className="mt-4 text-lg text-slate">{content.intro}</p>
+        )}
       </Reveal>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -43,6 +44,14 @@ export default function Split({ content }: { content: typeof home.split }) {
           );
         })}
       </div>
+
+      {content.closing && (
+        <Reveal>
+          <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium">
+            {content.closing}
+          </p>
+        </Reveal>
+      )}
     </Section>
   );
 }

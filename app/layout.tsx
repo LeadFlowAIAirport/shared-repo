@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Atmosphere from "@/components/layout/Atmosphere";
 
 // Display: sturdy, characterful grotesque for headings.
 const bricolage = Bricolage_Grotesque({
@@ -23,11 +24,11 @@ const publicSans = Public_Sans({
 export const metadata: Metadata = {
   title: {
     default:
-      "LeadFlow — More Booked Jobs for Local Home-Service Companies",
+      "LeadFlow — AI Lead-Flow Systems for Local Businesses",
     template: "%s · LeadFlow",
   },
   description:
-    "An AI automation agency for local service businesses. We help plumbing, electrical, HVAC, and pest control companies capture more leads, respond faster, and book more jobs — with lead generation, an AI receptionist, and local visibility systems.",
+    "An AI automation agency for local businesses. We connect ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — so local service businesses respond faster and book more appointments.",
 };
 
 export default function RootLayout({
@@ -48,6 +49,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="flex min-h-full flex-col">
+        <Atmosphere />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

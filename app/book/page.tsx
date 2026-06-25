@@ -7,7 +7,7 @@ import ContactForm from "@/components/sections/ContactForm";
 import { book } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Book a Call",
+  title: "Book a Free Lead-Flow Audit",
   description:
     "Choose how you'd like to meet — phone call, Zoom, or in-person by request — and we'll walk through how leads reach your business and how the systems would work for you. No promises about specific results.",
 };

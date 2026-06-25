@@ -24,13 +24,13 @@ export default function CTABand({
 }: Props) {
   return (
     <Section bg="ink">
-      <Reveal className="mx-auto max-w-3xl text-center">
+      <Reveal className="glass-strong mx-auto max-w-3xl rounded-3xl px-6 py-12 text-center shadow-glow sm:px-10 sm:py-14">
         <h2 className="text-3xl font-bold sm:text-4xl">{heading}</h2>
 
-        {body && <p className="mt-5 text-lg text-white/70">{body}</p>}
+        {body && <p className="mt-5 text-lg text-white/75">{body}</p>}
 
         {bodyLines?.map((line, i) => (
-          <p key={i} className="mt-5 text-lg text-white/70">
+          <p key={i} className="mt-5 text-lg text-white/75">
             {line}
           </p>
         ))}

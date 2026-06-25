@@ -1,36 +1,40 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens — "workshop" palette (grounded fintech for trades)
-   Committed strategy: pure-white surface, near-black ink, a deep petrol-teal
-   brand color, and a warm amber signal reserved for urgency moments.
-   All color in OKLCH. Token names are kept stable (paper/mist/ink/slate/line/
-   accent) so existing components keep compiling; `accent` is now the committed
-   brand color and `signal` is the new high-visibility accent.
+   Design tokens — "Signal in the dark" (premium dark AI/SaaS)
+   Deep navy-black canvas, electric-blue + violet glow accents, and a warm amber
+   "signal" reserved for opportunity/lead moments. All color in OKLCH.
+
+   Token names are kept STABLE (paper/mist/ink/slate/line/accent/signal) so the
+   whole component library keeps compiling — their MEANINGS are now dark-native:
+     paper  = base dark surface      ink   = primary (near-white) TEXT
+     mist   = elevated dark panel     slate = muted light text
+     line   = hairline on dark        accent = electric blue (brand)
+   New tokens: `violet` (purple glow) and `surface-deep` (deepest band).
 --------------------------------------------------------------------------- */
 @theme {
-  --color-ink: oklch(0.205 0.02 220); /* near-black, faint cool tint — primary text + dark bands */
-  --color-paper: oklch(1 0 0); /* pure white — primary surface */
-  --color-mist: oklch(0.972 0.005 215); /* faint cool band — alternating sections */
-  --color-slate: oklch(0.475 0.018 220); /* secondary text — ~5:1 on white */
-  --color-line: oklch(0.905 0.006 220); /* hairline borders */
+  --color-paper: oklch(0.17 0.024 265); /* base surface — deep navy-black */
+  --color-surface-deep: oklch(0.135 0.022 265); /* deepest band (CTA / spotlight) */
+  --color-mist: oklch(0.225 0.03 265); /* elevated panel — alternating sections */
+  --color-ink: oklch(0.97 0.006 250); /* primary TEXT — near white */
+  --color-slate: oklch(0.77 0.025 255); /* secondary text — muted light, lifted for contrast on glow bands */
+  --color-line: oklch(0.34 0.02 265); /* hairline borders on dark */
 
-  --color-accent: oklch(0.45 0.085 205); /* deep petrol-teal — the committed brand color */
-  --color-accent-hover: oklch(0.39 0.085 205);
+  --color-accent: oklch(0.64 0.17 250); /* electric blue — the brand color, CTAs, links */
+  --color-accent-hover: oklch(0.7 0.16 250);
+  --color-violet: oklch(0.6 0.21 296); /* purple glow — paired with accent in gradients */
 
-  --color-brand-green: oklch(0.535 0.083 172.3); /* muted sea-green (~#2f7d68) — nav link hover + faint auras */
+  --color-brand-green: oklch(0.7 0.11 200); /* cyan-teal — secondary highlight (legacy nav/forms) */
 
-  --color-signal: oklch(0.8 0.135 75); /* warm amber — urgency highlights, "missed call" marks (dark text on it) */
-  --color-signal-soft: oklch(0.93 0.06 80); /* amber wash for tinted highlights */
+  --color-signal: oklch(0.78 0.16 62); /* warm amber — opportunity/urgency marks */
+  --color-signal-soft: oklch(0.43 0.1 62); /* deep amber fill (light text sits on it) */
 
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-bricolage), var(--font-public-sans), ui-sans-serif, sans-serif;
 
   --container-site: 1200px;
 
-  /* Motion easing — natural deceleration curves (no bounce/elastic). Exposed as
-     both `--ease-*` vars (used in keyframes/transitions below) and `ease-*`
-     Tailwind utilities. */
+  /* Motion easing — natural deceleration curves (no bounce/elastic). */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -50,6 +54,8 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* Glows are positioned full-bleed; never let them spawn a horizontal scrollbar. */
+    overflow-x: hidden;
   }
 
   @media (min-width: 768px) {
@@ -76,6 +82,86 @@
   a {
     color: inherit;
   }
+
+  /* Selection picks up the brand glow. */
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 35%, transparent);
+    color: white;
+  }
+}
+
+/* ----------------------- Design-system helper classes --------------------- */
+@layer utilities {
+  /* Compatibility shim: a few not-yet-migrated pages use `bg-ink` as a DARK
+     surface paired with `text-white`. Since `--color-ink` is now light TEXT,
+     remap the plain `bg-ink` utility to the deepest surface so those elements
+     keep correct contrast until their own redesign phase. (Opacity variants
+     like `bg-ink/40` are intentionally left as light overlays.) */
+  .bg-ink {
+    background-color: var(--color-surface-deep);
+  }
+
+  /* Frosted-glass panel — the core surface of the dark UI. */
+  .glass {
+    background-color: color-mix(in oklab, white 4%, transparent);
+    border: 1px solid color-mix(in oklab, white 10%, transparent);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  }
+  .glass-strong {
+    background-color: color-mix(in oklab, white 7%, transparent);
+    border: 1px solid color-mix(in oklab, white 14%, transparent);
+    backdrop-filter: blur(18px) saturate(1.3);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  }
+
+  /* Blue→violet gradient fill (CTAs, accents). */
+  .bg-grad-accent {
+    background-image: linear-gradient(
+      110deg,
+      var(--color-accent),
+      var(--color-violet)
+    );
+  }
+
+  /* Gradient text — clipped blue→violet→white for hero emphasis. */
+  .text-grad {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-accent),
+      var(--color-violet) 55%,
+      color-mix(in oklab, var(--color-accent) 30%, white)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Brand glow shadows — used on the primary CTA and focal cards. */
+  .shadow-glow {
+    box-shadow: 0 10px 34px -10px color-mix(in oklab, var(--color-accent) 60%, transparent);
+  }
+  .shadow-glow-strong {
+    box-shadow: 0 14px 48px -8px color-mix(in oklab, var(--color-accent) 70%, transparent);
+  }
+
+  /* Hairline gradient divider. */
+  .rule-glow {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, white 18%, transparent),
+      transparent
+    );
+  }
+
+  /* Fine film grain for the background atmosphere (kept in CSS so the SVG data
+     URI isn't parsed as a Tailwind arbitrary value). */
+  .grain {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 120px 120px;
+  }
 }
 
 /* --------------------------- Scroll-reveal motion ------------------------- */
@@ -89,9 +175,6 @@
     will-change: opacity, transform;
   }
 
-  /* Reveal variants — swap only the resting transform; everything settles to
-     `none` when `.is-visible`. `scale` is used for the hero media (a confident
-     entrance); `fade` is opacity-only for quiet supporting text. */
   .reveal-scale {
     transform: translateY(10px) scale(0.97);
   }
@@ -104,8 +187,7 @@
     transform: none;
   }
 
-  /* Soft "breathing" glow for the single primary CTA on the homepage hero.
-     Lives on a ::after pseudo so it draws the eye without affecting layout. */
+  /* Soft breathing glow for the single primary CTA on the homepage hero. */
   .cta-pulse {
     position: relative;
   }
@@ -126,7 +208,7 @@
     box-shadow: 0 0 0 0 transparent;
   }
   50% {
-    box-shadow: 0 0 16px 1px color-mix(in oklch, var(--color-accent) 30%, transparent);
+    box-shadow: 0 0 28px 2px color-mix(in oklab, var(--color-accent) 45%, transparent);
   }
 }
 
@@ -141,13 +223,70 @@
   }
 }
 
+/* Slow drift for the background glow orbs. */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -26px, 0);
+  }
+}
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 22px, 0);
+  }
+}
+
+/* Flowing highlight that travels along a connector rail (data moving through). */
+@keyframes flow-line {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Pulsing ring on the diagram's AI hub. */
+@keyframes hub-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Motion-only enhancements (skipped entirely under reduced-motion). */
 @media (prefers-reduced-motion: no-preference) {
   .cta-pulse::after {
-    animation: cta-breathe 3s ease-in-out infinite;
+    animation: cta-breathe 3.4s ease-in-out infinite;
   }
   .animate-menu-in {
     animation: menu-in 0.22s var(--ease-out-quint) both;
+  }
+  .animate-float-slow {
+    animation: float-slow 11s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: float-slower 14s ease-in-out infinite;
+  }
+  .animate-flow-line {
+    animation: flow-line 2.6s linear infinite;
+  }
+  .animate-hub-pulse {
+    animation: hub-pulse 2.8s var(--ease-out-quart) infinite;
   }
 }
 
@@ -155,8 +294,6 @@
   html {
     scroll-behavior: auto;
   }
-  /* Keep revealed content visible — without this, disabling the transition
-     below would freeze elements at opacity:0. */
   .reveal,
   .reveal-scale,
   .reveal-fade {
@@ -164,8 +301,6 @@
     transform: none;
     transition: none;
   }
-  /* Blanket fallback: neutralize every other transition/animation for users
-     who opt out of motion. */
   *,
   *::before,
   *::after {

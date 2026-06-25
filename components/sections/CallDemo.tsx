@@ -157,10 +157,10 @@ export default function CallDemo() {
 
   return (
     <div className="relative mx-auto w-full max-w-sm">
-      {/* Soft amber glow behind the panel — the "signal" color, used sparingly. */}
+      {/* Soft glow behind the panel. */}
       <div
         aria-hidden
-        className="absolute -inset-4 -z-10 rounded-3xl bg-signal-soft/60 blur-2xl"
+        className="absolute -inset-4 -z-10 rounded-3xl bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--color-accent)_30%,transparent),transparent_75%)] blur-2xl"
       />
 
       {/* Full transcript for assistive tech — independent of animation state. */}
@@ -175,11 +175,11 @@ export default function CallDemo() {
 
       <figure
         aria-hidden="true"
-        className="overflow-hidden rounded-xl border border-line bg-paper shadow-xl shadow-ink/10"
+        className="glass-strong overflow-hidden rounded-2xl shadow-glow"
       >
-        <figcaption className="flex items-center justify-between border-b border-line bg-mist px-4 py-3">
+        <figcaption className="flex items-center justify-between border-b border-white/10 bg-white/[0.03] px-4 py-3">
           <span className="text-sm font-semibold">After-hours lead</span>
-          <span className="rounded-full bg-ink px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+          <span className="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-slate">
             Example
           </span>
         </figcaption>
@@ -209,12 +209,12 @@ function StepView({ step, animate }: { step: Step; animate: boolean }) {
     return (
       <Appear
         animate={animate}
-        className="flex items-center gap-3 rounded-lg bg-signal-soft px-3 py-2.5"
+        className="flex items-center gap-3 rounded-lg border border-signal/30 bg-signal/10 px-3 py-2.5"
       >
-        <PhoneMissed aria-hidden className="size-5 shrink-0 text-ink" />
+        <PhoneMissed aria-hidden className="size-5 shrink-0 text-signal" />
         <div className="text-sm">
           <p className="font-semibold text-ink">Missed call · 7:42 PM</p>
-          <p className="text-ink/70">You were on a job</p>
+          <p className="text-slate">You were on a job</p>
         </div>
       </Appear>
     );
@@ -224,7 +224,7 @@ function StepView({ step, animate }: { step: Step; animate: boolean }) {
     return (
       <Appear
         animate={animate}
-        className="flex items-center gap-3 rounded-lg border border-accent/30 bg-accent/5 px-3 py-2.5"
+        className="flex items-center gap-3 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2.5"
       >
         <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-white">
           <CalendarCheck aria-hidden className="size-4" />
@@ -249,8 +249,8 @@ function StepView({ step, animate }: { step: Step; animate: boolean }) {
       <p
         className={`max-w-[82%] rounded-2xl px-3.5 py-2 text-sm leading-snug ${
           out
-            ? "rounded-br-sm bg-accent text-white"
-            : "rounded-bl-sm bg-mist text-ink"
+            ? "rounded-br-sm bg-grad-accent text-white"
+            : "rounded-bl-sm border border-white/10 bg-white/[0.07] text-ink"
         }`}
       >
         {step.text}
@@ -268,7 +268,7 @@ function TypingRow({ side }: { side: "in" | "out" }) {
     >
       <span
         className={`inline-flex items-center gap-1 rounded-2xl px-3.5 py-2.5 ${
-          out ? "rounded-br-sm bg-accent" : "rounded-bl-sm bg-mist"
+          out ? "rounded-br-sm bg-grad-accent" : "rounded-bl-sm border border-white/10 bg-white/[0.07]"
         }`}
         aria-hidden
       >
@@ -276,7 +276,7 @@ function TypingRow({ side }: { side: "in" | "out" }) {
           <span
             key={d}
             className={`size-1.5 rounded-full motion-safe:animate-pulse ${
-              out ? "bg-white/70" : "bg-ink/40"
+              out ? "bg-white/70" : "bg-ink/50"
             }`}
             style={{ animationDelay: `${d * 180}ms` }}
           />

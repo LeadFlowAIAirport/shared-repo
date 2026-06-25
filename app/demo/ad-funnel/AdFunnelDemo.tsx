@@ -40,7 +40,8 @@ import {
 } from "lucide-react";
 import Section from "@/components/ui/Section";
 
-const DISCLAIMER = "Fictional demo data used for example purposes.";
+const DISCLAIMER =
+  "Example walkthrough with fictional data (e.g. “Valley Pro Plumbing”) — not a real client, result, or case study.";
 const MEETING_NOTE =
   "Zoom recommended. Phone calls available. In-person meetings available by request for qualified local businesses.";
 
