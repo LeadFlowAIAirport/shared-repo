@@ -68,11 +68,11 @@ export const site = {
 
 export const home = {
   hero: {
-    eyebrow: "AI lead-flow systems for local service businesses",
+    eyebrow: "AI lead capture and follow-up systems for local service businesses",
     headline: "Turn missed opportunities into booked jobs",
     subheadline:
       "Atlas Leads connects your ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — one system that responds in seconds so more of the leads you already get become real appointments.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine:
       "Built for local service businesses. Plain language, no long contracts, no tech for you to learn.",
@@ -93,15 +93,6 @@ export const home = {
     ],
     closing:
       "Every missed call and slow reply is a job that can go somewhere else. The marketing did its part. The handoff didn't.",
-  } satisfies ProseBlock,
-
-  solution: {
-    heading: "One System That Catches Leads and Helps Get Them Booked",
-    intro: [
-      "We connect the pieces you already rely on — your ads, your forms, your phone, and your website — into a single lead-flow system, so fewer opportunities get dropped.",
-      "When someone calls, texts, or fills out a form, the system responds quickly, follows up, and works to get them onto your calendar — including after hours, when you're under a sink or up a ladder. You get a notification for every new lead, so nothing sits unseen.",
-      "You keep doing the work you're good at. The system handles the catching, the follow-up, and the booking.",
-    ],
   } satisfies ProseBlock,
 
   // Visual "one connected system" diagram: channels in → AI → booking → owner.
@@ -193,7 +184,7 @@ export const home = {
   howHeading: "How Working With Us Goes",
   how: [
     {
-      title: "We Map Your Lead Flow",
+      title: "We Map Your Lead Pipeline",
       body: "We look at how calls, forms, and ad leads come into your business today, and find where opportunities are getting lost.",
     },
     {
@@ -240,8 +231,8 @@ export const home = {
   localFit: {
     heading:
       "Built for local businesses that rely on calls, appointments, follow-up, and booked jobs.",
-    body: "If your business runs on fast response and a full calendar, the same lead-flow system fits — whatever you do. Book a free audit and we'll map it to how the work comes in for you.",
-    cta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    body: "If your business runs on fast response and a full calendar, the same lead capture and follow-up system fits — whatever you do. Book a free audit and we'll map it to how the work comes in for you.",
+    cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 
   // Compact "see it in action" teaser → the live clickable demos on /how-it-works.
@@ -254,8 +245,8 @@ export const home = {
 
   cta: {
     heading: "See Where Your Leads Are Slipping",
-    body: "Book a free lead-flow audit. We'll talk through how leads come into your business today and walk you through how the systems would work for you — no pressure, no obligation, and no promises about specific results.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    body: "Book a free AI growth audit. We'll talk through how leads come into your business today and walk you through how the systems would work for you — no pressure, no obligation, and no promises about specific results.",
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
 
@@ -319,7 +310,7 @@ export const plumbing: TradePage = {
     headline: "Catch More Plumbing Leads — Without Chasing Every Call Yourself",
     subheadline:
       "We set up a lead and appointment system shaped around plumbing companies, so missed calls get a fast reply, leads get answered quickly, and more jobs have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for plumbers. Set up and run for you. No tech to learn.",
   },
@@ -387,8 +378,8 @@ export const plumbing: TradePage = {
     "It's built to plug the leaks, so more of the leads you already get have a chance to become paid work.",
   midCta: {
     heading: "Let's Look at Where Plumbing Jobs Are Slipping",
-    body: "Book a free call. We'll walk through your current lead flow and show you how the plumbing setup would work for your business.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    body: "Book a free call. We'll walk through your current lead pipeline and show you how the plumbing setup would work for your business.",
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -422,7 +413,7 @@ export const plumbing: TradePage = {
     ],
     emphasis:
       "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
-    cta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 };
 
@@ -433,7 +424,7 @@ export const electrical: TradePage = {
     headline: "Catch More Electrical Leads — Without Letting Calls Slip Past",
     subheadline:
       "We set up a lead and appointment system shaped around electrical companies, so missed calls get a fast reply, leads get answered quickly, and more panel upgrades, rewires, and service calls have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for electricians. Set up and run for you. No tech to learn.",
   },
@@ -499,8 +490,8 @@ export const electrical: TradePage = {
     "It's built to seal the gaps, so the high-value leads you already generate have a better chance of becoming paid jobs.",
   midCta: {
     heading: "Let's Look at Where Electrical Jobs Are Slipping",
-    body: "Book a free call. We'll review your current lead flow and show you how the electrical setup would work for your business.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    body: "Book a free call. We'll review your current lead pipeline and show you how the electrical setup would work for your business.",
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -534,7 +525,7 @@ export const electrical: TradePage = {
     ],
     emphasis:
       "Book a free call. It's quick, it's free, and you'll leave knowing where your leads are slipping and how to keep more of them.",
-    cta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 };
 
@@ -545,7 +536,7 @@ export const hvac: TradePage = {
     headline: "Catch More HVAC Leads — Without Missing the No-Heat Calls",
     subheadline:
       "We set up a lead and appointment system shaped around HVAC companies, so missed calls get a fast reply, no-heat and no-cool emergencies get answered quickly, and more tune-ups, repairs, and system quotes have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for HVAC pros. Set up and run for you. No tech to learn.",
   },
@@ -613,8 +604,8 @@ export const hvac: TradePage = {
     "It's built to plug the leaks, so more of the leads you already get have a chance to become paid work.",
   midCta: {
     heading: "Let's Look at Where HVAC Jobs Are Slipping",
-    body: "Book a free call. We'll walk through your current lead flow and show you how the HVAC setup would work for your business.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    body: "Book a free call. We'll walk through your current lead pipeline and show you how the HVAC setup would work for your business.",
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -648,7 +639,7 @@ export const hvac: TradePage = {
     ],
     emphasis:
       "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
-    cta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 };
 
@@ -659,7 +650,7 @@ export const pestControl: TradePage = {
     headline: "Catch More Pest Control Leads — Without Letting Calls Slip Past",
     subheadline:
       "We set up a lead and appointment system shaped around pest control companies, so missed calls get a fast reply, urgent infestations get answered quickly, and more inspections and recurring-service jobs have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for pest control pros. Set up and run for you. No tech to learn.",
   },
@@ -727,8 +718,8 @@ export const pestControl: TradePage = {
     "It's built to plug the leaks, so more of the leads you already get have a chance to become paid work.",
   midCta: {
     heading: "Let's Look at Where Pest Control Jobs Are Slipping",
-    body: "Book a free call. We'll walk through your current lead flow and show you how the pest control setup would work for your business.",
-    primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    body: "Book a free call. We'll walk through your current lead pipeline and show you how the pest control setup would work for your business.",
+    primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -762,7 +753,7 @@ export const pestControl: TradePage = {
     ],
     emphasis:
       "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
-    cta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
+    cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 };
 
@@ -805,7 +796,7 @@ export const howItWorks = {
   expectHeading: "What Working With Us Looks Like",
   expect: [
     {
-      lead: "We start with a look at your lead flow.",
+      lead: "We start with a look at your lead pipeline.",
       rest: " Before anything gets built, we map how calls and leads reach you and where they're getting lost.",
     },
     {
@@ -842,9 +833,9 @@ export const howItWorks = {
 
 export const book = {
   // Small uppercase label above the heading — frames the call as a focused
-  // review of the prospect's lead flow, not a generic sales consultation.
-  eyebrow: "Free Lead-Flow Audit · 15–30 Minutes",
-  heading: "Book Your Free Lead-Flow Audit",
+  // review of the prospect's lead pipeline, not a generic sales consultation.
+  eyebrow: "Free AI Growth Audit · 15–30 Minutes",
+  heading: "Book Your Free AI Growth Audit",
   body: "We'll take a look at how leads currently come into your business, where response time or follow-up may be costing you opportunities, and how our system could help you capture, qualify, and book more appointments — without pressure or hard selling.",
   trustLine: "Built for local businesses. No long contracts. No complicated tech for you to learn.",
   // What to expect on the call (sets honest expectations, no outcome claims).
@@ -867,7 +858,7 @@ export const book = {
         id: "phone",
         title: "Phone Call",
         description:
-          "Quick 15–30 minute call to understand your business, lead flow, and appointment-setting needs.",
+          "Quick 15–30 minute call to understand your business, lead pipeline, and appointment-setting needs.",
         cta: "Book a Phone Call",
         href: "[ADD PHONE CALL BOOKING LINK]",
       },

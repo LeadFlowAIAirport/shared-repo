@@ -28,7 +28,7 @@ export default function HomePage() {
       {/* The problem: missed calls, slow follow-up, wasted ad spend */}
       <Prose content={home.problem} bg="mist" />
 
-      {/* The system: one connected AI lead-flow engine */}
+      {/* The system: one connected AI lead capture and follow-up engine */}
       <FlowDiagram content={home.flowDiagram} bg="paper" />
 
       {/* What we offer: done-for-you systems + AI enablement/training */}

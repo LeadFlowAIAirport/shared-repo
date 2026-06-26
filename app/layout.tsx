@@ -24,7 +24,7 @@ const publicSans = Public_Sans({
 export const metadata: Metadata = {
   title: {
     default:
-      "Atlas Leads — AI Lead-Flow Systems for Local Businesses",
+      "Atlas Leads — AI Growth Systems for Local Businesses",
     template: "%s · Atlas Leads",
   },
   description:

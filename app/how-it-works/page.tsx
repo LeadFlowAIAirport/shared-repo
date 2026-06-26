@@ -29,7 +29,7 @@ export default function HowItWorksPage() {
         </Reveal>
       </Section>
 
-      {/* Lead flow timeline */}
+      {/* Lead pipeline timeline */}
       <Section bg="mist">
         <Reveal className="max-w-2xl">
           <h2 className="text-[clamp(1.9rem,3.5vw,2.75rem)]">
