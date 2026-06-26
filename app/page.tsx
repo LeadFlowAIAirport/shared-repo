@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import CallDemo from "@/components/sections/CallDemo";
 import Prose from "@/components/sections/Prose";
 import FlowDiagram from "@/components/sections/FlowDiagram";
+import Services from "@/components/sections/Services";
 import Steps from "@/components/sections/Steps";
 import Checklist from "@/components/sections/Checklist";
 import CTABand from "@/components/sections/CTABand";
@@ -29,6 +30,9 @@ export default function HomePage() {
 
       {/* The system: one connected AI lead-flow engine */}
       <FlowDiagram content={home.flowDiagram} bg="paper" />
+
+      {/* What we offer: done-for-you systems + AI enablement/training */}
+      <Services content={home.services} bg="mist" />
 
       {/* What you can expect (trust) */}
       <Checklist heading={home.whyHeading} items={home.why} bg="paper" columns />

@@ -47,6 +47,9 @@ export type SystemCard = {
   points: string[];
 };
 
+/** A done-for-you package card in the homepage services section. */
+export type ServiceCard = { id: string; name: string; body: string };
+
 export const site = {
   // PLACEHOLDER brand name — swap here to rebrand the whole site.
   brand: "Atlas Leads",
@@ -142,9 +145,62 @@ export const home = {
     note: "An illustration of how the system connects — not a record of any specific result.",
   },
 
-  // `systems` is still rendered on /how-it-works (howItWorks.systemsHeading).
-  // The homepage "Three Systems We Build" section was removed; new services
-  // copy will be added here later.
+  // Homepage services section — two distinct blocks: done-for-you growth
+  // systems (four packages) and AI enablement/training (one offering). Icons
+  // are owned by the Services component, keyed by card id. No pricing here.
+  services: {
+    eyebrow: "Two ways we help",
+    heading: "What Atlas Leads Helps You Build",
+    intro:
+      "We help local businesses in two ways: we can build the growth systems for you, or we can teach your team how to use AI inside the business so you save time, move faster, and operate with less manual work.",
+    doneForYou: {
+      heading: "Done-for-you growth systems",
+      description:
+        "For businesses that want Atlas Leads to build the system: lead capture, fast response, appointment booking, follow-up, local visibility, and the automation layer that keeps opportunities from slipping away.",
+      cards: [
+        {
+          id: "ai-receptionist-only",
+          name: "AI Receptionist Only",
+          body: "Capture missed calls, texts, and form fills with fast AI-supported response, qualification, follow-up, and booking support.",
+        },
+        {
+          id: "ads-booking",
+          name: "Ads + Booking System",
+          body: "Turn paid traffic into qualified conversations with a focused funnel, lead capture, qualification, and appointment-booking flow.",
+        },
+        {
+          id: "local-visibility",
+          name: "Local Visibility Package",
+          body: "Improve how your business shows up locally with Google Business Profile support, review systems, local listings, and trust-building basics.",
+        },
+        {
+          id: "full-growth",
+          name: "Full Growth System",
+          body: "A complete growth setup combining lead generation, AI receptionist, appointment booking, follow-up, and local visibility into one connected system.",
+        },
+      ] satisfies ServiceCard[],
+    },
+    enablement: {
+      heading: "AI Business Enablement & Training",
+      description:
+        "For businesses that want to learn how to use AI themselves. We help owners and teams understand what AI can do, where it fits in their workflow, and how to use it safely and practically to save time.",
+      card: {
+        name: "AI Business Enablement",
+        body: "Training, workflow mapping, prompt systems, AI tool setup guidance, and practical team education so your business can use AI for admin work, customer communication, content, operations, research, follow-up, and decision support.",
+        points: [
+          "AI basics explained in plain business language",
+          "Workflow audit: where AI can save time or reduce manual work",
+          "Prompting and tool-use training for owners and staff",
+          "Practical use cases for customer service, sales, admin, marketing, and operations",
+          "Guidance on what not to automate and where human review is needed",
+        ],
+      },
+    },
+    cta: { label: "Book a Free AI Growth Audit", href: "/book" },
+  },
+
+  // `systems` is no longer rendered on the homepage (replaced by `services`
+  // above) but is still used on /how-it-works (howItWorks.systemsHeading).
   systems: [
     {
       id: "lead-generation",
