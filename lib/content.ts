@@ -152,7 +152,7 @@ export const home = {
     eyebrow: "Two ways we help",
     heading: "What Atlas Leads Helps You Build",
     intro:
-      "We help local businesses in two ways: we can build the growth systems for you, or we can teach your team how to use AI inside the business so you save time, move faster, and operate with less manual work.",
+      "We help local businesses in two ways: we can build the growth systems for you, or we can help your team use AI to improve how the business runs — with the goal of saving time, moving faster, and cutting manual work.",
     doneForYou: {
       heading: "Done-for-you growth systems",
       description:
@@ -183,7 +183,7 @@ export const home = {
     enablement: {
       heading: "AI Business Enablement & Training",
       description:
-        "For businesses that want to learn how to use AI themselves. We help owners and teams understand what AI can do, where it fits in their workflow, and how to use it safely and practically to save time.",
+        "A lower-commitment, done-with-you starting point: instead of handing everything off, we help you find where AI fits, set up the right tools, and get your team using them safely and practically to improve day-to-day operations. It complements the done-for-you systems above — and can lead into them when you're ready.",
       card: {
         name: "AI Business Enablement",
         body: "Training, workflow mapping, prompt systems, AI tool setup guidance, and practical team education so your business can use AI for admin work, customer communication, content, operations, research, follow-up, and decision support.",
@@ -255,18 +255,6 @@ export const home = {
       body: "Leads get answered quickly and followed up consistently, so more of them have the chance to become scheduled, paying work.",
     },
   ] satisfies Step[],
-
-  whoHeading: "Who It's For",
-  whoIntro:
-    "We work with local businesses that run on calls, forms, and appointments — service and home-service companies where a fast response and good follow-up decide who wins the job. Plumbing, electrical, HVAC, and pest control are common examples, not the whole list.",
-  whoTrades: {
-    industries: [
-      "Local service businesses",
-      "Home-service companies",
-      "Trades & repair",
-      "Appointment-based businesses",
-    ],
-  },
 
   whyHeading: "What You Can Expect From Us",
   why: [
