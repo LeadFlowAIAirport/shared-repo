@@ -29,6 +29,15 @@ export default function HowItWorksPage() {
         </Reveal>
       </Section>
 
+      {/* Video walkthroughs — surfaced near the top so visitors see them first */}
+      <VideoWalkthroughs
+        heading={home.videos.heading}
+        intro={home.videos.intro}
+        note={home.videos.note}
+        items={home.videos.items}
+        bg="mist"
+      />
+
       {/* Lead pipeline timeline */}
       <Section bg="mist">
         <Reveal className="max-w-2xl">
@@ -96,15 +105,6 @@ export default function HowItWorksPage() {
           </div>
         </Reveal>
       </Section>
-
-      {/* Video walkthroughs (replaces the old clickable example-workflow demos) */}
-      <VideoWalkthroughs
-        heading={home.videos.heading}
-        intro={home.videos.intro}
-        note={home.videos.note}
-        items={home.videos.items}
-        bg="mist"
-      />
 
       {/* What working with us looks like */}
       <Checklist
