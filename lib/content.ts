@@ -41,9 +41,27 @@ export type ProseBlock = {
 /** A done-for-you package card in the homepage services section. */
 export type ServiceCard = { id: string; slug: string; name: string; body: string };
 
-/** A video-walkthrough card. Each links to its /demo/<slug> page where the
- *  recorded walkthrough will embed (placeholder until the video is added). */
-export type VideoItem = { slug: string; title: string; blurb: string };
+/** Where a walkthrough video comes from. Set `embedUrl` for a hosted embed
+ *  (YouTube, Vimeo, Loom, ...) OR `videoSrc` for a file in /public (e.g.
+ *  "/videos/ai-receptionist.mp4"). `embedUrl` wins if both are set. `posterSrc`
+ *  is an optional still shown before a local video plays. */
+export type VideoSource = {
+  embedUrl?: string;
+  videoSrc?: string;
+  posterSrc?: string;
+};
+
+/** A video-walkthrough card / page. To put a category's video live, set its
+ *  `video` field (one place) — e.g. `video: { embedUrl: "https://..." }` or
+ *  `video: { videoSrc: "/videos/ai-receptionist.mp4" }`. While `video` is
+ *  `null`, the card and /demo/<slug> page show the honest "coming soon"
+ *  placeholder (and the page stays noindex). */
+export type VideoItem = {
+  slug: string;
+  title: string;
+  blurb: string;
+  video: VideoSource | null;
+};
 
 export const site = {
   // PLACEHOLDER brand name — swap here to rebrand the whole site.
@@ -267,31 +285,39 @@ export const home = {
     intro:
       "Short video walkthroughs of how Atlas Leads teaches, builds, and trains your team on AI systems, from the first call to a booked job. AI education, implementation, and automation explained clearly.",
     note: "Video walkthroughs coming soon. We'll add each one here as it's ready.",
+    // To put a video live, change that category's `video: null` to a source,
+    // e.g. `video: { embedUrl: "https://www.youtube.com/embed/XXXX" }` or
+    // `video: { videoSrc: "/videos/ai-receptionist.mp4", posterSrc: "/videos/ai-receptionist.jpg" }`.
     items: [
       {
         slug: "ai-business-education",
         title: "AI Business Education",
         blurb: "How we teach owners and staff what AI can actually do, and where it saves time in day-to-day work.",
+        video: null,
       },
       {
         slug: "ai-receptionist",
         title: "AI Receptionist",
         blurb: "How AI answers calls, qualifies leads, and books appointments day or night, so you stop missing work.",
+        video: null,
       },
       {
         slug: "ad-funnel",
         title: "Ads + Booking",
         blurb: "How paid traffic becomes qualified, ready-to-book conversations instead of cold clicks.",
+        video: null,
       },
       {
         slug: "local-visibility",
         title: "Local Visibility",
         blurb: "How AI keeps your listings, reviews, and local search presence working for you.",
+        video: null,
       },
       {
         slug: "full-growth-system",
         title: "Full Growth System",
         blurb: "How the pieces connect into one AI-powered system for leads, booking, follow-up, and reviews.",
+        video: null,
       },
     ] satisfies VideoItem[],
   },

@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function AiReceptionistVideoPage() {
-  return <VideoPlaceholder title={item.title} blurb={item.blurb} />;
+  return <VideoPlaceholder item={item} />;
 }

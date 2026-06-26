@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function AdsBookingVideoPage() {
-  return <VideoPlaceholder title={item.title} blurb={item.blurb} />;
+  return <VideoPlaceholder item={item} />;
 }
