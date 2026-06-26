@@ -9,7 +9,7 @@
 // - Credibility comes from clearly explaining the problem, the offer, and the
 //   value — never from claims of past success.
 //
-// PLACEHOLDERS (swap before launch): the brand name `site.brand` ("LeadFlow"),
+// PLACEHOLDERS (swap before launch): the brand name `site.brand` ("Atlas Leads"),
 // `footer.partners`, `footer.contact`, and `book.calendlyUrl` are all
 // placeholders — change them in one place here.
 
@@ -49,7 +49,7 @@ export type SystemCard = {
 
 export const site = {
   // PLACEHOLDER brand name — swap here to rebrand the whole site.
-  brand: "LeadFlow",
+  brand: "Atlas Leads",
   bookHref: "/book",
   howHref: "/how-it-works",
   nav: [
@@ -63,7 +63,7 @@ export const site = {
     // PLACEHOLDER — replace with the real partner/contact names before launch.
     partners: ["[Partner Name]", "[Partner Name]"],
     // PLACEHOLDER — replace with a real contact email.
-    contact: "hello@leadflow.example",
+    contact: "hello@atlasleads.example",
     legal: ["Privacy Policy", "Terms of Service"],
     // Honest framing: we're new and say so.
     note: "A new agency. We'd rather earn your trust than lock you into a contract.",
@@ -77,7 +77,7 @@ export const home = {
     eyebrow: "AI lead-flow systems for local service businesses",
     headline: "Turn missed opportunities into booked jobs",
     subheadline:
-      "Lead Flow connects your ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — one system that responds in seconds so more of the leads you already get become real appointments.",
+      "Atlas Leads connects your ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — one system that responds in seconds so more of the leads you already get become real appointments.",
     primaryCta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine:
@@ -115,7 +115,7 @@ export const home = {
     eyebrow: "One connected system",
     heading: "Every opportunity flows into one place",
     intro:
-      "Today, leads scatter across voicemail, your inbox, ad platforms, and sticky notes — and the slow ones go cold. Lead Flow routes them all through a single path, so each one gets answered, qualified, and followed up the same way.",
+      "Today, leads scatter across voicemail, your inbox, ad platforms, and sticky notes — and the slow ones go cold. Atlas Leads routes them all through a single path, so each one gets answered, qualified, and followed up the same way.",
     inputs: [
       { id: "ads", label: "Ads" },
       { id: "website", label: "Website" },
@@ -142,9 +142,9 @@ export const home = {
     note: "An illustration of how the system connects — not a record of any specific result.",
   },
 
-  systemsHeading: "The Three Systems We Build",
-  systemsIntro:
-    "Each one targets a different way leads get lost. Together they connect into one system that captures leads, responds fast, and keeps you easy to find.",
+  // `systems` is still rendered on /how-it-works (howItWorks.systemsHeading).
+  // The homepage "Three Systems We Build" section was removed; new services
+  // copy will be added here later.
   systems: [
     {
       id: "lead-generation",

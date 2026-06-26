@@ -24,8 +24,8 @@ const publicSans = Public_Sans({
 export const metadata: Metadata = {
   title: {
     default:
-      "LeadFlow — AI Lead-Flow Systems for Local Businesses",
-    template: "%s · LeadFlow",
+      "Atlas Leads — AI Lead-Flow Systems for Local Businesses",
+    template: "%s · Atlas Leads",
   },
   description:
     "An AI automation agency for local businesses. We connect ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — so local service businesses respond faster and book more appointments.",
