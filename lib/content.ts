@@ -55,7 +55,6 @@ export const site = {
   nav: [
     { label: "Home", href: "/" },
     { label: "How It Works", href: "/how-it-works" },
-    { label: "Industries", href: "/#industries" },
   ],
   headerCta: { label: "Book a Free Audit", href: "/book" },
   footer: {
@@ -241,34 +240,14 @@ export const home = {
     },
   ] satisfies LedBullet[],
 
-  split: {
-    heading: "Built for local service businesses",
-    intro:
-      "The same lead-flow system works across most local businesses that rely on calls, forms, and appointments. Here are a few common examples — if yours isn't listed, the setup still fits.",
-    closing:
-      "Don't see your business? If you depend on fast lead response and booked appointments, Lead Flow can be shaped to fit. Book a free audit and we'll map it to how you work.",
-    cards: [
-      {
-        title: "For Plumbing Companies",
-        body: "Lead and appointment systems shaped around plumbing work — emergency calls, water heaters, repipes, and service jobs. If calls and leads come in but too many slip away, start here.",
-        cta: { label: "See the Plumbing Setup", href: "/plumbing" },
-      },
-      {
-        title: "For Electrical Companies",
-        body: "Lead and appointment systems shaped around electrical work — panel upgrades, rewires, EV chargers, and service calls. If leads slip through slow follow-up, start here.",
-        cta: { label: "See the Electrical Setup", href: "/electrical" },
-      },
-      {
-        title: "For HVAC Companies",
-        body: "Lead and appointment systems shaped around HVAC work — no-heat and no-cool emergencies, maintenance visits, and system replacement quotes. If urgent calls and quotes slip away, start here.",
-        cta: { label: "See the HVAC Setup", href: "/hvac" },
-      },
-      {
-        title: "For Pest Control Companies",
-        body: "Lead and appointment systems shaped around pest control work — inspections, urgent infestations, and recurring service plans. If leads slip through slow follow-up, start here.",
-        cta: { label: "See the Pest Control Setup", href: "/pest-control" },
-      },
-    ],
+  // Broad positioning band — intentionally trade-agnostic. The system fits any
+  // local business that runs on calls, appointments, and follow-up; we don't
+  // gate the pitch to specific industries here.
+  localFit: {
+    heading:
+      "Built for local businesses that rely on calls, appointments, follow-up, and booked jobs.",
+    body: "If your business runs on fast response and a full calendar, the same lead-flow system fits — whatever you do. Book a free audit and we'll map it to how the work comes in for you.",
+    cta: { label: "Book a Free Lead-Flow Audit", href: "/book" },
   },
 
   // Compact "see it in action" teaser → the live clickable demos on /how-it-works.

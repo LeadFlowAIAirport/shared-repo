@@ -5,7 +5,6 @@ import FlowDiagram from "@/components/sections/FlowDiagram";
 import Systems from "@/components/sections/Systems";
 import Steps from "@/components/sections/Steps";
 import Checklist from "@/components/sections/Checklist";
-import Split from "@/components/sections/Split";
 import CTABand from "@/components/sections/CTABand";
 import FAQ from "@/components/sections/FAQ";
 import Section from "@/components/ui/Section";
@@ -74,8 +73,23 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      {/* Industry pages */}
-      <Split content={home.split} />
+      {/* Broad positioning — fits any local business, no trade gating */}
+      <Section bg="mist">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            {home.localFit.heading}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate">
+            {home.localFit.body}
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Button href={home.localFit.cta.href}>
+              {home.localFit.cta.label}
+              <ArrowUpRight aria-hidden className="size-5" />
+            </Button>
+          </div>
+        </Reveal>
+      </Section>
 
       {/* Simple process */}
       <Steps heading={home.howHeading} steps={home.how} bg="paper" />
