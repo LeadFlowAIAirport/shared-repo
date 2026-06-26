@@ -39,7 +39,7 @@ export default function MeetingOptions() {
                 <p className="mt-2 flex-1 text-slate">{opt.description}</p>
                 <a
                   href={opt.href}
-                  className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-semibold text-on-accent transition-colors duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   {opt.cta}
                   <ArrowUpRight

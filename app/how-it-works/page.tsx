@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
-import SystemDemos from "@/components/sections/SystemDemos";
+import VideoWalkthroughs from "@/components/sections/VideoWalkthroughs";
 import Checklist from "@/components/sections/Checklist";
 import Prose from "@/components/sections/Prose";
 import CTABand from "@/components/sections/CTABand";
@@ -97,8 +97,14 @@ export default function HowItWorksPage() {
         </Reveal>
       </Section>
 
-      {/* Clickable example-workflow demos (all live) */}
-      <SystemDemos bg="mist" />
+      {/* Video walkthroughs (replaces the old clickable example-workflow demos) */}
+      <VideoWalkthroughs
+        heading={home.videos.heading}
+        intro={home.videos.intro}
+        note={home.videos.note}
+        items={home.videos.items}
+        bg="mist"
+      />
 
       {/* What working with us looks like */}
       <Checklist

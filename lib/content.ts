@@ -41,6 +41,10 @@ export type ProseBlock = {
 /** A done-for-you package card in the homepage services section. */
 export type ServiceCard = { id: string; slug: string; name: string; body: string };
 
+/** A video-walkthrough card. Each links to its /demo/<slug> page where the
+ *  recorded walkthrough will embed (placeholder until the video is added). */
+export type VideoItem = { slug: string; title: string; blurb: string };
+
 export const site = {
   // PLACEHOLDER brand name — swap here to rebrand the whole site.
   brand: "Atlas Leads",
@@ -68,14 +72,14 @@ export const site = {
 
 export const home = {
   hero: {
-    eyebrow: "AI lead capture and follow-up systems for local service businesses",
-    headline: "Turn missed opportunities into booked jobs",
+    eyebrow: "AI education and implementation for local business",
+    headline: "Learn AI. Install smarter systems. Book more jobs.",
     subheadline:
-      "Atlas Leads connects your ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — one system that responds in seconds so more of the leads you already get become real appointments.",
+      "Atlas Leads helps local businesses understand AI, train their teams, and install automated systems for follow-up, booking, customer communication, and growth, so fewer leads slip and more jobs get booked.",
     primaryCta: { label: "Book a Free AI Growth Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine:
-      "Built for local service businesses. Plain language, no long contracts, no tech for you to learn.",
+      "Plain-English AI for local businesses. We teach it, build it, and train your team. No jargon, no long contracts.",
   } satisfies Hero,
 
   problem: {
@@ -132,9 +136,9 @@ export const home = {
   // are owned by the Services component, keyed by card id. No pricing here.
   services: {
     eyebrow: "Two ways we help",
-    heading: "What Atlas Leads Helps You Build",
+    heading: "What We Help You Learn, Build, and Run",
     intro:
-      "We help local businesses in two ways: we can build the growth systems for you, or we can help your team use AI to improve how the business runs — with the goal of saving time, moving faster, and cutting manual work.",
+      "We help local businesses in two ways: we build the AI growth systems for you, or we teach your team to use AI to improve how the business runs day to day. Either way the goal is the same: save time, move faster, and cut manual work.",
     doneForYou: {
       heading: "Done-for-you growth systems",
       description:
@@ -186,21 +190,36 @@ export const home = {
     cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 
-  howHeading: "How Working With Us Goes",
-  how: [
-    {
-      title: "We Map Your Lead Pipeline",
-      body: "We look at how calls, forms, and ad leads come into your business today, and find where opportunities are getting lost.",
-    },
-    {
-      title: "We Build and Install the Systems",
-      body: "We set up the pieces that fit your business — lead generation, the AI receptionist, and local visibility — and connect them to your phone and website. Done for you.",
-    },
-    {
-      title: "You Handle More Booked Jobs",
-      body: "Leads get answered quickly and followed up consistently, so more of them have the chance to become scheduled, paying work.",
-    },
-  ] satisfies Step[],
+  // Atlas Leads AI implementation process — the five stages of how we partner
+  // with a business: teach what AI can do, find the gaps, build the systems,
+  // train the team, then keep improving. Rendered by the AiProcess section.
+  aiProcess: {
+    heading: "How We Put AI to Work in Your Business",
+    intro:
+      "No hype and no black box. We start by teaching you what AI can actually do, then build and run the systems for you, and train your team to use them with confidence.",
+    steps: [
+      {
+        title: "Learn",
+        body: "We teach you what AI can actually do for a business like yours, in plain language with no jargon.",
+      },
+      {
+        title: "Audit",
+        body: "We map how leads, calls, and messages reach you, and find the missed leads, slow follow-up, and repetitive manual work costing you time.",
+      },
+      {
+        title: "Build",
+        body: "We install AI systems for calls, messages, booking, follow-up, reviews, and CRM updates, connected to your phone and website.",
+      },
+      {
+        title: "Train",
+        body: "We show you and your team how to use the systems and work with AI confidently, so it actually sticks.",
+      },
+      {
+        title: "Improve",
+        body: "We monitor what's working, refine the workflows, and keep improving the results over time.",
+      },
+    ] satisfies Step[],
+  },
 
   whyHeading: "What You Can Expect From Us",
   why: [
@@ -240,12 +259,41 @@ export const home = {
     cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
 
-  // Compact "see it in action" teaser → the live clickable demos on /how-it-works.
-  demoTeaser: {
-    eyebrow: "See it in action",
-    heading: "Walk through the system yourself",
-    body: "Short, clickable demos show exactly how a lead moves from first contact to a booked appointment — the ad funnel, the AI receptionist, and local visibility. Built with example data, no sign-up.",
-    cta: { label: "See How It Works", href: "/how-it-works" },
+  // Video walkthroughs — short recorded explainers of how AI fits a real local
+  // business. Each card links to its /demo/<slug> page (clean placeholder until
+  // the video is embedded). Replaces the old interactive demo teaser.
+  videos: {
+    heading: "See how AI fits into a real local business",
+    intro:
+      "Short video walkthroughs of how Atlas Leads teaches, builds, and trains your team on AI systems, from the first call to a booked job. AI education, implementation, and automation explained clearly.",
+    note: "Video walkthroughs coming soon. We'll add each one here as it's ready.",
+    items: [
+      {
+        slug: "ai-business-education",
+        title: "AI Business Education",
+        blurb: "How we teach owners and staff what AI can actually do, and where it saves time in day-to-day work.",
+      },
+      {
+        slug: "ai-receptionist",
+        title: "AI Receptionist",
+        blurb: "How AI answers calls, qualifies leads, and books appointments day or night, so you stop missing work.",
+      },
+      {
+        slug: "ad-funnel",
+        title: "Ads + Booking",
+        blurb: "How paid traffic becomes qualified, ready-to-book conversations instead of cold clicks.",
+      },
+      {
+        slug: "local-visibility",
+        title: "Local Visibility",
+        blurb: "How AI keeps your listings, reviews, and local search presence working for you.",
+      },
+      {
+        slug: "full-growth-system",
+        title: "Full Growth System",
+        blurb: "How the pieces connect into one AI-powered system for leads, booking, follow-up, and reviews.",
+      },
+    ] satisfies VideoItem[],
   },
 
   cta: {

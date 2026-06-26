@@ -1,15 +1,15 @@
 import Hero from "@/components/sections/Hero";
-import CallDemo from "@/components/sections/CallDemo";
+import AiJourneyDemo from "@/components/sections/AiJourneyDemo";
 import Prose from "@/components/sections/Prose";
 import FlowDiagram from "@/components/sections/FlowDiagram";
 import Services from "@/components/sections/Services";
-import Steps from "@/components/sections/Steps";
+import AiProcess from "@/components/sections/AiProcess";
+import VideoWalkthroughs from "@/components/sections/VideoWalkthroughs";
 import Checklist from "@/components/sections/Checklist";
 import CTABand from "@/components/sections/CTABand";
 import FAQ from "@/components/sections/FAQ";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
-import Pill from "@/components/ui/Pill";
 import Button from "@/components/ui/Button";
 import { ArrowUpRight } from "lucide-react";
 import { home } from "@/lib/content";
@@ -17,10 +17,10 @@ import { home } from "@/lib/content";
 export default function HomePage() {
   return (
     <>
-      {/* Cinematic hero with the animated lead-capture demo */}
+      {/* Cinematic hero with the three-act AI education + implementation demo */}
       <Hero
         content={home.hero}
-        media={<CallDemo />}
+        media={<AiJourneyDemo />}
         secondaryCtaGlow
         primaryCtaPulse
       />
@@ -37,36 +37,14 @@ export default function HomePage() {
       {/* What you can expect (trust) */}
       <Checklist heading={home.whyHeading} items={home.why} bg="paper" columns />
 
-      {/* Demo previews → live clickable walkthroughs on /how-it-works */}
-      <Section bg="paper">
-        <Reveal className="glass mx-auto max-w-3xl rounded-3xl p-8 text-center md:p-12">
-          <div className="flex justify-center">
-            <Pill>{home.demoTeaser.eyebrow}</Pill>
-          </div>
-          <h2 className="mt-5 text-[clamp(1.8rem,3.5vw,2.5rem)]">
-            {home.demoTeaser.heading}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate">
-            {home.demoTeaser.body}
-          </p>
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-2.5">
-            {["Ad Funnel", "AI Receptionist", "Local Visibility"].map((name) => (
-              <li
-                key={name}
-                className="glass-strong rounded-full px-4 py-2 text-sm font-medium"
-              >
-                {name}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex justify-center">
-            <Button href={home.demoTeaser.cta.href}>
-              {home.demoTeaser.cta.label}
-              <ArrowUpRight aria-hidden className="size-5" />
-            </Button>
-          </div>
-        </Reveal>
-      </Section>
+      {/* Video walkthroughs (replaces the old interactive demo teaser) */}
+      <VideoWalkthroughs
+        heading={home.videos.heading}
+        intro={home.videos.intro}
+        note={home.videos.note}
+        items={home.videos.items}
+        bg="paper"
+      />
 
       {/* Broad positioning — fits any local business, no trade gating */}
       <Section bg="mist">
@@ -86,8 +64,13 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      {/* Simple process */}
-      <Steps heading={home.howHeading} steps={home.how} bg="paper" />
+      {/* How we work: the 5-step AI education + implementation process */}
+      <AiProcess
+        heading={home.aiProcess.heading}
+        intro={home.aiProcess.intro}
+        steps={home.aiProcess.steps}
+        bg="paper"
+      />
 
       {/* Final CTA */}
       <CTABand

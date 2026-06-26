@@ -15,7 +15,7 @@ type Props = {
 };
 
 // Soft glow behind the secondary CTA — a halo only, leaves size/position intact.
-const secondaryGlow = "shadow-[0_0_28px_rgba(99,102,241,0.22)]";
+const secondaryGlow = "shadow-[0_0_28px_rgba(34,197,94,0.28)]";
 
 export default function Hero({
   content,

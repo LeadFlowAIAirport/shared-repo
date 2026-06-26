@@ -98,7 +98,7 @@ export default function FlowDiagram({ content, bg = "paper" }: Props) {
               <span className="relative flex size-14 items-center justify-center">
                 <span className="absolute inline-flex size-14 rounded-full bg-accent/30 motion-safe:animate-hub-pulse" />
                 <span className="bg-grad-accent relative flex size-14 items-center justify-center rounded-full shadow-glow">
-                  <Sparkles aria-hidden className="size-6 text-white" />
+                  <Sparkles aria-hidden className="size-6 text-on-accent" />
                 </span>
               </span>
               <p className="mt-4 font-display text-lg font-bold">

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="max-w-sm">
           <div className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
             <span className="bg-grad-accent flex size-7 items-center justify-center rounded-lg shadow-glow">
-              <Zap aria-hidden className="size-4 text-white" />
+              <Zap aria-hidden className="size-4 text-on-accent" />
             </span>
             {site.brand}
           </div>

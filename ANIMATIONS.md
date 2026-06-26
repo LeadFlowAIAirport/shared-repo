@@ -34,6 +34,7 @@ npm run dev -- -p 3001   # http://localhost:3001
 - `app/page.tsx` — passes `primaryCtaPulse`; "who it's for" trade chips cascade in.
 - `app/how-it-works/page.tsx` — the lead-flow timeline steps reveal in sequence.
 
-## Not animated
-The hidden `/demo/*` pages are left exactly as-is (they already have their own bespoke
-motion). They still build and serve.
+## Video walkthroughs
+The `/demo/*` pages are now clean video-walkthrough placeholders (`VideoPlaceholder`),
+ready for the recorded videos to embed. Motion there is limited to the shared `Reveal`
+entrance, so they remain reduced-motion-safe.
