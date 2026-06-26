@@ -38,15 +38,6 @@ export type ProseBlock = {
   closing?: string;
 };
 
-/** One of the three core systems in the offer. */
-export type SystemCard = {
-  id: string;
-  name: string;
-  tagline: string;
-  body: string;
-  points: string[];
-};
-
 /** A done-for-you package card in the homepage services section. */
 export type ServiceCard = { id: string; name: string; body: string };
 
@@ -198,47 +189,6 @@ export const home = {
     },
     cta: { label: "Book a Free AI Growth Audit", href: "/book" },
   },
-
-  // `systems` is no longer rendered on the homepage (replaced by `services`
-  // above) but is still used on /how-it-works (howItWorks.systemsHeading).
-  systems: [
-    {
-      id: "lead-generation",
-      name: "Lead Generation System",
-      tagline: "Turn ad spend and clicks into qualified, ready-to-book leads.",
-      body: "We run targeted ads and lead funnels that send prospects to a focused landing page or short questionnaire, then collect and qualify their details and point them toward booking.",
-      points: [
-        "Targeted local ad campaigns and lead funnels",
-        "A focused landing page or questionnaire built to convert",
-        "Lead qualification so you spend time on real prospects",
-        "Every lead nudged toward booking an appointment",
-      ],
-    },
-    {
-      id: "ai-receptionist",
-      name: "AI Receptionist & Appointment Setting",
-      tagline: "Answer every call, text, and form in seconds — even after hours.",
-      body: "When you can't pick up, or a lead comes in late at night, the system responds fast, answers common questions, captures the job details, helps book the appointment, and notifies you the moment a new lead comes in.",
-      points: [
-        "Missed-call text-back so callers don't bounce to a competitor",
-        "Around-the-clock response to calls, texts, and form fills",
-        "Answers common questions and captures key job details",
-        "Books appointments and notifies you of every new lead",
-      ],
-    },
-    {
-      id: "local-visibility",
-      name: "Local Visibility System",
-      tagline: "Be easier to find — and easier to trust — in your service area.",
-      body: "We strengthen your local online presence so nearby customers find you sooner and feel confident choosing you.",
-      points: [
-        "Google Business Profile and local listing improvements",
-        "Support for gathering and showing reviews",
-        "A more consistent presence in local search",
-        "More of the right nearby customers finding your business",
-      ],
-    },
-  ] satisfies SystemCard[],
 
   howHeading: "How Working With Us Goes",
   how: [
@@ -851,9 +801,6 @@ export const howItWorks = {
       body: "Leads who don't book right away get followed up automatically, so quotes don't get forgotten.",
     },
   ] satisfies Step[],
-
-  systemsHeading: "The Three Systems, Up Close",
-  // Mirrors home.systems but framed as a deeper explainer.
 
   expectHeading: "What Working With Us Looks Like",
   expect: [

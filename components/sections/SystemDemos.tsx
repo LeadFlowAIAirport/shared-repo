@@ -13,9 +13,10 @@ import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 
 /**
- * "See the systems in action" — preview tiles linking to the clickable system
- * demos. All three systems (Ad Funnel, AI Phone Receptionist, Local Visibility)
- * are live. The demos use fictional example data.
+ * "See example workflows in action" — preview tiles linking to the clickable
+ * demo walkthroughs (Ad Funnel, AI Phone Receptionist, Local Visibility). These
+ * are example workflows, not the full offer structure. All are live and use
+ * fictional example data.
  */
 
 type Demo = {
@@ -66,10 +67,10 @@ export default function SystemDemos({
     <Section bg={bg}>
       <Reveal className="max-w-2xl">
         <h2 className="text-[clamp(1.9rem,3.5vw,2.75rem)]">
-          See the systems in action
+          See example workflows in action
         </h2>
         <p className="mt-4 text-lg text-slate">
-          Short, clickable walkthroughs of how each system is designed to work.
+          Short, clickable walkthroughs of how each example workflow is designed to work.
         </p>
       </Reveal>
 
@@ -153,7 +154,7 @@ function DemoTile({ demo }: { demo: Demo }) {
   const body = (
     <div className="flex flex-1 flex-col p-6">
       <p className="text-xs font-semibold uppercase tracking-wide text-slate">
-        System {demo.n}
+        Demo {demo.n}
       </p>
       <h3 className="mt-1.5 text-xl leading-snug">{demo.name}</h3>
       <p className="mt-2 text-slate">{demo.blurb}</p>
