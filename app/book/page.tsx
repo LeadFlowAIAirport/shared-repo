@@ -26,6 +26,7 @@ export default function BookPage() {
               {book.heading}
             </h1>
             <p className="mt-6 text-lg text-slate">{book.body}</p>
+            <p className="mt-4 text-lg font-medium text-ink/85">{book.whoFor}</p>
           </Reveal>
 
           <Reveal delay={80}>
@@ -33,17 +34,19 @@ export default function BookPage() {
             <hr className="mt-10 border-line" />
             <div className="mt-10 rounded-xl border border-line bg-paper p-6 shadow-sm sm:p-8">
               <h2 className="text-sm font-semibold uppercase tracking-wide text-slate">
-                What to expect on the call
+                What we look for
               </h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                {book.expect.map((item) => (
+                {book.lookFor.map((item) => (
                   <li key={item} className="flex gap-3">
                     <Check aria-hidden className="mt-0.5 size-5 shrink-0 text-accent" />
                     <span className="text-ink/80">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm font-medium text-slate">{book.trustLine}</p>
+              <p className="mt-6 text-sm font-medium text-slate">
+                {book.reassurance}
+              </p>
             </div>
           </Reveal>
         </div>

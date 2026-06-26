@@ -73,6 +73,12 @@ export default function ServicesPage() {
               <Reveal delay={80} className="space-y-6">
                 <div>
                   <h3 className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    Who it’s for
+                  </h3>
+                  <p className="mt-2 text-slate">{offer.whoFor}</p>
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wide text-accent">
                     The problem
                   </h3>
                   <p className="mt-2 text-slate">{offer.problem}</p>

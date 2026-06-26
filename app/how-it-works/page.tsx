@@ -6,6 +6,7 @@ import AiProcess from "@/components/sections/AiProcess";
 import Checklist from "@/components/sections/Checklist";
 import Prose from "@/components/sections/Prose";
 import CTABand from "@/components/sections/CTABand";
+import FAQ from "@/components/sections/FAQ";
 import { howItWorks, home } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -88,6 +89,9 @@ export default function HowItWorksPage() {
         }}
         bg="paper"
       />
+
+      {/* Common questions (moved off the home page) */}
+      <FAQ heading={home.faqHeading} items={home.faq} bg="mist" />
 
       <CTABand
         heading={howItWorks.cta.heading}

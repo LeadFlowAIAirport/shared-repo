@@ -387,6 +387,7 @@ export type ServiceOffer = {
   id: string;
   name: string;
   what: string;
+  whoFor: string;
   problem: string;
   howAI: string;
   gets: string[];
@@ -403,6 +404,7 @@ export const servicesPage = {
       id: "ai-business-enablement",
       name: "AI Business Education",
       what: "Plain-English training that shows owners and staff what AI can actually do for a business like yours.",
+      whoFor: "Owners and teams who want to understand AI and use it confidently, not hand everything off.",
       problem: "Most teams keep hearing about AI but don't know where it fits or how to use it safely.",
       howAI: "We map your day-to-day work, find the repetitive tasks, and teach practical AI tools and prompts for admin, customer communication, content, and operations.",
       gets: [
@@ -416,6 +418,7 @@ export const servicesPage = {
       id: "ai-receptionist",
       name: "AI Receptionist",
       what: "An AI front desk that answers calls, texts, and form fills, qualifies the lead, and books the appointment, day or night.",
+      whoFor: "Businesses missing calls, texts, or after-hours leads while they're busy on the job.",
       problem: "Calls go to voicemail and after-hours leads go cold while you're on a job.",
       howAI: "AI responds in seconds, answers common questions, captures job details, and guides the lead to a booked time, with owner notifications when a real person is needed.",
       gets: [
@@ -429,6 +432,7 @@ export const servicesPage = {
       id: "ads-booking-system",
       name: "Ads + Booking",
       what: "A focused ad-to-booking funnel that turns paid traffic into qualified, ready-to-book conversations.",
+      whoFor: "Businesses running ads, or about to, that want more booked jobs from the same spend.",
       problem: "Ads bring clicks, but generic pages and slow follow-up waste the spend.",
       howAI: "A service-specific landing page and short form feed an AI follow-up and booking flow that qualifies and schedules leads automatically.",
       gets: [
@@ -442,6 +446,7 @@ export const servicesPage = {
       id: "local-visibility",
       name: "Local Visibility",
       what: "Systems that keep your Google Business Profile, reviews, and local search presence working for you.",
+      whoFor: "Local businesses that want to show up, look trustworthy, and win nearby customers.",
       problem: "Nearby customers find other companies first, and reviews dry up.",
       howAI: "AI helps request and respond to reviews, keep your listings consistent, and surface local search opportunities, so you show up and look trustworthy.",
       gets: [
@@ -455,6 +460,7 @@ export const servicesPage = {
       id: "full-growth-system",
       name: "Full Growth System",
       what: "Every piece connected into one AI-powered system for leads, booking, follow-up, reviews, and CRM updates.",
+      whoFor: "Businesses ready to connect everything into one system instead of piecing tools together.",
       problem: "Point solutions don't talk to each other, so opportunities still slip through.",
       howAI: "Lead capture, the AI receptionist, ads and booking, follow-up, and local visibility run as one workflow, with your team trained to operate it.",
       gets: [
@@ -1032,6 +1038,20 @@ export const book = {
   heading: "Book a Free AI Audit",
   body: "On a short call we look at how your business runs today, find the missed leads, slow follow-up, and repetitive manual work that costs you time, and show where AI can save time and improve operations. We'll explain what systems actually make sense for you before anyone tries to sell you anything.",
   trustLine: "Built for local businesses. No long contracts. No complicated tech for you to learn.",
+  // Who the audit is for, the no-pressure framing, and the checklist we run.
+  whoFor:
+    "For local business owners who are curious about AI but want a clear, practical starting point, not a hard sell.",
+  reassurance:
+    "This is a practical AI and business audit, not a high-pressure sales call. We'll tell you what's worth doing, including the things you can handle yourself.",
+  lookFor: [
+    "Missed leads and calls that never get a callback",
+    "Slow follow-up that lets quotes and inquiries go cold",
+    "Repetitive manual work eating your team's time",
+    "Booking gaps where appointments slip away",
+    "Review and reputation gaps that cost you trust",
+    "CRM and admin inefficiencies",
+    "The specific places AI can save time and improve operations",
+  ],
   // What to expect on the call (sets honest expectations, no outcome claims).
   expect: [
     "A look at how calls, messages, and leads reach your business today",
