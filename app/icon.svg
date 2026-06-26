@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Atlas Leads">
+  <defs>
+    <linearGradient id="atlas-apex" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#149E5A"/>
+      <stop offset="1" stop-color="#0A3D2A"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#atlas-apex)"/>
+  <path d="M8 24 L16 8 L24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11.3 17.5 H20.7" fill="none" stroke="#2EDB82" stroke-width="3" stroke-linecap="round"/>
+</svg>

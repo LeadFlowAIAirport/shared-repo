@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Zap } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import AtlasLogo from "@/components/brand/AtlasLogo";
 import { site } from "@/lib/content";
 
 export default function Footer() {
@@ -8,12 +8,7 @@ export default function Footer() {
     <footer className="relative border-t border-white/10">
       <Reveal variant="fade" className="mx-auto grid w-full max-w-(--container-site) gap-10 px-5 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr]">
         <div className="max-w-sm">
-          <div className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
-            <span className="bg-grad-accent flex size-7 items-center justify-center rounded-lg shadow-glow">
-              <Zap aria-hidden className="size-4 text-on-accent" />
-            </span>
-            {site.brand}
-          </div>
+          <AtlasLogo variant="horizontal" tone="onDark" size={30} />
           <p className="mt-4 text-slate">{site.footer.pitch}</p>
           <p className="mt-4 text-sm font-medium text-ink/70">
             {site.footer.note}

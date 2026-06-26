@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Public_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -21,6 +21,14 @@ const publicSans = Public_Sans({
   display: "swap",
 });
 
+// Brand: Space Grotesk, scoped to the Atlas Leads logo wordmark (not global).
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default:
@@ -39,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolage.variable} ${publicSans.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${publicSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <head>
         {/* Fail-visible: if JS is disabled, scroll-reveal never runs, so show

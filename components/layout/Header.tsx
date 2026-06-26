@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
+import AtlasLogo from "@/components/brand/AtlasLogo";
 import { site } from "@/lib/content";
 
 export default function Header() {
@@ -38,13 +39,10 @@ export default function Header() {
       >
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-extrabold tracking-tight"
+          className="flex items-center"
           aria-label={`${site.brand} home`}
         >
-          <span className="bg-grad-accent flex size-7 items-center justify-center rounded-lg shadow-glow">
-            <Zap aria-hidden className="size-4 text-on-accent" />
-          </span>
-          {site.brand}
+          <AtlasLogo variant="horizontal" tone="onDark" size={28} />
         </Link>
 
         {/* Desktop nav */}
