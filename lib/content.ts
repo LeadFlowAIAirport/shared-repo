@@ -39,7 +39,7 @@ export type ProseBlock = {
 };
 
 /** A done-for-you package card in the homepage services section. */
-export type ServiceCard = { id: string; name: string; body: string };
+export type ServiceCard = { id: string; slug: string; name: string; body: string };
 
 export const site = {
   // PLACEHOLDER brand name — swap here to rebrand the whole site.
@@ -142,27 +142,32 @@ export const home = {
       cards: [
         {
           id: "ai-receptionist-only",
-          name: "AI Receptionist Only",
+          slug: "ai-receptionist",
+          name: "AI Receptionist",
           body: "Capture missed calls, texts, and form fills with fast AI-supported response, qualification, follow-up, and booking support.",
         },
         {
           id: "ads-booking",
-          name: "Ads + Booking System",
+          slug: "ads-booking-system",
+          name: "Ads + Booking",
           body: "Turn paid traffic into qualified conversations with a focused funnel, lead capture, qualification, and appointment-booking flow.",
         },
         {
           id: "local-visibility",
-          name: "Local Visibility Package",
+          slug: "local-visibility",
+          name: "Local Visibility",
           body: "Improve how your business shows up locally with Google Business Profile support, review systems, local listings, and trust-building basics.",
         },
         {
           id: "full-growth",
+          slug: "full-growth-system",
           name: "Full Growth System",
           body: "A complete growth setup combining lead generation, AI receptionist, appointment booking, follow-up, and local visibility into one connected system.",
         },
       ] satisfies ServiceCard[],
     },
     enablement: {
+      slug: "ai-business-enablement",
       heading: "AI Business Enablement & Training",
       description:
         "A lower-commitment, done-with-you starting point: instead of handing everything off, we help you find where AI fits, set up the right tools, and get your team using them safely and practically to improve day-to-day operations. It complements the done-for-you systems above — and can lead into them when you're ready.",
@@ -278,6 +283,25 @@ export const home = {
     },
   ] satisfies FaqItem[],
 };
+
+/* ----------------------------- SERVICE DETAIL PAGES ----------------------------- */
+// Minimal per-service pages at /services/<slug>. Copy is derived from the
+// homepage `services` data so it isn't duplicated; Hayden adds full copy later.
+
+export type ServiceDetail = { title: string; intro: string };
+
+const dfyCards = home.services.doneForYou.cards;
+
+export const serviceDetails = {
+  "ai-receptionist": { title: dfyCards[0].name, intro: dfyCards[0].body },
+  "ads-booking-system": { title: dfyCards[1].name, intro: dfyCards[1].body },
+  "local-visibility": { title: dfyCards[2].name, intro: dfyCards[2].body },
+  "full-growth-system": { title: dfyCards[3].name, intro: dfyCards[3].body },
+  "ai-business-enablement": {
+    title: home.services.enablement.heading,
+    intro: home.services.enablement.description,
+  },
+} satisfies Record<string, ServiceDetail>;
 
 /* --------------------------- SHARED SHAPE FOR TRADES --------------------------- */
 

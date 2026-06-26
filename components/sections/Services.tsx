@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Headset,
   Megaphone,
@@ -5,6 +6,7 @@ import {
   Network,
   GraduationCap,
   Check,
+  ArrowRight,
   ArrowUpRight,
   type LucideIcon,
 } from "lucide-react";
@@ -72,6 +74,15 @@ export default function Services({
                   </span>
                   <h4 className="mt-5 text-xl font-bold">{card.name}</h4>
                   <p className="mt-2 text-slate">{card.body}</p>
+                  <div className="mt-auto pt-5">
+                    <Link
+                      href={`/services/${card.slug}`}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold text-accent transition-colors hover:border-accent/40 hover:bg-accent/5"
+                    >
+                      Learn more
+                      <ArrowRight aria-hidden className="size-3.5" />
+                    </Link>
+                  </div>
                 </Card>
               </Reveal>
             );
@@ -99,6 +110,13 @@ export default function Services({
                   {content.enablement.card.name}
                 </h4>
                 <p className="mt-2 text-slate">{content.enablement.card.body}</p>
+                <Link
+                  href={`/services/${content.enablement.slug}`}
+                  className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold text-accent transition-colors hover:border-accent/40 hover:bg-accent/5"
+                >
+                  Learn more
+                  <ArrowRight aria-hidden className="size-3.5" />
+                </Link>
               </div>
               <ul className="space-y-3 md:pt-1">
                 {content.enablement.card.points.map((point) => (
