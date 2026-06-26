@@ -76,7 +76,7 @@ export default function VideoPlaceholder({ item }: Props) {
 
         <div className="mt-9">
           <Button href="/book">
-            Book a Free AI Growth Audit
+            Book a Free AI Audit
             <ArrowUpRight aria-hidden className="size-5" />
           </Button>
         </div>

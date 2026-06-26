@@ -29,6 +29,10 @@ export default function MeetingOptions() {
       <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {options.map((opt, i) => {
           const Icon = ICONS[opt.id] ?? Phone;
+          // Until real scheduler links are added, the placeholder hrefs (e.g.
+          // "[ADD ... LINK]") route to the working request form instead.
+          const placeholder = opt.href.startsWith("[");
+          const href = placeholder ? "#request-meeting" : opt.href;
           return (
             <Reveal key={opt.id} delay={(i % 3) * 80} className="h-full">
               <li className="group flex h-full flex-col rounded-xl border border-line bg-paper p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40 hover:shadow-lg hover:shadow-brand-green/10">
@@ -38,10 +42,10 @@ export default function MeetingOptions() {
                 <h3 className="mt-4 text-xl leading-snug">{opt.title}</h3>
                 <p className="mt-2 flex-1 text-slate">{opt.description}</p>
                 <a
-                  href={opt.href}
+                  href={href}
                   className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-semibold text-on-accent transition-colors duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
-                  {opt.cta}
+                  {placeholder ? "Request this meeting" : opt.cta}
                   <ArrowUpRight
                     aria-hidden
                     className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -52,6 +56,13 @@ export default function MeetingOptions() {
           );
         })}
       </ul>
+
+      {options.some((o) => o.href.startsWith("[")) && (
+        <p className="mt-6 max-w-2xl text-sm font-medium text-slate">
+          Online scheduling links are coming soon. For now, request a time with
+          the form below and we’ll confirm by reply.
+        </p>
+      )}
     </div>
   );
 }

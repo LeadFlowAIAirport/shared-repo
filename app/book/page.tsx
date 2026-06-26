@@ -7,7 +7,7 @@ import ContactForm from "@/components/sections/ContactForm";
 import { book } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Book a Free AI Growth Audit",
+  title: "Book a Free AI Audit",
   description:
     "Choose how you'd like to meet — phone call, Zoom, or in-person by request — and we'll walk through how leads reach your business and how the systems would work for you. No promises about specific results.",
 };
@@ -56,7 +56,7 @@ export default function BookPage() {
 
       {/* Request-a-meeting contact form */}
       <Section bg="paper">
-        <div className="mx-auto max-w-2xl">
+        <div id="request-meeting" className="mx-auto max-w-2xl scroll-mt-24">
           <Reveal>
             <ContactForm />
           </Reveal>
