@@ -26,6 +26,11 @@ export default function VideoWalkthroughs({
   items,
   bg = "paper",
 }: Props) {
+  const [featured, ...rest] = items;
+  const featuredHasVideo = !!(
+    featured.video?.embedUrl || featured.video?.videoSrc
+  );
+
   return (
     <Section bg={bg}>
       <Reveal className="max-w-2xl">
@@ -35,11 +40,65 @@ export default function VideoWalkthroughs({
         <p className="mt-4 text-lg text-slate">{intro}</p>
       </Reveal>
 
-      <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, i) => {
+      {/* Featured flagship walkthrough — visibly larger than the four modules */}
+      <Reveal delay={120} className="mt-12">
+        <Link
+          href={`/demo/${featured.slug}`}
+          className="group glass grid overflow-hidden rounded-3xl shadow-glow ring-1 ring-accent/25 transition-[transform,border-color,box-shadow] duration-200 ease-out-quint hover:-translate-y-0.5 hover:border-accent/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:hover:translate-y-0 md:grid-cols-2"
+        >
+          {/* Larger 16:9 frame */}
+          <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-surface-deep md:border-b-0 md:border-r">
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--color-accent)_22%,transparent),transparent_72%)]"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-50 [background-image:radial-gradient(var(--color-line)_1px,transparent_1px)] [background-size:18px_18px]"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="flex size-20 items-center justify-center rounded-full bg-accent/15 text-accent ring-1 ring-accent/30 backdrop-blur-sm transition-colors duration-200 group-hover:bg-accent/25">
+                <PlayCircle aria-hidden className="size-10" />
+              </span>
+            </div>
+            {featuredHasVideo ? (
+              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-on-accent">
+                <PlayCircle aria-hidden className="size-3.5" />
+                Watch
+              </span>
+            ) : (
+              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/70 px-2.5 py-1 text-xs font-semibold text-slate backdrop-blur-sm">
+                Coming soon
+              </span>
+            )}
+          </div>
+
+          {/* Text side */}
+          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10">
+            <span className="inline-flex items-center gap-2 self-start rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
+              Flagship walkthrough
+            </span>
+            <h3 className="mt-4 text-2xl font-bold text-ink sm:text-3xl">
+              {featured.title}
+            </h3>
+            <p className="mt-3 text-slate">{featured.blurb}</p>
+            <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+              {featuredHasVideo ? "Watch the walkthrough" : "Video coming soon"}
+              <ArrowUpRight
+                aria-hidden
+                className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+              />
+            </span>
+          </div>
+        </Link>
+      </Reveal>
+
+      {/* The four implementation-module walkthroughs */}
+      <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {rest.map((item, i) => {
           const hasVideo = !!(item.video?.embedUrl || item.video?.videoSrc);
           return (
-            <Reveal key={item.slug} delay={(i % 3) * 80} className="h-full">
+            <Reveal key={item.slug} delay={(i % 4) * 80} className="h-full">
               <li className="h-full">
                 <Link
                   href={`/demo/${item.slug}`}

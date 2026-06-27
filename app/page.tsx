@@ -7,6 +7,7 @@ import {
   Network,
   ArrowRight,
   ArrowUpRight,
+  Check,
   type LucideIcon,
 } from "lucide-react";
 import Hero from "@/components/sections/Hero";
@@ -17,6 +18,7 @@ import CTABand from "@/components/sections/CTABand";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
+import Pill from "@/components/ui/Pill";
 import { home, servicesPage } from "@/lib/content";
 
 // Icons for the compact services preview (full versions live on /services).
@@ -34,6 +36,10 @@ const OFFER_ICONS: Record<string, LucideIcon> = {
  * /how-it-works, and the booking detail on /book. Home only previews them.
  */
 export default function HomePage() {
+  const flagship = servicesPage.offers[0];
+  const supporting = servicesPage.offers.slice(1);
+  const FlagshipIcon = OFFER_ICONS[flagship.id] ?? GraduationCap;
+
   return (
     <>
       {/* Hero with the three-act AI education + implementation animation */}
@@ -47,23 +53,66 @@ export default function HomePage() {
       {/* The problem we solve, briefly */}
       <Prose content={home.problem} bg="mist" />
 
-      {/* Services preview → full detail on /services */}
+      {/* Flagship offer + the systems we implement inside it → detail on /services */}
       <Section bg="paper">
         <Reveal className="max-w-2xl">
-          <h2 className="text-[clamp(1.9rem,3.5vw,2.75rem)]">
-            {servicesPage.hero.heading}
+          <Pill>Our flagship offer</Pill>
+          <h2 className="mt-5 text-[clamp(1.9rem,3.5vw,2.75rem)]">
+            {flagship.name}
           </h2>
-          <p className="mt-4 text-lg text-slate">
-            Five ways Atlas Leads helps, from teaching your team to running the
-            whole system. Explore each one on the services page.
+          <p className="mt-4 text-lg text-slate">{flagship.what}</p>
+        </Reveal>
+
+        {/* Elevated flagship card — set apart with an accent ring + glow */}
+        <Reveal delay={80} className="mt-8">
+          <div className="glass rounded-3xl p-6 shadow-glow ring-1 ring-accent/30 sm:p-9">
+            <div className="grid gap-8 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-12">
+              <div>
+                <span className="flex size-12 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                  <FlagshipIcon aria-hidden className="size-6" />
+                </span>
+                <h3 className="mt-5 text-2xl font-bold text-ink">
+                  Inside the engagement
+                </h3>
+                <p className="mt-2 text-slate">{flagship.howAI}</p>
+                <Button href={`/services#${flagship.id}`} className="mt-6">
+                  Explore the flagship offer
+                  <ArrowUpRight aria-hidden className="size-5" />
+                </Button>
+              </div>
+              <ul className="grid gap-3 sm:grid-cols-2 md:pt-1">
+                {flagship.gets.map((g) => (
+                  <li key={g} className="flex gap-2.5">
+                    <Check
+                      aria-hidden
+                      className="mt-0.5 size-5 shrink-0 text-accent"
+                    />
+                    <span className="text-sm text-ink/85">{g}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Supporting systems — modules inside the flagship strategy */}
+        <Reveal className="mt-14 max-w-2xl">
+          <h3 className="text-xl font-bold text-ink sm:text-2xl">
+            Implementation modules inside your AI strategy
+          </h3>
+          <p className="mt-3 text-slate">
+            Receptionist, ads + booking, local visibility, and the full growth
+            system aren’t standalone products — they’re modules we switch on
+            inside your engagement, based on what the audit shows will move the
+            needle.
           </p>
         </Reveal>
 
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {servicesPage.offers.map((offer, i) => {
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {supporting.map((offer, i) => {
             const Icon = OFFER_ICONS[offer.id] ?? GraduationCap;
             return (
-              <Reveal key={offer.id} delay={(i % 3) * 80} className="h-full">
+              <Reveal key={offer.id} delay={(i % 4) * 80} className="h-full">
                 <li className="h-full">
                   <Link
                     href={`/services#${offer.id}`}
@@ -72,7 +121,10 @@ export default function HomePage() {
                     <span className="flex size-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
                       <Icon aria-hidden className="size-5" />
                     </span>
-                    <h3 className="mt-4 font-semibold text-ink">{offer.name}</h3>
+                    <span className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate/60">
+                      Implementation module
+                    </span>
+                    <h4 className="mt-1 font-semibold text-ink">{offer.name}</h4>
                     <p className="mt-1.5 text-sm text-slate">{offer.what}</p>
                   </Link>
                 </li>
@@ -81,7 +133,7 @@ export default function HomePage() {
           })}
         </ul>
 
-        <Reveal className="mt-8">
+        <Reveal className="mt-10">
           <Button href="/services" variant="secondary">
             View all services
             <ArrowUpRight aria-hidden className="size-5" />
@@ -131,7 +183,7 @@ export default function HomePage() {
       {/* Brief trust / honesty */}
       <Checklist heading={home.whyHeading} items={home.why} bg="paper" columns />
 
-      {/* Strong final CTA → Book a Free AI Audit */}
+      {/* Strong final CTA → Book a Free AI Business Audit */}
       <CTABand
         heading={home.cta.heading}
         body={home.cta.body}

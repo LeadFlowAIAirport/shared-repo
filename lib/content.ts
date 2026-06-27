@@ -73,10 +73,10 @@ export const site = {
     { label: "How It Works", href: "/how-it-works" },
     { label: "Services", href: "/services" },
   ],
-  headerCta: { label: "Book a Free AI Audit", href: "/book" },
+  headerCta: { label: "Book a Free AI Business Audit", href: "/book" },
   footer: {
     pitch:
-      "An AI automation agency for local businesses. We help local service and home-service companies capture more leads, respond faster, follow up, and book more appointments.",
+      "An AI education and implementation agency for local businesses. We help owners understand AI and put it to work — saving time, cutting manual work, and modernizing how their business runs.",
     // PLACEHOLDER — replace with the real partner/contact names before launch.
     partners: ["[Partner Name]", "[Partner Name]"],
     // PLACEHOLDER — replace with a real contact email.
@@ -91,31 +91,31 @@ export const site = {
 
 export const home = {
   hero: {
-    eyebrow: "AI education and implementation for local business",
-    headline: "Learn AI. Install smarter systems. Book more jobs.",
+    eyebrow: "AI Business Education + Implementation",
+    headline: "Your AI Transformation Partner for Local Business.",
     subheadline:
-      "Atlas Leads helps local businesses understand AI, train their teams, and install automated systems for follow-up, booking, customer communication, and growth, so fewer leads slip and more jobs get booked.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+      "We help local business owners understand AI, find the highest-value ways to use it, and implement the practical systems that save you time, cut manual admin, and speed up how you respond and follow up — so your business adopts AI with clarity, not confusion.",
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine:
-      "Plain-English AI for local businesses. We teach it, build it, and train your team. No jargon, no long contracts.",
+      "A hands-on AI partner for local businesses — education, strategy, and implementation. Plain English, no jargon, no long contracts.",
   } satisfies Hero,
 
   problem: {
-    heading: "Most Lost Jobs Aren't a Lead Problem — They're a Follow-Up Problem",
+    heading: "AI Is Everywhere — But No One Has Shown You How to Actually Use It",
     intro: [
-      "Local service businesses usually get plenty of calls, clicks, and form fills. The trouble is what happens next: leads slip through the cracks before anyone turns them into booked work.",
-      "It tends to look like this:",
+      "Local business owners are told AI will change everything. What they're not told is where it actually fits, what's genuinely worth doing, and how to put it to work without the hype or the jargon.",
+      "So the day-to-day still looks like this:",
     ],
     bullets: [
-      "A customer calls while you're on a job — and never hears back.",
-      "Someone fills out your form at 9 PM and waits until tomorrow for a reply… if it comes.",
-      "Your ads bring in calls, but some go straight to voicemail.",
-      "A quote goes out, no one follows up, and they book whoever called back first.",
-      "Customers searching nearby find other companies before they find you.",
+      "Hours lost every week to repetitive admin, quoting, and follow-up.",
+      "Calls missed while you're on a job — and leads that never hear back.",
+      "A form fill at 9 PM that waits until tomorrow for a reply… if it comes.",
+      "Tools and “AI apps” you paid for but never really rolled out.",
+      "A nagging sense that competitors are modernizing faster than you are.",
     ],
     closing:
-      "Every missed call and slow reply is a job that can go somewhere else. The marketing did its part. The handoff didn't.",
+      "The opportunity isn't one more app — it's understanding AI and implementing it properly across how your business runs. That's exactly what we do.",
   } satisfies ProseBlock,
 
   // Visual "one connected system" diagram: channels in → AI → booking → owner.
@@ -191,9 +191,9 @@ export const home = {
     },
     enablement: {
       slug: "ai-business-enablement",
-      heading: "AI Business Enablement & Training",
+      heading: "AI Business Education + Implementation",
       description:
-        "A lower-commitment, done-with-you starting point: instead of handing everything off, we help you find where AI fits, set up the right tools, and get your team using them safely and practically to improve day-to-day operations. It complements the done-for-you systems above — and can lead into them when you're ready.",
+        "Our flagship engagement: a strategic partnership that takes you from “AI is confusing” to “AI is working in my business.” We teach your team what AI can do, audit how your business runs, map your highest-value use cases, then implement and support the practical systems — saving time, cutting manual admin, and speeding up response and follow-up.",
       card: {
         name: "AI Business Enablement",
         body: "Training, workflow mapping, prompt systems, AI tool setup guidance, and practical team education so your business can use AI for admin work, customer communication, content, operations, research, follow-up, and decision support.",
@@ -206,7 +206,7 @@ export const home = {
         ],
       },
     },
-    cta: { label: "Book a Free AI Audit", href: "/book" },
+    cta: { label: "Book a Free AI Business Audit", href: "/book" },
   },
 
   // Atlas Leads AI implementation process — the five stages of how we partner
@@ -215,48 +215,48 @@ export const home = {
   aiProcess: {
     heading: "How We Put AI to Work in Your Business",
     intro:
-      "No hype and no black box. We start by teaching you what AI can actually do, then build and run the systems for you, and train your team to use them with confidence.",
+      "No hype and no black box. We start by auditing how your business runs, show you exactly where AI helps, teach your team in plain English, then build, connect, and support the systems that do the work.",
     steps: [
       {
-        title: "Learn",
-        body: "We teach you what AI can actually do for a business like yours, in plain language with no jargon.",
-      },
-      {
         title: "Audit",
-        body: "We map how leads, calls, and messages reach you, and find the missed leads, slow follow-up, and repetitive manual work costing you time.",
+        body: "We map how your business runs today — calls, leads, follow-up, admin, and operations — to see the full picture.",
       },
       {
-        title: "Build",
-        body: "We install AI systems for calls, messages, booking, follow-up, reviews, and CRM updates, connected to your phone and website.",
+        title: "Find the AI Wins",
+        body: "We pinpoint where AI can save you the most time and money, and what's genuinely worth doing.",
       },
       {
-        title: "Train",
-        body: "We show you and your team how to use the systems and work with AI confidently, so it actually sticks.",
+        title: "Teach",
+        body: "We explain how the right AI works in plain English, so you and your team actually understand it — no jargon.",
       },
       {
-        title: "Improve",
-        body: "We monitor what's working, refine the workflows, and keep improving the results over time.",
+        title: "Build & Connect",
+        body: "We build or connect the right systems — receptionist, follow-up, booking, reviews, and operations — into how you already work.",
+      },
+      {
+        title: "Support & Improve",
+        body: "We test, refine, and support the rollout over time, so the systems keep working and the change sticks.",
       },
     ] satisfies Step[],
   },
 
-  whyHeading: "What You Can Expect From Us",
+  whyHeading: "What Working With Atlas Leads Is Like",
   why: [
     {
-      lead: "We focus on local service businesses.",
-      rest: " We work with local companies that depend on calls, forms, and booked appointments, so the systems are shaped around how real jobs actually come in.",
+      lead: "We teach, not just sell.",
+      rest: " You'll actually understand what AI does for your business and why, explained in plain English.",
     },
     {
-      lead: "It's done for you.",
-      rest: " You don't have to learn or manage any tools. We set everything up and keep it running.",
+      lead: "Education and implementation together.",
+      rest: " We don't stop at advice — we build and connect the systems and train your team to use them.",
     },
     {
-      lead: "Plain-English, start to finish.",
-      rest: " We talk in calls answered and jobs booked, not buzzwords.",
+      lead: "Built around your operations.",
+      rest: " We start from how your business actually runs and apply AI where it saves the most time and money.",
     },
     {
-      lead: "Built to fit how you already work.",
-      rest: " The systems sit behind your current phone and website without changing your daily routine.",
+      lead: "Plain-English, no jargon.",
+      rest: " Serious about AI, allergic to buzzwords. You'll always know what's happening and why.",
     },
     {
       lead: "Direct access to the people doing the work.",
@@ -275,7 +275,7 @@ export const home = {
     heading:
       "Built for local businesses that rely on calls, appointments, follow-up, and booked jobs.",
     body: "If your business runs on fast response and a full calendar, the same lead capture and follow-up system fits — whatever you do. Book a free audit and we'll map it to how the work comes in for you.",
-    cta: { label: "Book a Free AI Audit", href: "/book" },
+    cta: { label: "Book a Free AI Business Audit", href: "/book" },
   },
 
   // Video walkthroughs — short recorded explainers of how AI fits a real local
@@ -292,8 +292,8 @@ export const home = {
     items: [
       {
         slug: "ai-business-education",
-        title: "AI Business Education",
-        blurb: "How we teach owners and staff what AI can actually do, and where it saves time in day-to-day work.",
+        title: "AI Business Education + Implementation",
+        blurb: "A walkthrough of our flagship engagement — how we teach your team, audit your operations, map high-value AI use cases, and implement the systems that save you time.",
         video: null,
       },
       {
@@ -324,9 +324,9 @@ export const home = {
   },
 
   cta: {
-    heading: "See Where Your Leads Are Slipping",
-    body: "Book a free AI growth audit. We'll talk through how leads come into your business today and walk you through how the systems would work for you — no pressure, no obligation, and no promises about specific results.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    heading: "See Where AI Fits in Your Business",
+    body: "Book a free AI Business Audit. We'll look at how your business runs today, show you where AI can save time and money, and lay out a practical plan to implement it — no pressure, no jargon, and no promises about specific results.",
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
 
@@ -395,23 +395,24 @@ export type ServiceOffer = {
 
 export const servicesPage = {
   hero: {
-    heading: "What we teach and build",
+    heading: "One Flagship Offer, Tailored to Your Business",
     intro:
-      "Atlas Leads is not just an ad agency. We teach local businesses how AI works, then build and run the systems that turn calls, messages, leads, follow-up, reviews, and CRM work into cleaner AI-powered workflows.",
+      "Atlas Leads helps local businesses understand AI and implement it properly. Our flagship offer is the education, planning, and hands-on build that modernizes how you operate. The systems further down are the practical pieces we put in place inside that offer.",
   },
   offers: [
     {
       id: "ai-business-enablement",
-      name: "AI Business Education",
-      what: "Plain-English training that shows owners and staff what AI can actually do for a business like yours.",
-      whoFor: "Owners and teams who want to understand AI and use it confidently, not hand everything off.",
-      problem: "Most teams keep hearing about AI but don't know where it fits or how to use it safely.",
-      howAI: "We map your day-to-day work, find the repetitive tasks, and teach practical AI tools and prompts for admin, customer communication, content, and operations.",
+      name: "AI Business Education + Implementation",
+      what: "Our flagship engagement — a strategic partnership that takes you from “AI is confusing” to “AI is working in my business.” We teach your team, audit your operations, map your highest-value use cases, then implement the practical systems that run them.",
+      whoFor: "Local business owners who want a serious partner to bring AI into their operations — not another tool to figure out on their own.",
+      problem: "AI could save you hours every week, but the path from hype to working systems isn't obvious — and trial-and-error is expensive in time you don't have.",
+      howAI: "A structured engagement: plain-English education for you and your team, a full audit of how your business runs, a prioritized map of high-value AI use cases, then hands-on implementation and support — saving time, cutting manual admin, speeding up response and follow-up, and organizing how your operations run.",
       gets: [
-        "AI explained in business terms, not jargon",
-        "A workflow audit of where AI can save time",
-        "Prompting and tool-use training for you and your team",
-        "Clear guidance on what to automate and what to keep human",
+        "Plain-English AI education for you and your team",
+        "A full audit of how your business runs today",
+        "A prioritized map of your highest-value AI use cases",
+        "Hands-on implementation of the systems that deliver them",
+        "Ongoing strategy and support as you adopt AI — without the confusion",
       ],
     },
     {
@@ -474,7 +475,7 @@ export const servicesPage = {
   cta: {
     heading: "Not sure which fits your business?",
     body: "Book a free AI audit. We'll look at how you work today, show where AI can save time, and recommend what makes sense, with no pressure and no promises about specific results.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
 };
@@ -510,7 +511,7 @@ export const plumbing: TradePage = {
     headline: "Catch More Plumbing Leads — Without Chasing Every Call Yourself",
     subheadline:
       "We set up a lead and appointment system shaped around plumbing companies, so missed calls get a fast reply, leads get answered quickly, and more jobs have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for plumbers. Set up and run for you. No tech to learn.",
   },
@@ -579,7 +580,7 @@ export const plumbing: TradePage = {
   midCta: {
     heading: "Let's Look at Where Plumbing Jobs Are Slipping",
     body: "Book a free call. We'll walk through your current lead pipeline and show you how the plumbing setup would work for your business.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -613,7 +614,7 @@ export const plumbing: TradePage = {
     ],
     emphasis:
       "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
-    cta: { label: "Book a Free AI Audit", href: "/book" },
+    cta: { label: "Book a Free AI Business Audit", href: "/book" },
   },
 };
 
@@ -624,7 +625,7 @@ export const electrical: TradePage = {
     headline: "Catch More Electrical Leads — Without Letting Calls Slip Past",
     subheadline:
       "We set up a lead and appointment system shaped around electrical companies, so missed calls get a fast reply, leads get answered quickly, and more panel upgrades, rewires, and service calls have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for electricians. Set up and run for you. No tech to learn.",
   },
@@ -691,7 +692,7 @@ export const electrical: TradePage = {
   midCta: {
     heading: "Let's Look at Where Electrical Jobs Are Slipping",
     body: "Book a free call. We'll review your current lead pipeline and show you how the electrical setup would work for your business.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -725,7 +726,7 @@ export const electrical: TradePage = {
     ],
     emphasis:
       "Book a free call. It's quick, it's free, and you'll leave knowing where your leads are slipping and how to keep more of them.",
-    cta: { label: "Book a Free AI Audit", href: "/book" },
+    cta: { label: "Book a Free AI Business Audit", href: "/book" },
   },
 };
 
@@ -736,7 +737,7 @@ export const hvac: TradePage = {
     headline: "Catch More HVAC Leads — Without Missing the No-Heat Calls",
     subheadline:
       "We set up a lead and appointment system shaped around HVAC companies, so missed calls get a fast reply, no-heat and no-cool emergencies get answered quickly, and more tune-ups, repairs, and system quotes have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for HVAC pros. Set up and run for you. No tech to learn.",
   },
@@ -805,7 +806,7 @@ export const hvac: TradePage = {
   midCta: {
     heading: "Let's Look at Where HVAC Jobs Are Slipping",
     body: "Book a free call. We'll walk through your current lead pipeline and show you how the HVAC setup would work for your business.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -839,7 +840,7 @@ export const hvac: TradePage = {
     ],
     emphasis:
       "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
-    cta: { label: "Book a Free AI Audit", href: "/book" },
+    cta: { label: "Book a Free AI Business Audit", href: "/book" },
   },
 };
 
@@ -850,7 +851,7 @@ export const pestControl: TradePage = {
     headline: "Catch More Pest Control Leads — Without Letting Calls Slip Past",
     subheadline:
       "We set up a lead and appointment system shaped around pest control companies, so missed calls get a fast reply, urgent infestations get answered quickly, and more inspections and recurring-service jobs have a chance to land on your calendar.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine: "Built for pest control pros. Set up and run for you. No tech to learn.",
   },
@@ -919,7 +920,7 @@ export const pestControl: TradePage = {
   midCta: {
     heading: "Let's Look at Where Pest Control Jobs Are Slipping",
     body: "Book a free call. We'll walk through your current lead pipeline and show you how the pest control setup would work for your business.",
-    primaryCta: { label: "Book a Free AI Audit", href: "/book" },
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   },
   faqHeading: "Common Questions",
@@ -953,7 +954,7 @@ export const pestControl: TradePage = {
     ],
     emphasis:
       "Book a free call. It costs nothing, and you'll leave with a clearer picture of where your leads are going and how to keep more of them.",
-    cta: { label: "Book a Free AI Audit", href: "/book" },
+    cta: { label: "Book a Free AI Business Audit", href: "/book" },
   },
 };
 
@@ -963,13 +964,13 @@ export const pestControl: TradePage = {
 
 export const howItWorks = {
   hero: {
-    heading: "How the Systems Work",
-    body: "No jargon, no black box. Here's exactly what we set up, what each part does, and how it fits behind your phone and website.",
+    heading: "How We Teach and Implement AI",
+    body: "No jargon, no black box. We audit how your business runs, show you where AI helps, teach your team, then build, connect, and support the systems that do the work.",
   },
 
   flowHeading: "Where a Lead Goes",
   flowIntro:
-    "When a new lead comes in — a call, a text, or a form fill — here's the path the system moves it along.",
+    "Lead capture and follow-up is one of the most common systems we implement. Once it's live, here's the path it moves a new lead along — whether it starts as a call, a text, or a form fill.",
   flow: [
     {
       title: "A lead comes in",
@@ -996,8 +997,8 @@ export const howItWorks = {
   expectHeading: "What Working With Us Looks Like",
   expect: [
     {
-      lead: "We start with a look at your lead pipeline.",
-      rest: " Before anything gets built, we map how calls and leads reach you and where they're getting lost.",
+      lead: "We start with an audit of how your business runs.",
+      rest: " Before anything gets built, we map how calls, leads, follow-up, and day-to-day work happen — and where AI can help.",
     },
     {
       lead: "We set it up for you.",
@@ -1023,8 +1024,8 @@ export const howItWorks = {
 
   cta: {
     heading: "Want to See How This Fits Your Business?",
-    body: "Book a free audit and we'll walk through how the systems would work for your business — and where your leads are slipping today.",
-    primaryCta: { label: "Book a Free Audit", href: "/book" },
+    body: "Book a free AI Business Audit and we'll walk through how your business runs today, where AI can save you time and money, and what implementing it would look like.",
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "Back to Home", href: "/" },
   },
 };
@@ -1034,9 +1035,9 @@ export const howItWorks = {
 export const book = {
   // Small uppercase label above the heading — frames the call as a focused
   // review of the prospect's lead pipeline, not a generic sales consultation.
-  eyebrow: "Free AI Audit · 15–30 Minutes",
-  heading: "Book a Free AI Audit",
-  body: "On a short call we look at how your business runs today, find the missed leads, slow follow-up, and repetitive manual work that costs you time, and show where AI can save time and improve operations. We'll explain what systems actually make sense for you before anyone tries to sell you anything.",
+  eyebrow: "Free AI Business Audit · 15–30 Minutes",
+  heading: "Book a Free AI Business Audit",
+  body: "On a short call we look at how your business runs today, find the missed leads, slow follow-up, and repetitive manual work that costs you time, and show where AI can save time and modernize your operations. You'll leave with a clear, practical picture of what to implement — before anyone tries to sell you anything.",
   trustLine: "Built for local businesses. No long contracts. No complicated tech for you to learn.",
   // Who the audit is for, the no-pressure framing, and the checklist we run.
   whoFor:

@@ -1,4 +1,4 @@
-import { GraduationCap, Search, Wrench, Users, LineChart } from "lucide-react";
+import { Search, Lightbulb, GraduationCap, Wrench, LifeBuoy } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import type { Step } from "@/lib/content";
@@ -11,9 +11,9 @@ type Props = {
 };
 
 // Fixed icon per stage (owned here, like the rest of the section components, so
-// the content stays pure data). Order matches the Learn/Audit/Build/Train/Improve
-// steps in lib/content.ts.
-const STAGE_ICONS = [GraduationCap, Search, Wrench, Users, LineChart];
+// the content stays pure data). Order matches the Audit / Find the AI Wins /
+// Teach / Build & Connect / Support & Improve steps in lib/content.ts.
+const STAGE_ICONS = [Search, Lightbulb, GraduationCap, Wrench, LifeBuoy];
 
 /**
  * The Atlas Leads AI implementation process as a clean horizontal (desktop) /

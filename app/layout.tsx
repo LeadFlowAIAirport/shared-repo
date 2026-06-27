@@ -32,11 +32,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: {
     default:
-      "Atlas Leads — AI Growth Systems for Local Businesses",
+      "Atlas Leads — AI Business Education + Implementation for Local Businesses",
     template: "%s · Atlas Leads",
   },
   description:
-    "An AI automation agency for local businesses. We connect ads, forms, website inquiries, and missed calls to AI follow-up, booking, and owner notifications — so local service businesses respond faster and book more appointments.",
+    "An AI education and implementation agency for local businesses. We teach owners what AI can do, then build and connect the systems — receptionist, follow-up, booking, reviews, and operations — that save time and modernize how they run.",
 };
 
 export default function RootLayout({
