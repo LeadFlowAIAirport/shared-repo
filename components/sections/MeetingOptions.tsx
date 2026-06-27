@@ -33,9 +33,23 @@ export default function MeetingOptions() {
           // "[ADD ... LINK]") route to the working request form instead.
           const placeholder = opt.href.startsWith("[");
           const href = placeholder ? "#request-meeting" : opt.href;
+          // Lead with one recommended option (the quick phone call) to reduce
+          // choice friction; the other methods stay available.
+          const recommended = i === 0;
           return (
             <Reveal key={opt.id} delay={(i % 3) * 80} className="h-full">
-              <li className="group flex h-full flex-col rounded-xl border border-line bg-paper p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40 hover:shadow-lg hover:shadow-brand-green/10">
+              <li
+                className={`group flex h-full flex-col rounded-xl border bg-paper p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40 hover:shadow-lg hover:shadow-brand-green/10 ${
+                  recommended
+                    ? "border-accent/40 ring-1 ring-accent/30"
+                    : "border-line"
+                }`}
+              >
+                {recommended && (
+                  <span className="mb-3 inline-flex w-fit items-center rounded-full bg-accent/10 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wide text-accent">
+                    Recommended
+                  </span>
+                )}
                 <span className="flex size-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-200 group-hover:bg-brand-green/10 group-hover:text-brand-green">
                   <Icon aria-hidden className="size-6" />
                 </span>

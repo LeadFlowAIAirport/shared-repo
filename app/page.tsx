@@ -39,6 +39,9 @@ export default function HomePage() {
   const flagship = servicesPage.offers[0];
   const supporting = servicesPage.offers.slice(1);
   const FlagshipIcon = OFFER_ICONS[flagship.id] ?? GraduationCap;
+  // Home previews only three flagship deliverables (education → audit →
+  // implementation); the full "what you get" list lives on /services.
+  const flagshipPreview = [flagship.gets[0], flagship.gets[1], flagship.gets[3]];
 
   return (
     <>
@@ -81,7 +84,7 @@ export default function HomePage() {
                 </Button>
               </div>
               <ul className="grid gap-3 sm:grid-cols-2 md:pt-1">
-                {flagship.gets.map((g) => (
+                {flagshipPreview.map((g) => (
                   <li key={g} className="flex gap-2.5">
                     <Check
                       aria-hidden
@@ -108,30 +111,27 @@ export default function HomePage() {
           </p>
         </Reveal>
 
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {supporting.map((offer, i) => {
+        {/* Compact module strip — names link to the full detail on /services.
+            The full descriptions live there; Home only previews. */}
+        <Reveal delay={80} className="mt-7 flex flex-wrap gap-2.5">
+          {supporting.map((offer) => {
             const Icon = OFFER_ICONS[offer.id] ?? GraduationCap;
             return (
-              <Reveal key={offer.id} delay={(i % 4) * 80} className="h-full">
-                <li className="h-full">
-                  <Link
-                    href={`/services#${offer.id}`}
-                    className="group glass flex h-full flex-col rounded-2xl p-5 transition-[transform,border-color] duration-200 ease-out-quint hover:-translate-y-0.5 hover:border-accent/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:hover:translate-y-0"
-                  >
-                    <span className="flex size-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                      <Icon aria-hidden className="size-5" />
-                    </span>
-                    <span className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate/60">
-                      Implementation module
-                    </span>
-                    <h4 className="mt-1 font-semibold text-ink">{offer.name}</h4>
-                    <p className="mt-1.5 text-sm text-slate">{offer.what}</p>
-                  </Link>
-                </li>
-              </Reveal>
+              <Link
+                key={offer.id}
+                href={`/services#${offer.id}`}
+                className="group inline-flex items-center gap-2 rounded-full border border-line bg-mist/40 px-4 py-2 text-sm font-medium text-ink transition-[transform,border-color,background-color] duration-200 ease-out-quint hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:hover:translate-y-0"
+              >
+                <Icon aria-hidden className="size-4 text-accent" />
+                {offer.name}
+                <ArrowUpRight
+                  aria-hidden
+                  className="size-4 text-slate/60 transition-colors group-hover:text-accent"
+                />
+              </Link>
             );
           })}
-        </ul>
+        </Reveal>
 
         <Reveal className="mt-10">
           <Button href="/services" variant="secondary">
@@ -147,7 +147,6 @@ export default function HomePage() {
           <h2 className="text-[clamp(1.9rem,3.5vw,2.75rem)]">
             {home.aiProcess.heading}
           </h2>
-          <p className="mt-4 text-lg text-slate">{home.aiProcess.intro}</p>
         </Reveal>
 
         <Reveal
@@ -174,7 +173,7 @@ export default function HomePage() {
 
         <Reveal delay={120} className="mt-8">
           <Button href="/how-it-works" variant="secondary">
-            See how it works
+            See How It Works
             <ArrowUpRight aria-hidden className="size-5" />
           </Button>
         </Reveal>

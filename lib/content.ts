@@ -38,8 +38,6 @@ export type ProseBlock = {
   closing?: string;
 };
 
-/** A done-for-you package card in the homepage services section. */
-export type ServiceCard = { id: string; slug: string; name: string; body: string };
 
 /** Where a walkthrough video comes from. Set `embedUrl` for a hosted embed
  *  (YouTube, Vimeo, Loom, ...) OR `videoSrc` for a file in /public (e.g.
@@ -98,7 +96,7 @@ export const home = {
     primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
     trustLine:
-      "A hands-on AI partner for local businesses — education, strategy, and implementation. Plain English, no jargon, no long contracts.",
+      "A hands-on AI partner for local businesses — education, strategy, and implementation. Plain English, no long contracts.",
   } satisfies Hero,
 
   problem: {
@@ -117,97 +115,6 @@ export const home = {
     closing:
       "The opportunity isn't one more app — it's understanding AI and implementing it properly across how your business runs. That's exactly what we do.",
   } satisfies ProseBlock,
-
-  // Visual "one connected system" diagram: channels in → AI → booking → owner.
-  flowDiagram: {
-    eyebrow: "One connected system",
-    heading: "Every opportunity flows into one place",
-    intro:
-      "Today, leads scatter across voicemail, your inbox, ad platforms, and sticky notes — and the slow ones go cold. Atlas Leads routes them all through a single path, so each one gets answered, qualified, and followed up the same way.",
-    inputs: [
-      { id: "ads", label: "Ads" },
-      { id: "website", label: "Website" },
-      { id: "calls", label: "Calls" },
-      { id: "forms", label: "Forms" },
-    ],
-    stages: [
-      {
-        id: "ai",
-        label: "AI Follow-Up",
-        desc: "Replies in seconds, answers common questions, and qualifies the lead — day or night.",
-      },
-      {
-        id: "booking",
-        label: "Booking",
-        desc: "Guides the lead to a time and sets the appointment on your calendar.",
-      },
-      {
-        id: "notify",
-        label: "Owner Notification",
-        desc: "Pings you the moment a job is booked or a lead needs a real person.",
-      },
-    ],
-    note: "An illustration of how the system connects — not a record of any specific result.",
-  },
-
-  // Homepage services section — two distinct blocks: done-for-you growth
-  // systems (four packages) and AI enablement/training (one offering). Icons
-  // are owned by the Services component, keyed by card id. No pricing here.
-  services: {
-    eyebrow: "Two ways we help",
-    heading: "What We Help You Learn, Build, and Run",
-    intro:
-      "We help local businesses in two ways: we build the AI growth systems for you, or we teach your team to use AI to improve how the business runs day to day. Either way the goal is the same: save time, move faster, and cut manual work.",
-    doneForYou: {
-      heading: "Done-for-you growth systems",
-      description:
-        "For businesses that want Atlas Leads to build the system: lead capture, fast response, appointment booking, follow-up, local visibility, and the automation layer that keeps opportunities from slipping away.",
-      cards: [
-        {
-          id: "ai-receptionist-only",
-          slug: "ai-receptionist",
-          name: "AI Receptionist",
-          body: "Capture missed calls, texts, and form fills with fast AI-supported response, qualification, follow-up, and booking support.",
-        },
-        {
-          id: "ads-booking",
-          slug: "ads-booking-system",
-          name: "Ads + Booking",
-          body: "Turn paid traffic into qualified conversations with a focused funnel, lead capture, qualification, and appointment-booking flow.",
-        },
-        {
-          id: "local-visibility",
-          slug: "local-visibility",
-          name: "Local Visibility",
-          body: "Improve how your business shows up locally with Google Business Profile support, review systems, local listings, and trust-building basics.",
-        },
-        {
-          id: "full-growth",
-          slug: "full-growth-system",
-          name: "Full Growth System",
-          body: "A complete growth setup combining lead generation, AI receptionist, appointment booking, follow-up, and local visibility into one connected system.",
-        },
-      ] satisfies ServiceCard[],
-    },
-    enablement: {
-      slug: "ai-business-enablement",
-      heading: "AI Business Education + Implementation",
-      description:
-        "Our flagship engagement: a strategic partnership that takes you from “AI is confusing” to “AI is working in my business.” We teach your team what AI can do, audit how your business runs, map your highest-value use cases, then implement and support the practical systems — saving time, cutting manual admin, and speeding up response and follow-up.",
-      card: {
-        name: "AI Business Enablement",
-        body: "Training, workflow mapping, prompt systems, AI tool setup guidance, and practical team education so your business can use AI for admin work, customer communication, content, operations, research, follow-up, and decision support.",
-        points: [
-          "AI basics explained in plain business language",
-          "Workflow audit: where AI can save time or reduce manual work",
-          "Prompting and tool-use training for owners and staff",
-          "Practical use cases for customer service, sales, admin, marketing, and operations",
-          "Guidance on what not to automate and where human review is needed",
-        ],
-      },
-    },
-    cta: { label: "Book a Free AI Business Audit", href: "/book" },
-  },
 
   // Atlas Leads AI implementation process — the five stages of how we partner
   // with a business: teach what AI can do, find the gaps, build the systems,
@@ -267,16 +174,6 @@ export const home = {
       rest: " We're a new agency. We'd rather earn your trust by being clear than make promises we can't back up.",
     },
   ] satisfies LedBullet[],
-
-  // Broad positioning band — intentionally trade-agnostic. The system fits any
-  // local business that runs on calls, appointments, and follow-up; we don't
-  // gate the pitch to specific industries here.
-  localFit: {
-    heading:
-      "Built for local businesses that rely on calls, appointments, follow-up, and booked jobs.",
-    body: "If your business runs on fast response and a full calendar, the same lead capture and follow-up system fits — whatever you do. Book a free audit and we'll map it to how the work comes in for you.",
-    cta: { label: "Book a Free AI Business Audit", href: "/book" },
-  },
 
   // Video walkthroughs — short recorded explainers of how AI fits a real local
   // business. Each card links to its /demo/<slug> page (clean placeholder until
@@ -358,25 +255,6 @@ export const home = {
     },
   ] satisfies FaqItem[],
 };
-
-/* ----------------------------- SERVICE DETAIL PAGES ----------------------------- */
-// Minimal per-service pages at /services/<slug>. Copy is derived from the
-// homepage `services` data so it isn't duplicated; Hayden adds full copy later.
-
-export type ServiceDetail = { title: string; intro: string };
-
-const dfyCards = home.services.doneForYou.cards;
-
-export const serviceDetails = {
-  "ai-receptionist": { title: dfyCards[0].name, intro: dfyCards[0].body },
-  "ads-booking-system": { title: dfyCards[1].name, intro: dfyCards[1].body },
-  "local-visibility": { title: dfyCards[2].name, intro: dfyCards[2].body },
-  "full-growth-system": { title: dfyCards[3].name, intro: dfyCards[3].body },
-  "ai-business-enablement": {
-    title: home.services.enablement.heading,
-    intro: home.services.enablement.description,
-  },
-} satisfies Record<string, ServiceDetail>;
 
 /* ------------------------------ SERVICES PAGE ------------------------------ */
 // The dedicated /services index. Each offer explains what it is, the problem it
@@ -1026,7 +904,7 @@ export const howItWorks = {
     heading: "Want to See How This Fits Your Business?",
     body: "Book a free AI Business Audit and we'll walk through how your business runs today, where AI can save you time and money, and what implementing it would look like.",
     primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
-    secondaryCta: { label: "Back to Home", href: "/" },
+    secondaryCta: { label: "View Services", href: "/services" },
   },
 };
 
@@ -1038,7 +916,6 @@ export const book = {
   eyebrow: "Free AI Business Audit · 15–30 Minutes",
   heading: "Book a Free AI Business Audit",
   body: "On a short call we look at how your business runs today, find the missed leads, slow follow-up, and repetitive manual work that costs you time, and show where AI can save time and modernize your operations. You'll leave with a clear, practical picture of what to implement — before anyone tries to sell you anything.",
-  trustLine: "Built for local businesses. No long contracts. No complicated tech for you to learn.",
   // Who the audit is for, the no-pressure framing, and the checklist we run.
   whoFor:
     "For local business owners who are curious about AI but want a clear, practical starting point, not a hard sell.",
@@ -1050,8 +927,6 @@ export const book = {
     "Repetitive manual work eating your team's time",
     "Booking gaps where appointments slip away",
     "Review and reputation gaps that cost you trust",
-    "CRM and admin inefficiencies",
-    "The specific places AI can save time and improve operations",
   ],
   // What to expect on the call (sets honest expectations, no outcome claims).
   expect: [

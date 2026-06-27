@@ -35,9 +35,11 @@ const OFFER_ICONS: Record<string, LucideIcon> = {
 function OfferDetail({
   offer,
   eyebrow,
+  showCta = true,
 }: {
   offer: ServiceOffer;
   eyebrow?: string;
+  showCta?: boolean;
 }) {
   const Icon = OFFER_ICONS[offer.id] ?? GraduationCap;
   return (
@@ -60,9 +62,11 @@ function OfferDetail({
           {offer.name}
         </h2>
         <p className="mt-4 text-lg text-slate">{offer.what}</p>
-        <Button href={servicesPage.cta.primaryCta.href} className="mt-7">
-          {servicesPage.cta.primaryCta.label}
-        </Button>
+        {showCta && (
+          <Button href={servicesPage.cta.primaryCta.href} className="mt-7">
+            {servicesPage.cta.primaryCta.label}
+          </Button>
+        )}
       </Reveal>
 
       {/* What it solves / how AI helps / what you get */}
@@ -154,7 +158,7 @@ export default function ServicesPage() {
       {supporting.map((offer, i) => (
         <Section key={offer.id} bg={i % 2 === 0 ? "mist" : "paper"}>
           <div id={offer.id} className="scroll-mt-24">
-            <OfferDetail offer={offer} eyebrow="Implementation module" />
+            <OfferDetail offer={offer} eyebrow="Implementation module" showCta={false} />
           </div>
         </Section>
       ))}
