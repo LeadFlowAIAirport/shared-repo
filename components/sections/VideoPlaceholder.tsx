@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight, PlayCircle } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
+import FullscreenButton from "@/components/sections/FullscreenButton";
 import type { VideoItem } from "@/lib/content";
 
 type Props = {
@@ -47,10 +48,11 @@ export default function VideoPlaceholder({ item }: Props) {
         <div className="relative mt-9 aspect-video overflow-hidden rounded-2xl glass-strong shadow-glow">
           {video?.embedUrl ? (
             <iframe
+              id="demo-video-embed"
               src={video.embedUrl}
               title={label}
               loading="lazy"
-              allow="encrypted-media; picture-in-picture; fullscreen"
+              allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 size-full border-0 bg-surface-deep"
             />
@@ -73,6 +75,10 @@ export default function VideoPlaceholder({ item }: Props) {
             <ComingSoon />
           )}
         </div>
+
+        {video?.embedUrl && (
+          <FullscreenButton targetId="demo-video-embed" />
+        )}
 
         {(video?.embedUrl || video?.videoSrc) && (
           <p className="mt-3 text-xs text-slate">
