@@ -74,6 +74,13 @@ export default function VideoPlaceholder({ item }: Props) {
           )}
         </div>
 
+        {(video?.embedUrl || video?.videoSrc) && (
+          <p className="mt-3 text-xs text-slate">
+            Illustrative example — a demo of how the system works, not real
+            client data or results.
+          </p>
+        )}
+
         <div className="mt-9">
           <Button href="/book">
             Book a Free AI Business Audit

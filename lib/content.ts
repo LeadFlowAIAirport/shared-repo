@@ -215,7 +215,7 @@ export const home = {
         slug: "full-growth-system",
         title: "Full Growth System",
         blurb: "How the pieces connect into one AI-powered system for leads, booking, follow-up, and reviews.",
-        video: null,
+        video: { embedUrl: "/demos/full-growth-system.html" },
       },
     ] satisfies VideoItem[],
   },
