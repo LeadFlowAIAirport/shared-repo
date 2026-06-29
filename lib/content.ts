@@ -197,7 +197,7 @@ export const home = {
         slug: "ai-receptionist",
         title: "AI Receptionist",
         blurb: "How AI answers calls, qualifies leads, and books appointments day or night, so you stop missing work.",
-        video: null,
+        video: { embedUrl: "/demos/ai-receptionist.html" },
       },
       {
         slug: "ad-funnel",
