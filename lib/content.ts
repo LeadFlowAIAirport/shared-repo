@@ -203,7 +203,7 @@ export const home = {
         slug: "ad-funnel",
         title: "Ads + Booking",
         blurb: "How paid traffic becomes qualified, ready-to-book conversations instead of cold clicks.",
-        video: null,
+        video: { embedUrl: "/demos/ads-booking.html" },
       },
       {
         slug: "local-visibility",
