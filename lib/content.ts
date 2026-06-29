@@ -209,7 +209,7 @@ export const home = {
         slug: "local-visibility",
         title: "Local Visibility",
         blurb: "How AI keeps your listings, reviews, and local search presence working for you.",
-        video: null,
+        video: { embedUrl: "/demos/local-visibility.html" },
       },
       {
         slug: "full-growth-system",
