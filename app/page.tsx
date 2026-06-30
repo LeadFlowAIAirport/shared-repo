@@ -151,10 +151,13 @@ export default function HomePage() {
 
         <Reveal
           delay={80}
-          className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-3"
+          className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-3 max-sm:flex-col max-sm:items-start max-sm:gap-y-2"
         >
           {home.aiProcess.steps.map((step, i) => (
-            <div key={step.title} className="flex items-center gap-2">
+            <div
+              key={step.title}
+              className="flex items-center gap-2 max-sm:flex-col max-sm:items-start"
+            >
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent">
                 <span className="text-xs tabular-nums text-accent/70">
                   {i + 1}
@@ -164,7 +167,7 @@ export default function HomePage() {
               {i < home.aiProcess.steps.length - 1 && (
                 <ArrowRight
                   aria-hidden
-                  className="size-4 shrink-0 text-slate/50"
+                  className="size-4 shrink-0 text-slate/50 max-sm:rotate-90"
                 />
               )}
             </div>
