@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type CSSProperties, type FormEvent } from "react";
 import { ChevronDown, CheckCircle2, Send } from "lucide-react";
 import { book, site } from "@/lib/content";
 
@@ -165,6 +165,22 @@ function Req() {
   );
 }
 
+// Native <option> popups are painted by the OS/browser, so Tailwind classes on
+// them are unreliable. Give each option an opaque, themed background + readable
+// colour inline (honoured on Windows/Linux), and set `color-scheme: dark` on the
+// <select> so the whole native popup — background, text, hover highlight, and
+// scrollbar — renders dark on every platform. Without this, the dark page left
+// the popup in the default light scheme, so the near-white option text was
+// unreadable and appeared to smear/overlap.
+const optionStyle: CSSProperties = {
+  backgroundColor: "var(--color-mist)",
+  color: "var(--color-ink)",
+};
+const optionPlaceholderStyle: CSSProperties = {
+  backgroundColor: "var(--color-mist)",
+  color: "var(--color-slate)",
+};
+
 /** Native select styled to match inputs, with a chevron and required empty default. */
 function Select({
   id,
@@ -184,13 +200,13 @@ function Select({
         name={name}
         required
         defaultValue=""
-        className={`${fieldCls} appearance-none pr-10 [&:invalid]:text-slate/60`}
+        className={`${fieldCls} appearance-none pr-10 [color-scheme:dark] [&:invalid]:text-slate/60`}
       >
-        <option value="" disabled>
+        <option value="" disabled style={optionPlaceholderStyle}>
           {placeholder}
         </option>
         {options.map((o) => (
-          <option key={o} value={o} className="text-ink">
+          <option key={o} value={o} style={optionStyle}>
             {o}
           </option>
         ))}
