@@ -246,6 +246,57 @@
   }
 }
 
+/* AiJourneyDemo hero scenes (leads growth / one workspace / systems install).
+   Small, composable primitives; elements stagger via inline animation-delay and
+   each scene remounts per cycle so the motion replays. */
+@keyframes al-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes al-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes al-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes al-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes al-dash {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+@keyframes al-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* Motion-only enhancements (skipped entirely under reduced-motion). */
 @media (prefers-reduced-motion: no-preference) {
   .cta-pulse::after {
@@ -259,6 +310,25 @@
   }
   .animate-hub-pulse {
     animation: hub-pulse 2.8s var(--ease-out-quart) infinite;
+  }
+  .al-rise {
+    animation: al-rise 0.6s var(--ease-out-expo) both;
+  }
+  .al-pop {
+    animation: al-pop 0.5s var(--ease-out-quint) both;
+  }
+  .al-draw {
+    animation: al-draw 1.5s var(--ease-out-quart) both;
+  }
+  .al-fill {
+    transform-origin: left;
+    animation: al-fill 1s var(--ease-out-quart) both;
+  }
+  .al-dash {
+    animation: al-dash 1.1s linear infinite;
+  }
+  .al-glow {
+    animation: al-glow 2.4s var(--ease-out-quart) infinite;
   }
 }
 
