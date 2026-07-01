@@ -40,10 +40,12 @@ export default function VideoWalkthroughs({
         <p className="mt-4 text-lg text-slate">{intro}</p>
       </Reveal>
 
-      {/* Featured flagship walkthrough — visibly larger than the four modules */}
+      {/* Featured flagship walkthrough — visibly larger than the four modules.
+          Its target can be overridden via `featured.href` (the flagship points
+          at the AI Learning hub); the module cards below still use /demo/<slug>. */}
       <Reveal delay={120} className="mt-12">
         <Link
-          href={`/demo/${featured.slug}`}
+          href={featured.href ?? `/demo/${featured.slug}`}
           className="group glass grid overflow-hidden rounded-3xl shadow-glow ring-1 ring-accent/25 transition-[transform,border-color,box-shadow] duration-200 ease-out-quint hover:-translate-y-0.5 hover:border-accent/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:hover:translate-y-0 md:grid-cols-2"
         >
           {/* Larger 16:9 frame */}

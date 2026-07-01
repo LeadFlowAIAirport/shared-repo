@@ -59,6 +59,9 @@ export type VideoItem = {
   title: string;
   blurb: string;
   video: VideoSource | null;
+  /** Optional link target that overrides the default `/demo/<slug>` page — e.g.
+   *  the flagship card points at the AI Learning hub instead of a demo page. */
+  href?: string;
 };
 
 export const site = {
@@ -199,6 +202,9 @@ export const home = {
         title: "AI Business Education + Implementation",
         blurb: "A walkthrough of our flagship engagement — how we teach your team, audit your operations, map high-value AI use cases, and implement the systems that save you time.",
         video: null,
+        // Flagship card links to the AI Learning hub (same route as the
+        // "AI Learning" nav item), not a /demo page.
+        href: "/ai-implementation",
       },
       {
         slug: "ai-receptionist",
