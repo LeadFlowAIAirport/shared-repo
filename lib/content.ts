@@ -69,6 +69,7 @@ export const site = {
   nav: [
     { label: "Home", href: "/" },
     { label: "How It Works", href: "/how-it-works" },
+    { label: "AI Learning", href: "/ai-implementation" },
     { label: "Services", href: "/services" },
   ],
   headerCta: { label: "Book a Free AI Business Audit", href: "/book" },
@@ -361,6 +362,268 @@ export const servicesPage = {
     body: "Book a free AI audit. We'll look at how you work today, show where AI can save time, and recommend what makes sense, with no pressure and no promises about specific results.",
     primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
     secondaryCta: { label: "See How It Works", href: "/how-it-works" },
+  },
+};
+
+/* -------------------- AI LEARNING + IMPLEMENTATION (HUB) -------------------- */
+// The /ai-implementation page — the education hub for the flagship "AI Business
+// Education + Implementation" offer. Content-driven so lessons, modules, and
+// FAQs grow here without touching the page or components.
+//
+// VIDEO PLACEHOLDERS (swap when videos are recorded): every lesson and the
+// featured overview ship with the `LessonVideo` slot below but no source yet —
+// `status: "coming-soon"`, `videoUrl: null`. To put one live later, set
+// `status: "available"`, a `videoType` ("youtube" | "vimeo" | "loom" | "file"),
+// the `videoUrl`, and an optional `duration`. The card/box flips from the honest
+// placeholder to a real embed with no structural change.
+
+export type LessonVideoStatus = "coming-soon" | "available";
+export type LessonVideoType = "youtube" | "vimeo" | "loom" | "file" | null;
+
+/** Future-ready video slot for a lesson or the featured overview. */
+export type LessonVideo = {
+  status: LessonVideoStatus;
+  videoType: LessonVideoType;
+  /** Embed URL (YouTube/Vimeo/Loom) or a /public file path — null until recorded. */
+  videoUrl: string | null;
+  /** Human-readable length once known, e.g. "6 min" — null until recorded. */
+  duration: string | null;
+};
+
+/** A mini-lesson card in the learning library. */
+export type Lesson = {
+  number: number;
+  category: string;
+  title: string;
+  description: string;
+  takeaways: string[];
+  video: LessonVideo;
+};
+
+/** A phase in the Learn → … → Improve implementation roadmap. */
+export type RoadmapStep = { title: string; body: string };
+
+/** An implementation module surfaced as a card. `id` matches a `servicesPage`
+ *  offer id so the card can deep-link to /services#<id>. */
+export type ImplementationModule = { id: string; name: string; blurb: string };
+
+// Reusable "not recorded yet" video state — every slot starts here.
+const comingSoonVideo: LessonVideo = {
+  status: "coming-soon",
+  videoType: null,
+  videoUrl: null,
+  duration: null,
+};
+
+export const aiImplementation = {
+  hero: {
+    eyebrow: "AI Learning Hub",
+    headline: "AI Business Education + Implementation",
+    subheadline:
+      "Atlas Leads helps local businesses learn where AI actually fits — then implements the systems that save you time, respond to leads faster, and turn more of them into booked appointments. Education first, working systems second.",
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
+    secondaryCta: { label: "View Mini Lessons", href: "#lessons" },
+    trustLine:
+      "Plain-English lessons for local business owners — no jargon, no hype, and no AI experience needed.",
+  } satisfies Hero,
+
+  // Featured overview — the large placeholder at the top of the hub. Set
+  // `featured.video` fields to embed the real overview later.
+  featured: {
+    eyebrow: "Featured lesson",
+    title: "How AI Can Actually Help a Local Business",
+    blurb:
+      "A plain-English overview of where AI fits in a local business — the day-to-day admin it takes off your plate, the calls and leads it helps you catch, and how a practical implementation actually comes together.",
+    placeholder: "Featured overview video coming soon",
+    video: comingSoonVideo,
+  },
+
+  lessonsHeading: "Mini Lesson Library",
+  lessonsIntro:
+    "Short, practical lessons that show local business owners where AI fits and what it changes day to day. Watch them in order or jump to what matters most — each one ends with a few clear takeaways.",
+  lessonsNote:
+    "Videos are being recorded now — each lesson below will play right here as soon as it's ready.",
+  lessons: [
+    {
+      number: 1,
+      category: "Getting Started",
+      title: "How AI Can Help a Local Business Without Overcomplicating It",
+      description:
+        "Where AI realistically fits in a local business, and how to add it without disrupting how you already work.",
+      takeaways: [
+        "Where AI saves the most admin time first",
+        "Why you don't have to replace your current tools to start",
+        "How to keep it simple and skip the over-engineering",
+      ],
+      video: comingSoonVideo,
+    },
+    {
+      number: 2,
+      category: "Strategy",
+      title: "How to Find the Best AI Opportunities in Your Business",
+      description:
+        "A simple way to spot the tasks and gaps where AI will pay off most — before spending a dollar on tools.",
+      takeaways: [
+        "How to audit where your time and leads actually go",
+        "Which tasks are worth automating, and which aren't",
+        "How to rank opportunities by value, not hype",
+      ],
+      video: comingSoonVideo,
+    },
+    {
+      number: 3,
+      category: "AI Receptionist",
+      title: "How an AI Receptionist Captures More Calls and Bookings",
+      description:
+        "What an AI receptionist actually does with a missed call or after-hours lead, and how it turns them into booked appointments.",
+      takeaways: [
+        "What happens the moment a call gets missed",
+        "How leads get qualified and booked automatically",
+        "Where a real person still steps in",
+      ],
+      video: comingSoonVideo,
+    },
+    {
+      number: 4,
+      category: "Booking & Follow-Up",
+      title: "Why Leads Are Useless Without a Booking System",
+      description:
+        "Why generating leads isn't the hard part — and how a booking and follow-up system keeps the ones you get from going cold.",
+      takeaways: [
+        "Why fast response beats more ad spend",
+        "How automated follow-up rescues forgotten quotes",
+        "What a booking flow should handle for you",
+      ],
+      video: comingSoonVideo,
+    },
+    {
+      number: 5,
+      category: "Local Visibility",
+      title: "How AI Helps With Reviews, Google Visibility, and Local Trust",
+      description:
+        "How AI helps you earn reviews, stay visible in local search, and look trustworthy to nearby customers.",
+      takeaways: [
+        "How to request and respond to reviews consistently",
+        "What keeps your Google presence working for you",
+        "Why local trust turns searches into calls",
+      ],
+      video: comingSoonVideo,
+    },
+    {
+      number: 6,
+      category: "Implementation",
+      title: "What Happens During an AI Implementation Project",
+      description:
+        "A behind-the-scenes look at how an Atlas Leads implementation goes from audit to live systems, step by step.",
+      takeaways: [
+        "What we set up and connect for you",
+        "How your team gets trained to use it",
+        "How we test and keep improving after launch",
+      ],
+      video: comingSoonVideo,
+    },
+  ] satisfies Lesson[],
+
+  // Implementation roadmap — the arc from first lesson to live systems. Atlas
+  // Leads doesn't stop at generic AI theory; every stage points at the
+  // highest-value use cases and the real systems built around them.
+  roadmapHeading: "From Learning to Live Systems",
+  roadmapIntro:
+    "We don't just teach generic AI concepts. The point of every lesson and every audit is to find the highest-value use cases in your business — then build real systems around them. Here's the path from first lesson to working software.",
+  roadmap: [
+    {
+      title: "Learn",
+      body: "We start by teaching you and your team what AI can and can't do for a business like yours — in plain English, no jargon.",
+    },
+    {
+      title: "Audit",
+      body: "We map how your business runs today: calls, leads, follow-up, admin, and operations, so we see the full picture.",
+    },
+    {
+      title: "Opportunity Map",
+      body: "We rank where AI can save the most time and capture the most leads, so effort goes to the highest-value use cases first.",
+    },
+    {
+      title: "Build",
+      body: "We build or connect the systems around those opportunities and fit them into how you already work.",
+    },
+    {
+      title: "Test",
+      body: "We test each system against real scenarios and refine it before it ever touches a live customer.",
+    },
+    {
+      title: "Launch",
+      body: "We roll it out and train your team, so everyone knows how to use it with confidence.",
+    },
+    {
+      title: "Improve",
+      body: "We keep refining and supporting the systems over time, so they keep working as your business grows.",
+    },
+  ] satisfies RoadmapStep[],
+
+  modulesHeading: "Implementation Modules",
+  modulesIntro:
+    "These are the systems we implement inside the AI Business Education + Implementation engagement — switched on based on what your audit shows will help most, not sold as disconnected services.",
+  modules: [
+    {
+      id: "ai-receptionist",
+      name: "AI Receptionist",
+      blurb:
+        "Answers calls, texts, and form fills, qualifies the lead, and books the appointment — day or night, so you stop missing work.",
+    },
+    {
+      id: "ads-booking-system",
+      name: "Ads + Booking",
+      blurb:
+        "Turns paid traffic into qualified, ready-to-book conversations instead of cold clicks that go nowhere.",
+    },
+    {
+      id: "local-visibility",
+      name: "Local Visibility",
+      blurb:
+        "Keeps your listings, reviews, and local search presence working for you, so nearby customers find and trust you first.",
+    },
+    {
+      id: "full-growth-system",
+      name: "Full Growth System",
+      blurb:
+        "Connects every piece — leads, booking, follow-up, and reviews — into one AI-powered system your team is trained to run.",
+    },
+  ] satisfies ImplementationModule[],
+
+  faqHeading: "Common Questions",
+  faq: [
+    {
+      q: "Do I need to understand AI before working with Atlas Leads?",
+      a: "No. That's the whole point of the education side — we explain what AI does for your business in plain English before anything gets built. You bring the knowledge of how your business runs; we bring the AI.",
+    },
+    {
+      q: "Will this replace my employees?",
+      a: "No. The goal is to take repetitive admin and after-hours gaps off your team's plate, not replace them. Your people stay focused on the work that needs a human; AI handles the busywork and the leads no one had time to answer.",
+    },
+    {
+      q: "What kind of businesses is this for?",
+      a: "Local, service-based businesses — home services, trades, clinics, and similar owner-run operations that handle calls, leads, bookings, and follow-up. If you're losing time to admin or losing leads to slow response, it fits.",
+    },
+    {
+      q: "Do I need a CRM already?",
+      a: "No. If you have one, we work with it. If you don't, we'll help you put a simple one in place as part of the implementation, so your leads and follow-up finally live in one spot.",
+    },
+    {
+      q: "What happens after the free AI audit?",
+      a: "You get a clear, prioritized map of where AI can help most — no obligation. If it makes sense to move forward, we start with the highest-value system first. If it doesn't, we'll tell you that too.",
+    },
+    {
+      q: "Can we start with one system first?",
+      a: "Yes, and most owners do. We usually start with the single highest-value opportunity from your audit — often the AI receptionist or follow-up — prove it works, then expand only when you're ready.",
+    },
+  ] satisfies FaqItem[],
+
+  finalCta: {
+    heading: "Want to see where AI fits in your business?",
+    body: "Book a Free AI Business Audit and we'll help identify the highest-value opportunities before building anything.",
+    primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
+    secondaryCta: { label: "View Services", href: "/services" },
   },
 };
 
