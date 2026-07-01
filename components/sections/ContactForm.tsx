@@ -27,6 +27,7 @@ export default function ContactForm() {
     const lines = [
       `Name: ${get("name")}`,
       `Business Name: ${get("business")}`,
+      `Business Website URL: ${get("website")}`,
       `Industry: ${get("industry")}`,
       `Phone: ${get("phone")}`,
       `Email: ${get("email")}`,
@@ -97,6 +98,23 @@ export default function ContactForm() {
             Business Name <Req />
           </label>
           <input id="cf-business" name="business" type="text" required autoComplete="organization" className={fieldCls} />
+        </div>
+
+        {/* Optional — lets us review the visitor's current site before the audit.
+            No `required`/`<Req/>`, so the missing asterisk signals it's optional. */}
+        <div>
+          <label htmlFor="cf-website" className={labelCls}>
+            Business Website URL
+          </label>
+          <input
+            id="cf-website"
+            name="website"
+            type="url"
+            inputMode="url"
+            autoComplete="url"
+            placeholder="https://yourbusiness.com"
+            className={fieldCls}
+          />
         </div>
 
         <div>
