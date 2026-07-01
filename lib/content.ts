@@ -472,45 +472,6 @@ export const aiImplementation = {
     },
     {
       number: 3,
-      category: "AI Receptionist",
-      title: "How an AI Receptionist Captures More Calls and Bookings",
-      description:
-        "What an AI receptionist actually does with a missed call or after-hours lead, and how it turns them into booked appointments.",
-      takeaways: [
-        "What happens the moment a call gets missed",
-        "How leads get qualified and booked automatically",
-        "Where a real person still steps in",
-      ],
-      video: comingSoonVideo,
-    },
-    {
-      number: 4,
-      category: "Booking & Follow-Up",
-      title: "Why Leads Are Useless Without a Booking System",
-      description:
-        "Why generating leads isn't the hard part — and how a booking and follow-up system keeps the ones you get from going cold.",
-      takeaways: [
-        "Why fast response beats more ad spend",
-        "How automated follow-up rescues forgotten quotes",
-        "What a booking flow should handle for you",
-      ],
-      video: comingSoonVideo,
-    },
-    {
-      number: 5,
-      category: "Local Visibility",
-      title: "How AI Helps With Reviews, Google Visibility, and Local Trust",
-      description:
-        "How AI helps you earn reviews, stay visible in local search, and look trustworthy to nearby customers.",
-      takeaways: [
-        "How to request and respond to reviews consistently",
-        "What keeps your Google presence working for you",
-        "Why local trust turns searches into calls",
-      ],
-      video: comingSoonVideo,
-    },
-    {
-      number: 6,
       category: "Implementation",
       title: "What Happens During an AI Implementation Project",
       description:
