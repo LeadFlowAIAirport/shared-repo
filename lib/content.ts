@@ -84,7 +84,7 @@ export const site = {
     contact: "hello@atlasaileads.com",
     legal: [
       { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "#" },
+      { label: "Terms and Conditions", href: "/terms" },
     ],
     // Honest framing: we're new and say so.
     note: "A new agency. We'd rather earn your trust than lock you into a contract.",
@@ -1007,7 +1007,7 @@ export const book = {
 /* --------------------------------- PRIVACY --------------------------------- */
 // Plain-English privacy policy for Atlas Leads LLC, rendered at /privacy.
 
-export type PolicySection = { heading: string; body?: string[]; bullets?: string[] };
+export type PolicySection = { heading: string; body?: string[]; bullets?: string[]; link?: { label: string; href: string } };
 
 export type Privacy = {
   title: string;
@@ -1131,6 +1131,131 @@ export const privacy: Privacy = {
   contact: {
     heading: "Contact Us",
     intro: "Questions about this policy or the information we hold? We’re happy to help.",
+    legalName: "Atlas Leads LLC",
+    email: "hello@atlasaileads.com",
+    website: "atlasaileads.com",
+  },
+};
+
+/* ---------------------------------- TERMS ---------------------------------- */
+// Plain-English terms and conditions for Atlas Leads LLC, rendered at /terms.
+// Reuses the shared Privacy/PolicySection shape (the same policy-page architecture).
+
+export const terms: Privacy = {
+  title: "Terms and Conditions",
+  lastUpdated: "June 30, 2026",
+  intro: [
+    "These Terms and Conditions (“Terms”) govern your use of atlasaileads.com, operated by Atlas Leads LLC (“Atlas Leads,” “we,” “us,” or “our”).",
+    "Please read them carefully. If you have any questions, email us at hello@atlasaileads.com.",
+  ],
+  sections: [
+    {
+      heading: "1. Acceptance of Terms",
+      body: [
+        "By accessing or using atlasaileads.com, you agree to these Terms. If you don’t agree with them, please don’t use the website.",
+      ],
+    },
+    {
+      heading: "2. About Atlas Leads",
+      body: [
+        "Atlas Leads LLC provides AI Business Education and Implementation for local businesses — helping owners understand AI and put practical systems to work. You can reach us anytime at hello@atlasaileads.com.",
+      ],
+    },
+    {
+      heading: "3. Website Content",
+      body: [
+        "The content on this website — including demos, examples, audit descriptions, and educational materials — is provided for general informational purposes only. It explains what we do and how AI can help a business; it is not a guarantee of specific results.",
+      ],
+    },
+    {
+      heading: "4. No Guaranteed Results",
+      body: [
+        "We do not guarantee specific numbers of leads, booked appointments, revenue, search rankings, cost savings, response rates, or any other business outcomes. Results depend on many factors outside our control, including:",
+      ],
+      bullets: [
+        "Your market and local customer demand",
+        "Your offer, pricing, and budget",
+        "How quickly you respond to and follow up with leads",
+        "The quality and accuracy of your data",
+        "Third-party platforms and tools",
+      ],
+    },
+    {
+      heading: "5. AI and Automation Disclaimer",
+      body: [
+        "We may use AI, automation, and software tools to help prepare audits, recommendations, workflows, content, follow-up systems, and implementation work.",
+        "AI outputs can contain errors or need human review. You remain responsible for reviewing and approving important business communications, claims, and decisions before they go out.",
+      ],
+    },
+    {
+      heading: "6. Separate Client Agreements",
+      body: [
+        "Any paid services — including pricing, timelines, deliverables, cancellation terms, refund terms, and ownership terms — are governed by a separate written proposal, invoice, service agreement, statement of work, or other written agreement.",
+        "If anything in these website Terms conflicts with a signed client agreement, the signed client agreement controls.",
+      ],
+    },
+    {
+      heading: "7. Client Responsibilities",
+      body: [
+        "If you work with us, you are responsible for providing accurate information, access, approvals, brand guidance, ad budgets, third-party software fees, and timely communication.",
+        "You are also responsible for complying with the laws, industry rules, advertising platform policies, and customer-communication requirements that apply to your business.",
+      ],
+    },
+    {
+      heading: "8. Third-Party Services",
+      body: [
+        "This website and our services may rely on third-party tools — such as hosting, email, scheduling, CRM, analytics, advertising platforms, AI tools, automation tools, and communication platforms.",
+        "We are not responsible for outages, policy changes, pricing changes, errors, or security issues caused by third-party services.",
+      ],
+    },
+    {
+      heading: "9. Intellectual Property",
+      body: [
+        "Unless otherwise stated, Atlas Leads owns or licenses the content on this website — including branding, copy, visuals, designs, demos, workflows, and frameworks.",
+        "You may not copy, reproduce, resell, or misuse these materials without our permission.",
+      ],
+    },
+    {
+      heading: "10. Acceptable Use",
+      body: [
+        "You agree not to hack, scrape, spam, overload, reverse engineer, copy, interfere with, or otherwise misuse the website or its content.",
+      ],
+    },
+    {
+      heading: "11. No Professional Advice",
+      body: [
+        "The content and recommendations on this website are not legal, financial, tax, accounting, medical, or other licensed professional advice. Please consult qualified professionals where needed for your specific situation.",
+      ],
+    },
+    {
+      heading: "12. Privacy",
+      body: [
+        "We respect your privacy. To understand how we collect, use, and protect your information, please review our Privacy Policy.",
+      ],
+      link: { label: "Read our Privacy Policy", href: "/privacy" },
+    },
+    {
+      heading: "13. Limitation of Liability",
+      body: [
+        "The website is provided on an “as is” and “as available” basis. To the maximum extent allowed by law, Atlas Leads is not liable for any indirect, incidental, consequential, special, or lost-profit damages arising from your use of this website.",
+      ],
+    },
+    {
+      heading: "14. Changes to These Terms",
+      body: [
+        "We may update these Terms from time to time. When we do, we’ll revise the “Last updated” date at the top of this page. Continuing to use the website after changes means you accept the updated Terms.",
+      ],
+    },
+    {
+      heading: "15. Governing Law",
+      body: [
+        "These Terms are governed by the laws of the State of Maryland, without regard to its conflict-of-law principles.",
+      ],
+    },
+  ],
+  contact: {
+    heading: "16. Contact",
+    intro: "Questions about these Terms? We’re happy to help.",
     legalName: "Atlas Leads LLC",
     email: "hello@atlasaileads.com",
     website: "atlasaileads.com",
