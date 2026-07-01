@@ -75,8 +75,11 @@ export const site = {
   footer: {
     pitch:
       "An AI education and implementation agency for local businesses. We help owners understand AI and put it to work — saving time, cutting manual work, and modernizing how their business runs.",
-    // PLACEHOLDER — replace with the real partner/contact names before launch.
-    partners: ["[Partner Name]", "[Partner Name]"],
+    contacts: [
+      { label: "General", email: "hello@atlasaileads.com" },
+      { label: "Hayden", email: "hayden@atlasaileads.com" },
+      { label: "Derrick", email: "derrick@atlasaileads.com" },
+    ],
     // PLACEHOLDER — replace with a real contact email.
     contact: "hello@atlasaileads.com",
     legal: ["Privacy Policy", "Terms of Service"],

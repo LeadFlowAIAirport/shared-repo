@@ -40,15 +40,13 @@ export default function Footer() {
             Get in touch
           </h2>
           <ul className="mt-4 space-y-2 text-slate">
-            {/* TODO: swap in the two real partner names. */}
-            {site.footer.partners.map((name, i) => (
-              <li key={i}>{name}</li>
+            {site.footer.contacts.map((c) => (
+              <li key={c.email}>
+                <a href={`mailto:${c.email}`} className="transition-colors hover:text-ink">
+                  {c.label}: {c.email}
+                </a>
+              </li>
             ))}
-            <li>
-              <a href={`mailto:${site.footer.contact}`} className="transition-colors hover:text-ink">
-                {site.footer.contact}
-              </a>
-            </li>
           </ul>
         </div>
       </Reveal>
