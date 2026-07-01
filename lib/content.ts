@@ -82,7 +82,10 @@ export const site = {
     ],
     // PLACEHOLDER — replace with a real contact email.
     contact: "hello@atlasaileads.com",
-    legal: ["Privacy Policy", "Terms of Service"],
+    legal: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "#" },
+    ],
     // Honest framing: we're new and say so.
     note: "A new agency. We'd rather earn your trust than lock you into a contract.",
   },
@@ -998,5 +1001,138 @@ export const book = {
       meetingTypes: ["Phone Call", "Zoom Meeting", "In-Person Meeting"],
       submitLabel: "Request Meeting",
     },
+  },
+};
+
+/* --------------------------------- PRIVACY --------------------------------- */
+// Plain-English privacy policy for Atlas Leads LLC, rendered at /privacy.
+
+export type PolicySection = { heading: string; body?: string[]; bullets?: string[] };
+
+export type Privacy = {
+  title: string;
+  lastUpdated: string;
+  intro: string[];
+  sections: PolicySection[];
+  contact: { heading: string; intro: string; legalName: string; email: string; website: string };
+};
+
+export const privacy: Privacy = {
+  title: "Privacy Policy",
+  lastUpdated: "June 30, 2026",
+  intro: [
+    "Atlas Leads LLC (“Atlas Leads,” “we,” “us,” or “our”) provides AI Business Education and Implementation for local businesses through our website at atlasaileads.com.",
+    "This Privacy Policy explains, in plain English, what information we collect, how we collect and use it, who we share it with, and the choices you have. If anything here is unclear, email us at hello@atlasaileads.com and we’ll be glad to explain.",
+  ],
+  sections: [
+    {
+      heading: "Information We Collect",
+      body: [
+        "We only collect the information you choose to share with us when you contact us, book a call, or request an AI Opportunity Audit. That typically includes:",
+      ],
+      bullets: [
+        "Your name",
+        "Your email address",
+        "Your phone number",
+        "Your business name",
+        "Your website URL",
+        "The details of your inquiry or message",
+        "Booking details, such as your preferred meeting type and time",
+        "Basic website analytics and device data (such as pages viewed or browser type), only if analytics tools are in use",
+      ],
+    },
+    {
+      heading: "How We Collect Information",
+      body: ["We collect information directly from you, and in a few automated ways:"],
+      bullets: [
+        "Website forms you fill out",
+        "Booking and contact forms you submit",
+        "Emails you send us",
+        "Calls or messages you have with us",
+        "Analytics tools, if present on the website, which may collect basic usage data automatically",
+      ],
+    },
+    {
+      heading: "How We Use Information",
+      body: ["We use your information to run our business and help you — specifically to:"],
+      bullets: [
+        "Respond to your inquiries and questions",
+        "Schedule calls and audits",
+        "Prepare your AI Opportunity Audit",
+        "Provide recommendations tailored to your business",
+        "Deliver the services you ask us for",
+        "Improve our website and services",
+        "Send relevant follow-up communications about your inquiry or our services",
+      ],
+    },
+    {
+      heading: "How We Share Information",
+      body: [
+        "We do not sell your information. We share it only with the service providers and tools that help us operate, and only as needed to serve you. These may include:",
+      ],
+      bullets: [
+        "Website hosting providers",
+        "Email providers",
+        "Scheduling tools",
+        "CRM and other tools we use to manage inquiries",
+        "Analytics providers, if present",
+        "AI and software tools we use to help prepare audits or recommendations",
+        "Legal or compliance recipients, if required by law or to protect our rights",
+      ],
+    },
+    {
+      heading: "We Do Not Sell Your Information",
+      body: [
+        "Atlas Leads does not sell your personal information, and we do not rent or trade it. We share information only as described in this policy to operate our business and provide what you’ve asked for.",
+      ],
+    },
+    {
+      heading: "Sensitive Information",
+      body: [
+        "We do not intentionally collect sensitive personal information — such as government ID numbers, financial account details, or health information. Please don’t include sensitive details in your messages or forms; they aren’t needed for an inquiry or an audit.",
+      ],
+    },
+    {
+      heading: "Children’s Privacy",
+      body: [
+        "Our website and services are intended for business owners and are not directed to children. We do not knowingly collect personal information from children under 13. If you believe a child has provided us information, email hello@atlasaileads.com and we’ll delete it.",
+      ],
+    },
+    {
+      heading: "Data Retention",
+      body: [
+        "We keep your information only as long as we need it for the purposes described in this policy — for example, to respond to your inquiry, deliver services, and keep basic business records — or as required by law. When we no longer need it, we take reasonable steps to delete it or remove details that identify you. You can ask us to delete your information at any time (see Your Choices and Rights).",
+      ],
+    },
+    {
+      heading: "Security",
+      body: [
+        "We take reasonable steps to protect the information you share with us and to guard against unauthorized access. That said, no website, email, or online system is completely secure, so we can’t guarantee absolute security. Please avoid sending sensitive information through online forms or email.",
+      ],
+    },
+    {
+      heading: "Your Choices and Rights",
+      body: ["You’re in control of your information. At any time, you can:"],
+      bullets: [
+        "Request access to the personal information we hold about you",
+        "Request that we correct information that’s inaccurate or out of date",
+        "Request that we delete your personal information",
+        "Opt out of marketing or follow-up emails (use the unsubscribe link, or just ask us)",
+        "Contact us with any privacy question at hello@atlasaileads.com",
+      ],
+    },
+    {
+      heading: "Changes to This Policy",
+      body: [
+        "We may update this Privacy Policy from time to time. When we do, we’ll revise the “Last updated” date at the top of this page, and any significant changes will be reflected here.",
+      ],
+    },
+  ],
+  contact: {
+    heading: "Contact Us",
+    intro: "Questions about this policy or the information we hold? We’re happy to help.",
+    legalName: "Atlas Leads LLC",
+    email: "hello@atlasaileads.com",
+    website: "atlasaileads.com",
   },
 };

@@ -57,11 +57,11 @@ export default function Footer() {
             © {site.brand}. AI education and implementation for local businesses.
           </p>
           <ul className="flex gap-6">
-            {site.footer.legal.map((label) => (
-              <li key={label}>
+            {site.footer.legal.map((item) => (
+              <li key={item.label}>
                 {/* TODO: link to real privacy/terms pages. */}
-                <Link href="#" className="transition-colors hover:text-ink">
-                  {label}
+                <Link href={item.href} className="transition-colors hover:text-ink">
+                  {item.label}
                 </Link>
               </li>
             ))}
