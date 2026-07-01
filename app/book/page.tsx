@@ -63,6 +63,40 @@ export default function BookPage() {
           <Reveal>
             <ContactForm />
           </Reveal>
+
+          <Reveal delay={80}>
+            <div className="mt-12 border-t border-line pt-10">
+              <h2 className="text-xl leading-snug">{book.contacts.heading}</h2>
+              <p className="mt-2 text-slate">{book.contacts.intro}</p>
+              <ul className="mt-6 space-y-4">
+                <li>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate">
+                    {book.contacts.general.label}
+                  </p>
+                  <a
+                    href={`mailto:${book.contacts.general.email}`}
+                    className="mt-0.5 inline-block font-semibold text-accent transition-colors hover:text-brand-green"
+                  >
+                    {book.contacts.general.email}
+                  </a>
+                </li>
+                {book.contacts.founders.map((person) => (
+                  <li key={person.email}>
+                    <p className="text-sm font-semibold text-ink">
+                      {person.name}{" "}
+                      <span className="font-normal text-slate">· {person.role}</span>
+                    </p>
+                    <a
+                      href={`mailto:${person.email}`}
+                      className="mt-0.5 inline-block font-semibold text-accent transition-colors hover:text-brand-green"
+                    >
+                      {person.email}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </Section>
     </>

@@ -78,7 +78,7 @@ export const site = {
     // PLACEHOLDER — replace with the real partner/contact names before launch.
     partners: ["[Partner Name]", "[Partner Name]"],
     // PLACEHOLDER — replace with a real contact email.
-    contact: "hello@atlasleads.example",
+    contact: "hello@atlasaileads.com",
     legal: ["Privacy Policy", "Terms of Service"],
     // Honest framing: we're new and say so.
     note: "A new agency. We'd rather earn your trust than lock you into a contract.",
@@ -935,6 +935,17 @@ export const book = {
     "Where AI can save time and improve your day-to-day operations",
     "A straight recommendation on what systems make sense, with no pressure and no promises about specific results",
   ],
+
+  contacts: {
+    heading: "Prefer email? Reach us directly",
+    intro:
+      "You'll always deal with us — the two people doing the work. Use the general inbox, or email either of us directly.",
+    general: { label: "General inquiries", email: site.footer.contact },
+    founders: [
+      { name: "Hayden", role: "Co-founder", email: "hayden@atlasaileads.com" },
+      { name: "Derrick", role: "Co-founder", email: "derrick@atlasaileads.com" },
+    ],
+  },
 
   // How visitors can choose to meet. Each option links to its own booking link.
   // PLACEHOLDER booking links — replace the three `href` values below with your
