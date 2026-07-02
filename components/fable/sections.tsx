@@ -33,7 +33,7 @@ import {
 /* ------------------------------- Primitives ------------------------------- */
 
 /** Cartographic section label — "01 / THE PROBLEM" with a fading rule. */
-function Kicker({ index, label, center = false }: { index: string; label: string; center?: boolean }) {
+export function Kicker({ index, label, center = false }: { index: string; label: string; center?: boolean }) {
   return (
     <div className={`flex items-center gap-4 ${center ? "justify-center" : ""}`}>
       {center && (
@@ -50,7 +50,7 @@ function Kicker({ index, label, center = false }: { index: string; label: string
   );
 }
 
-function Shell({
+export function Shell({
   id,
   deep = false,
   children,
@@ -71,7 +71,7 @@ function Shell({
   );
 }
 
-const HEADING_SIZE = "text-[clamp(1.9rem,3.6vw,2.9rem)]";
+export const HEADING_SIZE = "text-[clamp(1.9rem,3.6vw,2.9rem)]";
 
 /* ---------------------------------- Hero ---------------------------------- */
 
