@@ -185,8 +185,11 @@ export const servicesPreview = {
 };
 
 /* ------------------------------- HOW IT WORKS ------------------------------ */
+// Promoted in Phase 2 step 1: consumed by BOTH the live /how-it-works page and
+// the /preview/fable-how-it-works route (shared sections live in
+// components/fable/howItWorksSections.tsx).
 
-export const howItWorksPreview = {
+export const howItWorksPage = {
   hero: {
     eyebrow: "How It Works",
     headlinePre: "From first call to ",
@@ -308,8 +311,17 @@ export const howItWorksPreview = {
       "No guaranteed jobs, revenue, or lead volume — we won't pretend otherwise. What you get is a clear picture and systems set up properly.",
   },
 
+  // Video walkthroughs — the items themselves stay in lib/content.ts
+  // (`home.videos.items`) so recorded videos keep swapping in from one place.
+  videos: {
+    kicker: "See It In Action",
+    heading: "Watch how the systems work.",
+    intro:
+      "Short video walkthroughs of how Atlas Leads teaches, builds, and trains your team on AI systems, from the first call to a booked job. AI education, implementation, and automation explained clearly.",
+  },
+
   cta: {
-    index: "05",
+    index: "06",
     kicker: "Next Step",
     headingPre: "Start with the ",
     headingAccent: "free",
