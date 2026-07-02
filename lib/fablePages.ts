@@ -1,6 +1,6 @@
-// Copy for the Phase 2 Fable pages. /services and /how-it-works are PROMOTED —
-// their objects here serve both the live route and its /preview/fable-* twin
-// via the shared section components. /preview/fable-book is still preview-only.
+// Copy for the Phase 2 Fable pages. /services, /how-it-works, and /book are
+// all PROMOTED — each object here serves both the live route and its
+// /preview/fable-* twin via the shared section components.
 //
 // Sources: synced Agency Brain vault (Core_Offer.md, Free_Audit_Process.md —
 // the 8-step AI Opportunity Audit, Current_Source_Of_Truth.md canonical
@@ -336,8 +336,12 @@ export const howItWorksPage = {
 };
 
 /* ----------------------------------- BOOK ---------------------------------- */
+// Promoted in Phase 2 step 3: consumed by BOTH the live /book page and the
+// /preview/fable-book route (shared sections live in
+// components/fable/bookSections.tsx). The form fields, meeting options, and
+// contact addresses stay in lib/content.ts (`book`).
 
-export const bookPreview = {
+export const bookPage = {
   hero: {
     eyebrow: "Free AI Business Audit · 15–30 minutes",
     headlinePre: "Book a Free AI Business Audit.",
