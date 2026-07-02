@@ -1,6 +1,7 @@
-// Copy for the /preview/fable-redesign route ONLY. Nothing here is imported by
-// production pages. If the redesign is approved, this content merges into
-// lib/content.ts following the same data-driven pattern.
+// Homepage (Fable redesign) copy. Consumed by BOTH the live homepage (`app/page.tsx`)
+// and the design-preview route (`app/preview/fable-redesign`). Kept separate from
+// the shared `lib/content.ts` `home` export (which /how-it-works and the demo pages
+// still import) so promoting the homepage never disturbs those routes.
 //
 // Sources: synced Agency Brain vault (Core_Offer.md, One_Sentence_Explanation.md,
 // Current_Source_Of_Truth.md — canonical direction 2026-06-29) + current site copy.
@@ -32,7 +33,9 @@ export const hero = {
   subheadline:
     "Atlas Leads teaches local business owners where AI genuinely fits — then implements the practical systems that answer faster, follow up consistently, and cut the busywork. Education first. Implementation second. No hype in between.",
   primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
-  secondaryCta: { label: "See how it works", href: "#process" },
+  // Routes to the dedicated How It Works page (supports the main site nav),
+  // not the in-page process section.
+  secondaryCta: { label: "See how it works", href: "/how-it-works" },
   trustLine: ["Plain English", "No long contracts", "Built for local businesses"],
   mapCaption: "One system we implement: lead capture and follow-up, end to end.",
   moduleStrip: [
@@ -286,6 +289,8 @@ export const finalCta = {
   microline: ["Free", "15–30 minutes", "Plain English", "No obligation"],
 };
 
+// Footer copy — used only by the preview route's PreviewFooter. The live homepage
+// uses the shared global Footer (components/layout/Footer.tsx).
 export const footer = {
   pitch:
     "An AI education and implementation agency for local businesses. We help owners understand AI and put it to work — saving time, cutting manual work, and modernizing how their business runs.",

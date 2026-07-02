@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
-import "./preview.css";
+import "../../fable.css";
 import PreviewChrome from "./PreviewChrome";
 import {
   ApproachSection,
@@ -12,7 +12,7 @@ import {
   ProblemSection,
   ProcessSection,
   TrustSection,
-} from "./sections";
+} from "@/components/fable/sections";
 
 /* /preview/fable-redesign — isolated design preview of the Atlas Leads site.
    Renders as a full-screen overlay (z-70) above the global header/footer so the
@@ -68,7 +68,7 @@ export default function FableRedesignPreview() {
   return (
     <div
       id="top"
-      className={`fable-preview ${display.variable} ${serif.variable} ${mono.variable} fixed inset-0 z-[70] overflow-y-auto overscroll-contain bg-paper text-ink`}
+      className={`fable ${display.variable} ${serif.variable} ${mono.variable} fixed inset-0 z-[70] overflow-y-auto overscroll-contain bg-paper text-ink`}
     >
       <PreviewAtmosphere />
       <PreviewChrome />

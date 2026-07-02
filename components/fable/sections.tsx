@@ -28,7 +28,7 @@ import {
   problem,
   process as processContent,
   trust,
-} from "./content";
+} from "@/lib/homeContent";
 
 /* ------------------------------- Primitives ------------------------------- */
 
@@ -60,7 +60,10 @@ function Shell({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={`relative ${deep ? "border-y border-white/5 bg-surface-deep" : ""}`}>
+    <section
+      id={id}
+      className={`relative scroll-mt-24 ${deep ? "border-y border-white/5 bg-surface-deep" : ""}`}
+    >
       <div className="relative mx-auto w-full max-w-(--container-site) px-5 py-20 sm:px-8 md:py-28">
         {children}
       </div>
@@ -102,9 +105,9 @@ export function HeroSection() {
                 {hero.primaryCta.label}
                 <ArrowUpRight className="fbl-btn-icon size-5" aria-hidden />
               </Link>
-              <a href={hero.secondaryCta.href} className="fbl-btn fbl-btn-ghost">
+              <Link href={hero.secondaryCta.href} className="fbl-btn fbl-btn-ghost">
                 {hero.secondaryCta.label}
-              </a>
+              </Link>
             </div>
           </Reveal>
           <Reveal delay={280} variant="fade">
@@ -512,6 +515,8 @@ export function FinalCtaSection() {
 }
 
 /* --------------------------------- Footer ---------------------------------- */
+/* PreviewFooter is used only by the /preview/fable-redesign route. The live
+   homepage renders the shared global Footer (components/layout/Footer.tsx). */
 
 function FooterCol({
   heading,

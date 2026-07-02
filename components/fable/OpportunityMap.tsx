@@ -1,7 +1,7 @@
-import { hero } from "./content";
+import { hero } from "@/lib/homeContent";
 
 /* The hero "opportunity map" — a stylized system diagram of the lead capture +
-   follow-up flow. Pure SVG + CSS animation (motion-gated in preview.css), no
+   follow-up flow. Pure SVG + CSS animation (motion-gated in app/fable.css), no
    client JS. Illustrative only: it shows what the system does, not results. */
 
 type MapNodeData = {
@@ -119,7 +119,7 @@ function MapNode({ x, y, node, outcome }: { x: number; y: number; node: MapNodeD
   );
 }
 
-/** Topographic contour lines — the cartographic garnish used across the preview. */
+/** Topographic contour lines — the cartographic garnish used across the redesign. */
 export function Topo({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 600 480" fill="none" aria-hidden className={className}>

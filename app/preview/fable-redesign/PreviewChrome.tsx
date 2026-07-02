@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import AtlasLogo from "@/components/brand/AtlasLogo";
-import { nav } from "./content";
+import { nav } from "@/lib/homeContent";
 
 /* Preview ribbon + sticky header + mobile menu for the fable-redesign preview.
    The ribbon makes it unmistakable that this is a design preview, and links
