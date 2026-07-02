@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../fable.css";
+import "../../fable.css";
 import { fableFontVars } from "@/components/fable/fonts";
 import {
   SvcCtaBand,
@@ -8,24 +8,22 @@ import {
   SvcHero,
   SvcModulesSection,
 } from "@/components/fable/servicesSections";
+import PreviewBanner from "../PreviewBanner";
 
-/**
- * Services — the Fable redesign (Phase 2 step 2). Sections are shared with
- * /preview/fable-services via components/fable/servicesSections; copy lives in
- * lib/fablePages.ts. The old page's five offer anchors are preserved
- * (#ai-business-enablement + the four module ids) — next.config.ts redirects
- * and the AI Learning hub deep-link to them.
- */
+/* /preview/fable-services — design preview of the Services page. Renders the
+   same shared sections as the live /services (promoted in Phase 2 step 2),
+   plus the preview ribbon. Kept for reviewing future changes in isolation. */
 
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "AI Business Education + Implementation for local businesses — a strategic AI partnership, plus the implementation modules we switch on inside it: AI receptionist, ads + booking, local visibility, and a full growth system.",
+  title: "Fable Services Preview",
+  description: "Internal design preview of the Atlas Leads services page redesign.",
+  robots: { index: false, follow: false },
 };
 
-export default function ServicesPage() {
+export default function FableServicesPreview() {
   return (
     <div className={`fable relative ${fableFontVars}`}>
+      <PreviewBanner label="Fable Services" liveHref="/services" />
       <div
         aria-hidden
         className="fbl-grid-dots fbl-mask-top pointer-events-none absolute inset-x-0 top-0 h-[40rem] opacity-50"
