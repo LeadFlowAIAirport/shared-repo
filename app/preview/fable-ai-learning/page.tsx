@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../fable.css";
+import "../../fable.css";
 import { fableFontVars } from "@/components/fable/fonts";
 import {
   AilCtaBand,
@@ -12,25 +12,23 @@ import {
   AilProblemSection,
   AilTeachSection,
 } from "@/components/fable/aiLearningSections";
+import PreviewBanner from "../PreviewBanner";
 
-/**
- * AI Learning (/ai-implementation) — the Fable redesign (Phase 3). Sections
- * are shared with /preview/fable-ai-learning via
- * components/fable/aiLearningSections; copy lives in lib/fablePages.ts. The
- * lesson video library, implementation modules, and FAQ keep their data in
- * lib/content.ts (`aiImplementation`), so recorded videos still go live by
- * editing one place and module cards keep their /services#<id> deep links.
- */
+/* /preview/fable-ai-learning — design preview of the AI Learning page.
+   Renders the same shared sections as the live /ai-implementation (promoted
+   in Phase 3), plus the preview ribbon. Kept for reviewing future changes in
+   isolation. */
 
 export const metadata: Metadata = {
-  title: "AI Business Education + Implementation",
-  description:
-    "The Atlas Leads learning hub for local business owners. Plain-English mini lessons on where AI fits, plus the implementation roadmap and systems — AI receptionist, ads + booking, local visibility, and a full growth system — that save time and book more appointments.",
+  title: "Fable AI Learning Preview",
+  description: "Internal design preview of the Atlas Leads AI Learning page redesign.",
+  robots: { index: false, follow: false },
 };
 
-export default function AiImplementationPage() {
+export default function FableAiLearningPreview() {
   return (
     <div className={`fable relative ${fableFontVars}`}>
+      <PreviewBanner label="Fable AI Learning" liveHref="/ai-implementation" />
       <div
         aria-hidden
         className="fbl-grid-dots fbl-mask-top pointer-events-none absolute inset-x-0 top-0 h-[40rem] opacity-50"

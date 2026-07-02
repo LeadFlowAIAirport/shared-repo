@@ -1,6 +1,6 @@
-// Copy for the Phase 2 Fable pages. /services, /how-it-works, and /book are
-// all PROMOTED — each object here serves both the live route and its
-// /preview/fable-* twin via the shared section components.
+// Copy for the Fable pages. /services, /how-it-works, /book, and
+// /ai-implementation are all PROMOTED — each object here serves both the live
+// route and its /preview/fable-* twin via the shared section components.
 //
 // Sources: synced Agency Brain vault (Core_Offer.md, Free_Audit_Process.md —
 // the 8-step AI Opportunity Audit, Current_Source_Of_Truth.md canonical
@@ -401,5 +401,183 @@ export const bookPage = {
     heading: "Prefer email? Reach us directly.",
     intro:
       "You'll always deal with us — the two people doing the work. Use the general inbox, or email either of us directly.",
+  },
+};
+
+/* ------------------------------- AI LEARNING ------------------------------- */
+// Promoted in Phase 3: consumed by BOTH the live /ai-implementation page and
+// the /preview/fable-ai-learning route (shared sections live in
+// components/fable/aiLearningSections.tsx). The lesson video library,
+// implementation modules, and FAQ stay in lib/content.ts (`aiImplementation`)
+// so recorded videos keep swapping in from one place and the module cards keep
+// their /services#<id> deep links.
+//
+// Sources: vault 01_Business_Identity/AI_Business_Education_And_Implementation_
+// System.md + _Strategy.md (the three "stuck states", safe-outcomes rules,
+// teach-first → roadmap → implement motion) and the prior production copy.
+
+export const aiLearningPage = {
+  hero: {
+    eyebrow: "AI Learning",
+    headlinePre: "Learn where AI fits ",
+    headlineAccent: "before",
+    headlinePost: " you implement it.",
+    intro:
+      "Most owners hear about AI everywhere and still don't know what to do with it. Atlas Leads teaches you where AI genuinely helps a business like yours — and where it doesn't — so every system we build starts from understanding, not hype.",
+    primaryCta: BOOK_CTA,
+    secondaryCta: { label: "See how it works", href: "/how-it-works" },
+    microline: ["Plain English", "No AI experience needed", "Built for local businesses"],
+  },
+
+  problem: {
+    kicker: "The Problem",
+    heading: "Why AI feels confusing.",
+    intro:
+      "AI is in every headline, but most advice is generic, the tools change monthly, and nobody explains what any of it means for a plumbing, electrical, or HVAC company. A random AI tool doesn't improve operations on its own — so most owners end up stuck in one of three places.",
+    states: [
+      {
+        title: "Haven't started",
+        body: "You know AI matters, but every article says something different and you're worried about getting it wrong. So nothing happens, and the admin pile keeps growing.",
+      },
+      {
+        title: "Dabbling without rules",
+        body: "You or your staff paste things into whichever free chatbot is handy — inconsistent results, no standards, and customer information going places it probably shouldn't.",
+      },
+      {
+        title: "Paying for shelfware",
+        body: "You already pay for an AI feature or a chatbot, but nobody was trained on it. It sits unused while the problems it was meant to fix carry on.",
+      },
+    ],
+  },
+
+  teach: {
+    kicker: "What We Teach",
+    heading: "Practical AI, tied to how your business runs.",
+    intro:
+      "Not theory, not tool demos — where AI applies to your actual operations, taught in plain English with examples from your own business.",
+    items: [
+      {
+        title: "Where AI saves time",
+        body: "The repetitive admin — job notes, estimates, review replies, internal docs — that AI can take off your team's plate first.",
+      },
+      {
+        title: "Where AI speeds up response",
+        body: "How AI answers and qualifies the calls, texts, and form fills that currently go to voicemail while you're on a job.",
+      },
+      {
+        title: "Where AI organizes follow-up",
+        body: "How quotes and inquiries stop going cold, with follow-up that runs on time even when nobody has time to chase it.",
+      },
+      {
+        title: "Where AI supports booking",
+        body: "How a lead moves from first contact to a time on your calendar — and how AI keeps customer communication fast without sounding robotic.",
+      },
+      {
+        title: "How to use AI safely",
+        body: "Simple rules for your team: what never goes into a chatbot, what a human always reviews, and how to check AI's answers before they reach a customer.",
+      },
+      {
+        title: "Where AI is not worth forcing",
+        body: "The honest half of the education. Some tasks AI makes worse, not better — we'll tell you which ones to skip.",
+      },
+    ],
+  },
+
+  path: {
+    kicker: "The Path",
+    heading: "Education first. Implementation second.",
+    intro:
+      "The learning isn't separate from the work — it's how every engagement starts. Teach first, map second, implement third.",
+    steps: [
+      {
+        title: "Learn the business context",
+        body: "We start with how your business actually runs — calls, leads, jobs, follow-up, admin — not with tools.",
+      },
+      {
+        title: "Identify practical AI opportunities",
+        body: "Together we find where AI could genuinely help: missed calls, slow follow-up, repetitive admin, booking friction.",
+      },
+      {
+        title: "Map the highest-value use cases",
+        body: "The free audit turns those into a ranked opportunity map, so effort goes where the payoff actually is.",
+      },
+      {
+        title: "Choose the right modules",
+        body: "Only the systems the map justifies — AI receptionist, ads + booking, local visibility, or the full system. Sometimes none yet.",
+      },
+      {
+        title: "Launch, test, and improve",
+        body: "We build, test against real scenarios, train your team, and keep improving as AI changes.",
+      },
+    ],
+  },
+
+  library: {
+    kicker: "The Library",
+    heading: "Watch, learn, then decide.",
+    topicsLabel: "What the lessons and audits cover",
+    topics: [
+      "Missed calls & after-hours inquiries",
+      "Slow follow-up",
+      "Repetitive admin",
+      "Booking friction",
+      "Review requests",
+      "Local visibility",
+      "Lead capture",
+      "Internal knowledge & SOPs",
+      "Staff adoption",
+      "Tool selection",
+    ],
+  },
+
+  modules: {
+    kicker: "Where It Leads",
+    heading: "Learning that connects to real systems.",
+    intro:
+      "The education isn't an end in itself. AI Business Education is the layer you're reading about — these are the implementation modules it switches on when your audit shows they'll help. By then, you'll already understand why they work.",
+    servicesLink: { label: "See how the modules fit inside the engagement", href: "/services" },
+  },
+
+  honesty: {
+    kicker: "The Honest Part",
+    heading: "What this is — and what it isn't.",
+    isHeading: "What it is",
+    isBody:
+      "Practical education connected to implementation. You learn where AI fits in your business, the free audit maps the highest-value opportunities, and we build the systems that map justifies — then train your team to run them.",
+    nots: [
+      {
+        title: "Not a generic AI course",
+        body: "Everything is tied to how local service businesses actually run — not slideware you could get from YouTube.",
+      },
+      {
+        title: "Not a hype webinar",
+        body: "No “AI will 10x your revenue” talk. We teach what the tools genuinely do, including their limits.",
+      },
+      {
+        title: "Not a software sales pitch",
+        body: "We recommend the tools you actually need — often ones you already have — and tell you what to skip.",
+      },
+      {
+        title: "Not a guarantee",
+        body: "No guaranteed jobs, revenue, or lead volume. What we can promise: a clear picture, and systems set up properly.",
+      },
+      {
+        title: "Not a technical workshop",
+        body: "If you can send a text, you can use what we teach. Plain English, with examples from your own business.",
+      },
+    ],
+  },
+
+  faqKicker: "Common Questions",
+
+  cta: {
+    index: "08",
+    kicker: "Next Step",
+    headingPre: "Start with the ",
+    headingAccent: "free",
+    headingPost: " audit.",
+    body: "One 15–30 minute conversation about your business — where AI fits, where it doesn't, and what to do first. You'll leave with a clear picture either way.",
+    primaryCta: BOOK_CTA,
+    microline: MICROLINE,
   },
 };
