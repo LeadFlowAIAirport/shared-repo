@@ -1,0 +1,272 @@
+/* Styles for /preview/fable-redesign ONLY.
+   Every selector is scoped under .fable-preview and every keyframe is prefixed
+   fbl-, so nothing leaks into production pages even though Next bundles this
+   file into the global stylesheet. */
+
+.fable-preview {
+  /* Preview type stacks — the --fbl-font-* vars come from next/font in page.tsx. */
+  --fbl-display: var(--fbl-font-display), ui-sans-serif, system-ui, sans-serif;
+  --fbl-serif: var(--fbl-font-serif), Georgia, "Times New Roman", serif;
+  --fbl-mono: var(--fbl-font-mono), ui-monospace, "Cascadia Mono", monospace;
+
+  /* This div is the scroll container for the whole preview. */
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+/* ------------------------------- Typography ------------------------------- */
+
+.fable-preview .fbl-display {
+  font-family: var(--fbl-display);
+  font-weight: 800;
+  font-stretch: 116%; /* Archivo wdth axis — sturdy, expanded display cut */
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.fable-preview .fbl-serif-accent {
+  font-family: var(--fbl-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  letter-spacing: -0.01em;
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.fable-preview .fbl-mono {
+  font-family: var(--fbl-mono);
+  font-feature-settings: "tnum";
+}
+
+/* --------------------------------- Chrome --------------------------------- */
+
+.fable-preview .fbl-ribbon {
+  background: color-mix(in oklab, var(--color-accent) 10%, var(--color-surface-deep));
+  border-bottom: 1px solid color-mix(in oklab, var(--color-accent) 22%, transparent);
+}
+
+/* -------------------------------- Buttons --------------------------------- */
+
+.fable-preview .fbl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 1rem 1.75rem;
+  transition:
+    transform 0.25s var(--ease-out-quint),
+    box-shadow 0.25s var(--ease-out-quint),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* FAQ accordion — hide the native disclosure triangle (Safari needs the
+   vendor pseudo; `list-none` covers the standard marker). */
+.fable-preview .fbl-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.fable-preview .fbl-btn .fbl-btn-icon {
+  transition: transform 0.25s var(--ease-out-quint);
+}
+.fable-preview .fbl-btn:hover .fbl-btn-icon {
+  transform: translate(2px, -2px);
+}
+
+.fable-preview .fbl-btn-primary {
+  background-image: linear-gradient(110deg, var(--color-accent), var(--color-violet));
+  color: var(--color-on-accent);
+  box-shadow: 0 10px 34px -10px color-mix(in oklab, var(--color-accent) 55%, transparent);
+}
+.fable-preview .fbl-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px -10px color-mix(in oklab, var(--color-accent) 70%, transparent);
+}
+
+/* Size modifiers — plain classes (Tailwind's layered utilities can't override
+   the unlayered .fbl-btn padding, so sizes live here too). */
+.fable-preview .fbl-btn-sm {
+  padding: 0.7rem 1.3rem;
+  font-size: 0.85rem;
+}
+.fable-preview .fbl-btn-lg {
+  padding: 1.15rem 2.25rem;
+  font-size: 1rem;
+}
+
+.fable-preview .fbl-btn-ghost {
+  border: 1px solid var(--color-line);
+  background: color-mix(in oklab, white 4%, transparent);
+  color: var(--color-ink);
+}
+.fable-preview .fbl-btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--color-accent) 45%, transparent);
+  background: color-mix(in oklab, var(--color-accent) 9%, transparent);
+}
+
+/* --------------------------------- Cards ---------------------------------- */
+
+.fable-preview .fbl-card {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in oklab, white 9%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, white 5%, transparent),
+    color-mix(in oklab, white 2%, transparent)
+  );
+  transition:
+    transform 0.3s var(--ease-out-quint),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Green hairline shine along the top edge — brightens on hover. */
+.fable-preview .fbl-card::before {
+  content: "";
+  position: absolute;
+  inset-inline: 1.25rem;
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-accent) 60%, transparent),
+    transparent
+  );
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.fable-preview .fbl-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--color-accent) 30%, transparent);
+  box-shadow: 0 18px 50px -18px color-mix(in oklab, var(--color-accent) 35%, transparent);
+}
+.fable-preview .fbl-card-hover:hover::before {
+  opacity: 1;
+}
+
+/* Cartographic registration marks — small crosses on two corners of a panel. */
+.fable-preview .fbl-reg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--color-accent), var(--color-accent)) no-repeat -7px 7px / 14px 1px,
+    linear-gradient(var(--color-accent), var(--color-accent)) no-repeat 0px 0px / 1px 14px,
+    linear-gradient(var(--color-accent), var(--color-accent)) no-repeat calc(100% + 7px) calc(100% - 7px) / 14px 1px,
+    linear-gradient(var(--color-accent), var(--color-accent)) no-repeat 100% 100% / 1px 14px;
+  opacity: 0.35;
+}
+
+/* ------------------------------ Atmosphere -------------------------------- */
+
+/* Graticule — the faint cartographic dot grid. */
+.fable-preview .fbl-grid-dots {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--color-accent) 26%, transparent) 1px,
+    transparent 1.4px
+  );
+  background-size: 34px 34px;
+}
+
+.fable-preview .fbl-mask-top {
+  mask-image: radial-gradient(85% 65% at 50% 0%, black 25%, transparent 95%);
+  -webkit-mask-image: radial-gradient(85% 65% at 50% 0%, black 25%, transparent 95%);
+}
+
+.fable-preview .fbl-mask-bottom {
+  mask-image: radial-gradient(85% 70% at 50% 100%, black 25%, transparent 95%);
+  -webkit-mask-image: radial-gradient(85% 70% at 50% 100%, black 25%, transparent 95%);
+}
+
+/* ------------------------------ Process rail ------------------------------ */
+
+.fable-preview .fbl-rail {
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-accent) 60%, transparent) 25%,
+    color-mix(in oklab, var(--color-accent) 60%, transparent) 75%,
+    transparent
+  );
+  background-size: 200% 100%;
+}
+
+/* --------------------------- Opportunity map SVG -------------------------- */
+
+.fable-preview .fbl-map-path {
+  stroke-dasharray: 4 9;
+}
+
+.fable-preview .fbl-hub-ring {
+  transform-origin: center;
+  transform-box: fill-box;
+  opacity: 0;
+}
+
+/* -------------------------------- Motion ---------------------------------- */
+
+@keyframes fbl-flow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fbl-dash {
+  to {
+    stroke-dashoffset: -52;
+  }
+}
+
+@keyframes fbl-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fable-preview .fbl-rail {
+    animation: fbl-flow 3.4s linear infinite;
+  }
+  .fable-preview .fbl-map-path {
+    animation: fbl-dash 1.9s linear infinite;
+  }
+  .fable-preview .fbl-hub-ring {
+    animation: fbl-pulse 2.8s var(--ease-out-quart) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fable-preview {
+    scroll-behavior: auto;
+  }
+  /* Show the flow paths as calm solid lines instead of animated dashes. */
+  .fable-preview .fbl-map-path {
+    stroke-dasharray: none;
+    opacity: 0.5;
+  }
+}
