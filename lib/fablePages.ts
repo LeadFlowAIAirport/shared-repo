@@ -1,8 +1,6 @@
-// Copy for the Fable pages. /services, /how-it-works, and /book are all
-// PROMOTED — each object here serves both the live route and its
-// /preview/fable-* twin via the shared section components. aiLearningPreview
-// is PREVIEW-ONLY (/preview/fable-ai-learning); the live /ai-implementation
-// page is untouched until that redesign is approved.
+// Copy for the Fable pages. /services, /how-it-works, /book, and
+// /ai-implementation are all PROMOTED — each object here serves both the live
+// route and its /preview/fable-* twin via the shared section components.
 //
 // Sources: synced Agency Brain vault (Core_Offer.md, Free_Audit_Process.md —
 // the 8-step AI Opportunity Audit, Current_Source_Of_Truth.md canonical
@@ -407,17 +405,18 @@ export const bookPage = {
 };
 
 /* ------------------------------- AI LEARNING ------------------------------- */
-// PREVIEW-ONLY copy for /preview/fable-ai-learning (the AI Learning /
-// /ai-implementation redesign). The live /ai-implementation page is untouched.
-// The lesson video library, implementation modules, and FAQ stay in
-// lib/content.ts (`aiImplementation`) so recorded videos keep swapping in from
-// one place and the module cards keep their /services#<id> deep links.
+// Promoted in Phase 3: consumed by BOTH the live /ai-implementation page and
+// the /preview/fable-ai-learning route (shared sections live in
+// components/fable/aiLearningSections.tsx). The lesson video library,
+// implementation modules, and FAQ stay in lib/content.ts (`aiImplementation`)
+// so recorded videos keep swapping in from one place and the module cards keep
+// their /services#<id> deep links.
 //
 // Sources: vault 01_Business_Identity/AI_Business_Education_And_Implementation_
 // System.md + _Strategy.md (the three "stuck states", safe-outcomes rules,
-// teach-first → roadmap → implement motion) and the current production copy.
+// teach-first → roadmap → implement motion) and the prior production copy.
 
-export const aiLearningPreview = {
+export const aiLearningPage = {
   hero: {
     eyebrow: "AI Learning",
     headlinePre: "Learn where AI fits ",
