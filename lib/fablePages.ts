@@ -1,6 +1,6 @@
-// Copy for the Phase 2 PREVIEW routes only (/preview/fable-services,
-// /preview/fable-how-it-works, /preview/fable-book). Nothing here is imported
-// by production pages. If a page is promoted, its object moves with it.
+// Copy for the Phase 2 Fable pages. /services and /how-it-works are PROMOTED —
+// their objects here serve both the live route and its /preview/fable-* twin
+// via the shared section components. /preview/fable-book is still preview-only.
 //
 // Sources: synced Agency Brain vault (Core_Offer.md, Free_Audit_Process.md —
 // the 8-step AI Opportunity Audit, Current_Source_Of_Truth.md canonical
@@ -18,8 +18,11 @@ const BOOK_CTA: PageCta = { label: "Book a Free AI Business Audit", href: "/book
 const MICROLINE = ["Free", "15–30 minutes", "Plain English", "No obligation"];
 
 /* --------------------------------- SERVICES -------------------------------- */
+// Promoted in Phase 2 step 2: consumed by BOTH the live /services page and the
+// /preview/fable-services route (shared sections live in
+// components/fable/servicesSections.tsx).
 
-export const servicesPreview = {
+export const servicesPage = {
   hero: {
     eyebrow: "Services",
     headlinePre: "One flagship engagement. Five ",
