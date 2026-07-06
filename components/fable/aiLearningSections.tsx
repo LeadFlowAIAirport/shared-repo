@@ -53,8 +53,47 @@ function LessonChip({ video, className = "" }: { video: LessonVideo; className?:
   );
 }
 
-/** 16:9 media frame where a lesson video embeds once recorded. */
-function LessonFrame({ large = false }: { large?: boolean }) {
+/** 16:9 media frame. Plays the recorded video once a slot is live — a /public
+ *  file (`videoType: "file"`) or a hosted embed — and shows the green/black
+ *  placeholder until then. State is driven entirely by the lesson's `video`. */
+function LessonFrame({
+  large = false,
+  video,
+  label,
+}: {
+  large?: boolean;
+  video?: LessonVideo;
+  label?: string;
+}) {
+  const live = video?.status === "available" && !!video.videoUrl;
+
+  if (live) {
+    return (
+      <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-surface-deep">
+        {video!.videoType === "file" ? (
+          <video
+            controls
+            preload="metadata"
+            playsInline
+            aria-label={label}
+            className="absolute inset-0 size-full bg-surface-deep object-contain"
+          >
+            <source src={video!.videoUrl!} />
+          </video>
+        ) : (
+          <iframe
+            src={video!.videoUrl!}
+            title={label}
+            loading="lazy"
+            allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 size-full border-0 bg-surface-deep"
+          />
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-surface-deep">
       <div
@@ -194,7 +233,11 @@ export function AilLibrarySection() {
       <Reveal delay={120} className="mt-10">
         <div className="fbl-card grid overflow-hidden shadow-glow ring-1 ring-accent/25 md:grid-cols-2">
           <div className="relative md:border-b-0 md:border-r md:border-white/10">
-            <LessonFrame large />
+            <LessonFrame
+              large
+              video={featured.video}
+              label={`${featured.title} — overview video`}
+            />
             <LessonChip video={featured.video} className="absolute left-3.5 top-3.5" />
           </div>
           <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10">

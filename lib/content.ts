@@ -441,7 +441,12 @@ export const aiImplementation = {
     blurb:
       "A plain-English overview of where AI fits in a local business — the day-to-day admin it takes off your plate, the calls and leads it helps you catch, and how a practical implementation actually comes together.",
     placeholder: "Featured overview video coming soon",
-    video: comingSoonVideo,
+    video: {
+      status: "available",
+      videoType: "file",
+      videoUrl: "/videos/ai-learning-implementation-master.mp4",
+      duration: "2:48",
+    } satisfies LessonVideo,
   },
 
   lessonsHeading: "Mini Lesson Library",
