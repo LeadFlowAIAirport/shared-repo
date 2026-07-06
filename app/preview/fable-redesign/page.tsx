@@ -7,6 +7,7 @@ import {
   FaqSection,
   FinalCtaSection,
   HeroSection,
+  MissionSection,
   ModulesSection,
   PreviewFooter,
   ProblemSection,
@@ -78,6 +79,7 @@ export default function FableRedesignPreview() {
         <ApproachSection />
         <ModulesSection />
         <ProcessSection />
+        <MissionSection />
         <TrustSection />
         <FaqSection />
         <FinalCtaSection />
