@@ -201,7 +201,7 @@ export const home = {
         slug: "ai-business-education",
         title: "AI Business Education + Implementation",
         blurb: "A walkthrough of our flagship engagement — how we teach your team, audit your operations, map high-value AI use cases, and implement the systems that save you time.",
-        video: null,
+        video: { videoSrc: "/videos/ai-learning-implementation-master.mp4" },
         // Flagship card links to the AI Learning hub (same route as the
         // "AI Learning" nav item), not a /demo page.
         href: "/ai-implementation",
@@ -437,9 +437,9 @@ export const aiImplementation = {
   // `featured.video` fields to embed the real overview later.
   featured: {
     eyebrow: "Featured lesson",
-    title: "How AI Can Actually Help a Local Business",
+    title: "AI Business Education + Implementation",
     blurb:
-      "A plain-English overview of where AI fits in a local business — the day-to-day admin it takes off your plate, the calls and leads it helps you catch, and how a practical implementation actually comes together.",
+      "A practical walkthrough of how Atlas Leads teaches, audits, maps high-value AI opportunities, and implements systems for local businesses.",
     placeholder: "Featured overview video coming soon",
     video: {
       status: "available",
