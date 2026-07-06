@@ -5,6 +5,7 @@ import {
   FaqSection,
   FinalCtaSection,
   HeroSection,
+  MissionSection,
   ModulesSection,
   ProblemSection,
   ProcessSection,
@@ -62,6 +63,7 @@ export default function HomePage() {
         <ApproachSection />
         <ModulesSection />
         <ProcessSection />
+        <MissionSection />
         <TrustSection />
         <FaqSection />
         <FinalCtaSection />

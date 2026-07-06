@@ -207,6 +207,16 @@ export const process = {
     "Every engagement starts with the audit. You leave it with a clear picture of where AI fits — whether or not we build anything together.",
 };
 
+// Mission — the brand's north star, stated once in its own quiet band before the
+// "How We Work" principles. Reinforces that Atlas *Leads* means leading local
+// businesses into an AI-enabled future, not just generating customer leads. Kept
+// verbatim as a single string so the statement stays exactly as written.
+export const mission = {
+  label: "Our Mission",
+  statement:
+    "Our mission is to lead small businesses into the future of AI—turning confusion into clarity, outdated systems into smarter operations, and missed opportunities into measurable growth.",
+};
+
 export const trust = {
   kicker: "How We Work",
   heading: "Premium doesn't mean complicated.",

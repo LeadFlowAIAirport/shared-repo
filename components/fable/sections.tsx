@@ -24,6 +24,7 @@ import {
   finalCta,
   footer,
   hero,
+  mission,
   modules,
   problem,
   process as processContent,
@@ -372,6 +373,37 @@ export function ProcessSection() {
         </p>
       </Reveal>
     </Shell>
+  );
+}
+
+/* -------------------------------- Mission --------------------------------- */
+/* Brand north-star band — an un-numbered, centered statement that opens the
+   identity zone (it sits just before "How We Work"). Quieter than the hero and
+   final CTA: no serif accent, no glow. It borrows the same faint Topo motif so
+   it still reads as a peer brand moment, and it reinforces that Atlas *Leads*
+   means leading local businesses into an AI-enabled future. */
+
+export function MissionSection() {
+  return (
+    <section id="mission" className="relative scroll-mt-24 overflow-hidden border-t border-white/5">
+      <Topo className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 text-accent opacity-[0.05]" />
+      <div className="relative mx-auto w-full max-w-(--container-site) px-5 py-20 text-center sm:px-8 md:py-28">
+        <Reveal>
+          <div className="flex items-center justify-center gap-4">
+            <span aria-hidden className="h-px w-10 bg-gradient-to-r from-transparent to-accent/50 sm:w-16" />
+            <span className="fbl-mono text-xs font-medium uppercase tracking-[0.22em] text-accent">
+              {mission.label}
+            </span>
+            <span aria-hidden className="h-px w-10 bg-gradient-to-r from-accent/50 to-transparent sm:w-16" />
+          </div>
+        </Reveal>
+        <Reveal delay={90}>
+          <p className="mx-auto mt-8 max-w-3xl text-balance text-[clamp(1.35rem,2.4vw,1.95rem)] font-medium leading-[1.4] tracking-[-0.01em] text-ink">
+            {mission.statement}
+          </p>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
