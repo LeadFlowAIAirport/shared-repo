@@ -175,8 +175,76 @@ export const servicesPage = {
     ],
   },
 
+  // The concrete systems the modules break down into, grouped into four
+  // practical buckets so an owner can see exactly what can be set up for them.
+  systems: {
+    kicker: "What We Can Build",
+    heading: "Systems we can build around your business.",
+    intro:
+      "Every engagement is built from a set of concrete systems. Here's the menu — grouped by what each one does for your business. You won't need all of them; the free audit shows which ones fit, and we can start simple and add more as they prove out.",
+    buckets: [
+      {
+        id: "lead-capture",
+        icon: "phone" as const,
+        name: "Lead Capture & Fast Response",
+        includes: [
+          "AI receptionist",
+          "Missed-call recovery",
+          "SMS & quote follow-up",
+          "Lead qualification",
+        ],
+        what: "Catches every call, text, and form the moment it comes in — answers, texts missed callers back, chases quotes, and sorts real leads from the noise.",
+        why: "When you're busy on a job you can't answer, and a lead that hits voicemail often just calls the next company on the list.",
+        gets: [
+          "An AI receptionist answering calls and messages day or night",
+          "Automatic missed-call text-back and quote follow-up",
+          "Real leads flagged so you spend time on the ones that count",
+        ],
+      },
+      {
+        id: "booking-handoff",
+        icon: "calendar" as const,
+        name: "Booking & Owner Handoff",
+        includes: ["Booking support", "Owner alerts", "CRM & lead timeline"],
+        what: "Turns an interested lead into a booked appointment, pings you when a real person needs you, and keeps every lead's history in one place.",
+        why: "It closes the gap between “they reached out” and “they're on the calendar,” so nothing slips while you're heads-down on a job.",
+        gets: [
+          "Appointments booked straight onto your calendar",
+          "Instant owner alerts when a lead needs a human",
+          "A simple timeline of every lead and conversation",
+        ],
+      },
+      {
+        id: "reputation",
+        icon: "star" as const,
+        name: "Trust & Reputation Follow-Up",
+        includes: ["Review requests", "Reputation follow-up"],
+        what: "Asks happy customers for a review at the right moment and helps you keep up with the ones that come in.",
+        why: "Nearby customers often check your reviews before they ever call, so recent, steady reviews help you make a strong first impression.",
+        gets: [
+          "Automatic review requests after a completed job",
+          "Help staying on top of new reviews and replies",
+        ],
+      },
+      {
+        id: "growth-infra",
+        icon: "chart" as const,
+        name: "Simple Growth Infrastructure",
+        includes: ["Landing / lead-capture pages", "Monthly reporting"],
+        what: "Gives you a focused page to capture leads and a plain-English monthly summary of what's working.",
+        why: "A clean place to send traffic captures more of it, and a simple report shows where your leads and jobs are coming from.",
+        gets: [
+          "A focused landing or lead-capture page",
+          "A plain-English monthly report — no dashboards to learn",
+        ],
+      },
+    ],
+    footnote:
+      "Not every business needs all of these — we start from what your audit shows will help most, and systems can start simple.",
+  },
+
   cta: {
-    index: "04",
+    index: "05",
     kicker: "Next Step",
     headingPre: "Not sure which fits ",
     headingAccent: "your",
