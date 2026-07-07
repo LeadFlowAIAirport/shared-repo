@@ -84,6 +84,15 @@ export const problem = {
     "None of this is fixed by one more app. It's fixed by understanding where AI fits your operation — then implementing it properly. That's the whole job.",
 };
 
+export type ApproachStep = {
+  icon: "book" | "search" | "map" | "wrench" | "users";
+  title: string;
+  body: string;
+  /** Optional internal detail page under /approach/*. Cards with an href are
+      clickable on the homepage; cards without one stay static. */
+  href?: string;
+};
+
 export const approach = {
   kicker: "Our Approach",
   heading: "Teach first. Then implement.",
@@ -94,29 +103,34 @@ export const approach = {
     {
       icon: "book" as const,
       title: "Plain-English AI education",
+      href: "/ai-implementation",
       body: "We teach you and your team what AI can and can't do — for your business specifically, not in the abstract. No jargon, no hype.",
     },
     {
       icon: "search" as const,
       title: "AI Opportunity Audit",
+      href: "/approach/ai-opportunity-audit",
       body: "We review how your business actually runs: calls, leads, follow-up, admin, and the day-to-day operations behind them.",
     },
     {
       icon: "map" as const,
       title: "Use-case mapping",
+      href: "/approach/use-case-mapping",
       body: "We rank where AI saves the most time and captures the most opportunities — so effort goes to the highest-value systems first.",
     },
     {
       icon: "wrench" as const,
       title: "Hands-on implementation",
+      href: "/approach/hands-on-implementation",
       body: "We build and connect the right systems, fit them into how you already work, and test them before they touch a customer.",
     },
     {
       icon: "users" as const,
       title: "Training + ongoing advisory",
+      href: "/approach/training-ongoing-advisory",
       body: "We train your team so the change sticks, and stay available as your tools and needs evolve.",
     },
-  ],
+  ] as ApproachStep[],
 };
 
 export const modules = {
