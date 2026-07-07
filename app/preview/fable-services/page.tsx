@@ -7,6 +7,7 @@ import {
   SvcFlagshipSection,
   SvcHero,
   SvcModulesSection,
+  SvcSystemsSection,
 } from "@/components/fable/servicesSections";
 import PreviewBanner from "../PreviewBanner";
 
@@ -34,6 +35,7 @@ export default function FableServicesPreview() {
         <SvcFlagshipSection />
         <SvcModulesSection />
         <SvcFitSection />
+        <SvcSystemsSection />
         <SvcCtaBand />
       </div>
     </div>
