@@ -206,7 +206,7 @@ export const servicesPage = {
         icon: "calendar" as const,
         name: "Booking & Owner Handoff",
         includes: ["Booking support", "Owner alerts", "CRM & lead timeline"],
-        what: "Turns an interested lead into a booked appointment, pings you when a real person needs you, and keeps every lead's history in one place.",
+        what: "Helps move interested leads toward a scheduled appointment, alerts you when a real person needs you, and keeps each lead's history in one place.",
         why: "It helps close the gap between “they reached out” and “someone followed up clearly,” so nothing slips while you're heads-down on a job.",
         gets: [
           "Booking support that helps move qualified leads toward a scheduled appointment",
@@ -222,7 +222,7 @@ export const servicesPage = {
         what: "Asks happy customers for a review at the right moment and helps you keep up with the ones that come in.",
         why: "Nearby customers often check your reviews before they ever call, so recent, steady reviews help you make a strong first impression.",
         gets: [
-          "Automatic review requests after a completed job",
+          "Review request workflows after completed jobs, when the right setup is in place",
           "Help staying on top of new reviews and replies",
         ],
       },
