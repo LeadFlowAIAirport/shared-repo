@@ -67,8 +67,8 @@ export default function MeetingChoices() {
       {options.some((o) => o.href.startsWith("[")) && (
         <Reveal delay={200} variant="fade">
           <p className="fbl-mono mt-6 max-w-2xl text-xs text-slate/70">
-            Online scheduling links are coming soon. For now, request a time with
-            the form below and we&rsquo;ll confirm by reply.
+            Choose whichever works best for you and request a time — we&rsquo;ll
+            confirm by reply.
           </p>
         </Reveal>
       )}

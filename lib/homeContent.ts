@@ -179,7 +179,7 @@ export const modules = {
       icon: "network" as const,
       name: "Full Growth System",
       blurb:
-        "Combines visibility, lead capture, follow-up, booking, and automation into one connected operating system.",
+        "Connects visibility, lead capture, follow-up, booking, and reviews into one system — with your leads tracked in one CRM and a simple monthly summary of your leads and follow-up.",
     },
   ],
   footnote:
