@@ -1,0 +1,20 @@
+# Netlify security headers for atlasaileads.com
+# ---------------------------------------------------------------------------
+# Draft added on branch security/netlify-headers-hardening.
+# These harden browser security WITHOUT changing site design, copy, forms,
+# demos, or behavior. The Content-Security-Policy is REPORT-ONLY: it observes
+# and logs to the browser console but blocks NOTHING, so it cannot break the
+# demos, videos, or fonts. Flip it to an enforced `Content-Security-Policy`
+# header only after reviewing that the console shows no legitimate violations.
+#
+# X-Frame-Options is SAMEORIGIN (not DENY) on purpose: the site iframes its
+# own same-origin /demos/*.html and video pages, which SAMEORIGIN still allows.
+# ---------------------------------------------------------------------------
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; frame-src 'self'; form-action 'self' mailto:; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; worker-src 'self' blob:; connect-src 'self' blob:

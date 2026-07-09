@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Drop the `X-Powered-By: Next.js` response header — minor stack-fingerprint
+  // hardening. The remaining security headers are set at the edge in
+  // `public/_headers` (Netlify), which is the reliable place for a
+  // statically-served site.
+  poweredByHeader: false,
   // Pin the workspace root to this project. The home directory contains an
   // unrelated package-lock.json, which would otherwise be inferred as root.
   turbopack: {
