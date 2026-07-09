@@ -1,6 +1,11 @@
 # Netlify security headers for atlasaileads.com
 # ---------------------------------------------------------------------------
-# Draft added on branch security/netlify-headers-hardening.
+# NOTE: this file only covers STATIC files Netlify serves directly (e.g. the
+# /demos/*.html bundles). Next.js-rendered pages (/, /services, ...) are served
+# by the Next runtime and do NOT read this file — those are covered by an
+# identical `securityHeaders` list in next.config.ts `headers()`. Keep both in
+# sync. Both are required for full coverage on Netlify + Next.js.
+#
 # These harden browser security WITHOUT changing site design, copy, forms,
 # demos, or behavior. The Content-Security-Policy is REPORT-ONLY: it observes
 # and logs to the browser console but blocks NOTHING, so it cannot break the
