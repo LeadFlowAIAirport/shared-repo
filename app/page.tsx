@@ -7,9 +7,11 @@ import {
   HeroSection,
   MissionSection,
   ModulesSection,
+  MonthlyOpsSection,
   ProblemSection,
   ProcessSection,
   TrustSection,
+  WhyStaySection,
 } from "@/components/fable/sections";
 
 /**
@@ -62,7 +64,9 @@ export default function HomePage() {
         <ProblemSection />
         <ApproachSection />
         <ModulesSection />
+        <MonthlyOpsSection />
         <ProcessSection />
+        <WhyStaySection />
         <MissionSection />
         <TrustSection />
         <FaqSection />

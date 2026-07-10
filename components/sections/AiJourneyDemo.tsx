@@ -521,7 +521,7 @@ function WorkspaceScene() {
 /* --- Scene 3: AI systems installed ---------------------------------------- */
 
 const INSTALL_ROWS: { label: string; Icon: LucideIcon }[] = [
-  { label: "AI Receptionist", Icon: Headset },
+  { label: "Atlas Receptionist", Icon: Headset },
   { label: "Follow-up", Icon: RefreshCw },
   { label: "Booking", Icon: CalendarCheck },
   { label: "CRM", Icon: Database },

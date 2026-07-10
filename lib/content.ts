@@ -72,7 +72,7 @@ export const site = {
   nav: [
     { label: "Home", href: "/" },
     { label: "How It Works", href: "/how-it-works" },
-    { label: "AI Learning", href: "/ai-implementation" },
+    { label: "AI Academy", href: "/ai-implementation" },
     { label: "Services", href: "/services" },
   ],
   headerCta: { label: "Book a Free AI Business Audit", href: "/book" },
@@ -99,7 +99,7 @@ export const site = {
 
 export const home = {
   hero: {
-    eyebrow: "AI Business Education + Implementation",
+    eyebrow: "Atlas AI Academy · Atlas Implementations",
     headline: "Your AI Transformation Partner for Local Business.",
     subheadline:
       "We help local business owners understand AI, find the highest-value ways to use it, and implement the practical systems that save you time, cut manual admin, and speed up how you respond and follow up — so your business adopts AI with clarity, not confusion.",
@@ -199,7 +199,7 @@ export const home = {
     items: [
       {
         slug: "ai-business-education",
-        title: "AI Business Education + Implementation",
+        title: "Atlas AI Academy / Atlas Implementations",
         blurb: "A walkthrough of our flagship engagement — how we teach your team, audit your operations, map high-value AI use cases, and implement the systems that save you time.",
         video: { videoSrc: "/videos/ai-learning-implementation-master.mp4" },
         // Flagship card links to the AI Learning hub (same route as the
@@ -208,26 +208,26 @@ export const home = {
       },
       {
         slug: "ai-receptionist",
-        title: "AI Receptionist",
+        title: "Atlas Receptionist",
         blurb: "How AI answers calls, qualifies leads, and books appointments day or night, so you stop missing work.",
         video: { embedUrl: "/demos/ai-receptionist.html" },
       },
       {
         slug: "ad-funnel",
-        title: "Ads + Booking",
+        title: "Atlas Lead Engine",
         blurb: "How paid traffic becomes qualified, ready-to-book conversations instead of cold clicks.",
         video: { embedUrl: "/demos/ads-booking.html" },
       },
       {
         slug: "local-visibility",
-        title: "Local Visibility",
+        title: "Atlas Local Trust",
         blurb: "How AI keeps your listings, reviews, and local search presence working for you.",
         video: { embedUrl: "/demos/local-visibility.html" },
       },
       {
         slug: "full-growth-system",
-        title: "Full Growth System",
-        blurb: "How the pieces connect into one AI-powered system for leads, booking, follow-up, and reviews.",
+        title: "Atlas Command Center",
+        blurb: "One place to see and run it all — dashboards, roadmap tracking, reviews, and the systems that power your operation.",
         video: { embedUrl: "/demos/full-growth-system.html" },
       },
     ] satisfies VideoItem[],
@@ -293,7 +293,7 @@ export const servicesPage = {
   offers: [
     {
       id: "ai-business-enablement",
-      name: "AI Business Education + Implementation",
+      name: "Atlas AI Academy / Atlas Implementations",
       what: "Our flagship engagement — a strategic partnership that takes you from “AI is confusing” to “AI is working in my business.” We teach your team, audit your operations, map your highest-value use cases, then implement the practical systems that run them.",
       whoFor: "Local business owners who want a serious partner to bring AI into their operations — not another tool to figure out on their own.",
       problem: "AI could save you hours every week, but the path from hype to working systems isn't obvious — and trial-and-error is expensive in time you don't have.",
@@ -308,7 +308,7 @@ export const servicesPage = {
     },
     {
       id: "ai-receptionist",
-      name: "AI Receptionist",
+      name: "Atlas Receptionist",
       what: "An AI front desk that answers calls, texts, and form fills, qualifies the lead, and books the appointment, day or night.",
       whoFor: "Businesses missing calls, texts, or after-hours leads while they're busy on the job.",
       problem: "Calls go to voicemail and after-hours leads go cold while you're on a job.",
@@ -322,7 +322,7 @@ export const servicesPage = {
     },
     {
       id: "ads-booking-system",
-      name: "Ads + Booking",
+      name: "Atlas Lead Engine",
       what: "A focused ad-to-booking funnel that turns paid traffic into qualified, ready-to-book conversations.",
       whoFor: "Businesses running ads, or about to, that want more booked jobs from the same spend.",
       problem: "Ads bring clicks, but generic pages and slow follow-up waste the spend.",
@@ -336,7 +336,7 @@ export const servicesPage = {
     },
     {
       id: "local-visibility",
-      name: "Local Visibility",
+      name: "Atlas Local Trust",
       what: "Systems that keep your Google Business Profile, reviews, and local search presence working for you.",
       whoFor: "Local businesses that want to show up, look trustworthy, and win nearby customers.",
       problem: "Nearby customers find other companies first, and reviews dry up.",
@@ -350,16 +350,16 @@ export const servicesPage = {
     },
     {
       id: "full-growth-system",
-      name: "Full Growth System",
-      what: "Every piece connected into one AI-powered system for leads, booking, follow-up, reviews, and CRM updates.",
-      whoFor: "Businesses ready to connect everything into one system instead of piecing tools together.",
-      problem: "Point solutions don't talk to each other, so opportunities still slip through.",
-      howAI: "Lead capture, the AI receptionist, ads and booking, follow-up, and local visibility run as one workflow, with your team trained to operate it.",
+      name: "Atlas Command Center",
+      what: "Your dashboards, client portal, and internal Atlas tools — reporting, roadmap tracking, and the systems that run your operation, in one place.",
+      whoFor: "Owners who want one clear place to see what's working, track the roadmap, and run the business.",
+      problem: "Tools and data are scattered — no single place to see performance, progress, or what's next.",
+      howAI: "Atlas builds the dashboards, portal, and internal tools (Atlas apps) that surface your leads, follow-up, reviews, roadmap, and AI systems in one operating view, updated as we improve things.",
       gets: [
-        "One connected system instead of scattered tools",
-        "Lead capture through to a booked job",
-        "Automated follow-up, reviews, and CRM updates",
-        "Team training so the system actually sticks",
+        "One place to see leads, follow-up, and reviews",
+        "Your AI roadmap and opportunity tracker, visible",
+        "Internal Atlas tools and apps built for your workflows",
+        "Reporting that shows what's actually working",
       ],
     },
   ] satisfies ServiceOffer[],
@@ -423,8 +423,8 @@ const comingSoonVideo: LessonVideo = {
 
 export const aiImplementation = {
   hero: {
-    eyebrow: "AI Learning Hub",
-    headline: "AI Business Education + Implementation",
+    eyebrow: "Atlas AI Academy",
+    headline: "Atlas AI Academy / Atlas Implementations",
     subheadline:
       "Atlas Leads helps local businesses learn where AI actually fits — then implements the systems that save you time, respond to leads faster, and turn more of them into booked appointments. Education first, working systems second.",
     primaryCta: { label: "Book a Free AI Business Audit", href: "/book" },
@@ -437,7 +437,7 @@ export const aiImplementation = {
   // `featured.video` fields to embed the real overview later.
   featured: {
     eyebrow: "Featured lesson",
-    title: "AI Business Education + Implementation",
+    title: "Atlas AI Academy / Atlas Implementations",
     blurb:
       "A practical walkthrough of how Atlas Leads teaches, audits, maps high-value AI opportunities, and implements systems for local businesses.",
     placeholder: "Featured overview video coming soon",
@@ -535,31 +535,31 @@ export const aiImplementation = {
 
   modulesHeading: "Implementation Modules",
   modulesIntro:
-    "These are the systems we implement inside the AI Business Education + Implementation engagement — switched on based on what your audit shows will help most, not sold as disconnected services.",
+    "These are the systems we implement inside the Atlas AI Academy / Atlas Implementations engagement — switched on based on what your audit shows will help most, not sold as disconnected services.",
   modules: [
     {
       id: "ai-receptionist",
-      name: "AI Receptionist",
+      name: "Atlas Receptionist",
       blurb:
         "Answers calls, texts, and form fills, qualifies the lead, and books the appointment — day or night, so you stop missing work.",
     },
     {
       id: "ads-booking-system",
-      name: "Ads + Booking",
+      name: "Atlas Lead Engine",
       blurb:
         "Turns paid traffic into qualified, ready-to-book conversations instead of cold clicks that go nowhere.",
     },
     {
       id: "local-visibility",
-      name: "Local Visibility",
+      name: "Atlas Local Trust",
       blurb:
         "Keeps your listings, reviews, and local search presence working for you, so nearby customers find and trust you first.",
     },
     {
       id: "full-growth-system",
-      name: "Full Growth System",
+      name: "Atlas Command Center",
       blurb:
-        "Connects every piece — leads, booking, follow-up, and reviews — into one AI-powered system your team is trained to run.",
+        "Your dashboards, portal, and internal Atlas tools — reporting, roadmap tracking, and the systems that run your operation, in one place.",
     },
   ] satisfies ImplementationModule[],
 
@@ -649,11 +649,11 @@ export const plumbing: TradePage = {
     "We set up and run a system designed to capture, respond to, and help book more of your plumbing leads:",
   offer: [
     { lead: "Missed-Call Text-Back", rest: " so emergency and service calls don't go cold" },
-    { lead: "Around-the-Clock AI Receptionist", rest: " to answer questions and capture job details after hours" },
+    { lead: "Atlas Receptionist", rest: " to answer questions and capture job details after hours" },
     { lead: "Fast Lead Response", rest: " for every form, ad lead, and inquiry" },
     { lead: "Automated Follow-Up", rest: " that keeps quotes from getting forgotten" },
     { lead: "Appointment Setting", rest: " that helps fill your calendar with real jobs" },
-    { lead: "Local Visibility", rest: " improvements so more nearby homeowners find you" },
+    { lead: "Atlas Local Trust", rest: " — local visibility improvements so more nearby homeowners find you" },
   ],
   offerClosing: "You stay on the tools. The system handles the catching and following up.",
   stepsHeading: "How the Plumbing Setup Works",
@@ -763,11 +763,11 @@ export const electrical: TradePage = {
     "We set up and run a system designed to capture, respond to, and help book more of your electrical leads:",
   offer: [
     { lead: "Missed-Call Text-Back", rest: " so service and emergency calls don't bounce" },
-    { lead: "Around-the-Clock AI Receptionist", rest: " to handle questions and capture job details anytime" },
+    { lead: "Atlas Receptionist", rest: " to handle questions and capture job details anytime" },
     { lead: "Fast Lead Response", rest: " for every form, ad lead, and inquiry" },
     { lead: "Automated Follow-Up", rest: " that keeps high-ticket quotes from going quiet" },
     { lead: "Appointment Setting", rest: " that helps fill your calendar with real work" },
-    { lead: "Local Visibility", rest: " improvements so more nearby homeowners find you" },
+    { lead: "Atlas Local Trust", rest: " — local visibility improvements so more nearby homeowners find you" },
   ],
   offerClosing: "You focus on the work. The system handles the catching and following up.",
   stepsHeading: "How the Electrical Setup Works",
@@ -875,11 +875,11 @@ export const hvac: TradePage = {
     "We set up and run a system designed to capture, respond to, and help book more of your HVAC leads:",
   offer: [
     { lead: "Missed-Call Text-Back", rest: " so no-heat and no-cool calls don't go cold" },
-    { lead: "Around-the-Clock AI Receptionist", rest: " to answer questions and capture job details after hours" },
+    { lead: "Atlas Receptionist", rest: " to answer questions and capture job details after hours" },
     { lead: "Fast Lead Response", rest: " for every form, ad lead, and inquiry" },
     { lead: "Automated Follow-Up", rest: " that keeps maintenance and system quotes from getting forgotten" },
     { lead: "Appointment Setting", rest: " that helps fill your calendar with real jobs" },
-    { lead: "Local Visibility", rest: " improvements so more nearby homeowners find you" },
+    { lead: "Atlas Local Trust", rest: " — local visibility improvements so more nearby homeowners find you" },
   ],
   offerClosing: "You stay on the job. The system handles the catching and following up.",
   stepsHeading: "How the HVAC Setup Works",
@@ -989,11 +989,11 @@ export const pestControl: TradePage = {
     "We set up and run a system designed to capture, respond to, and help book more of your pest control leads:",
   offer: [
     { lead: "Missed-Call Text-Back", rest: " so urgent infestation calls don't go cold" },
-    { lead: "Around-the-Clock AI Receptionist", rest: " to answer questions and capture job details after hours" },
+    { lead: "Atlas Receptionist", rest: " to answer questions and capture job details after hours" },
     { lead: "Fast Lead Response", rest: " for every form, ad lead, and inquiry" },
     { lead: "Automated Follow-Up", rest: " that keeps inspection and recurring-plan quotes from getting forgotten" },
     { lead: "Appointment Setting", rest: " that helps fill your calendar with real jobs" },
-    { lead: "Local Visibility", rest: " improvements so more nearby homeowners find you" },
+    { lead: "Atlas Local Trust", rest: " — local visibility improvements so more nearby homeowners find you" },
   ],
   offerClosing: "You stay on the job. The system handles the catching and following up.",
   stepsHeading: "How the Pest Control Setup Works",

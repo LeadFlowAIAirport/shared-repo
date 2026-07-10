@@ -25,7 +25,7 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "AI Business Education + Implementation",
+  eyebrow: "Atlas AI Academy · Atlas Implementations",
   // "mapped" is the serif-italic accent word — set by the Hero component.
   headlinePre: "AI, ",
   headlineAccent: "mapped",
@@ -39,11 +39,11 @@ export const hero = {
   trustLine: ["Plain English", "No long contracts", "Built for local businesses"],
   mapCaption: "One system we implement: lead capture and follow-up, end to end.",
   moduleStrip: [
-    "AI Receptionist",
-    "Ads + Booking",
-    "Local Visibility",
-    "Full Growth System",
-    "AI Business Education",
+    "Atlas Receptionist",
+    "Atlas Lead Engine",
+    "Atlas Local Trust",
+    "Atlas Command Center",
+    "Atlas AI Academy",
   ],
 };
 
@@ -140,14 +140,14 @@ export const modules = {
     "These aren't five separate products. They're the systems we switch on inside your engagement — chosen by what the audit shows will actually move the needle, not by what's easiest to sell.",
   featured: {
     id: "ai-business-enablement",
-    tag: "The front door",
-    name: "AI Business Education",
+    tag: "The flagship",
+    name: "Atlas AI Academy / Atlas Implementations",
     blurb:
-      "We teach the owner and team how AI applies to their business — so every system we implement is understood, not just installed. Plain-English lessons, a full audit of how you run, and a prioritized map of your highest-value AI use cases.",
+      "The core relationship. Atlas AI Academy teaches your team to understand and use AI; Atlas Implementations installs the workflows, prompts, policies, and systems that make it useful — then we keep improving it, month after month.",
     points: [
-      "Plain-English AI education for you and your team",
-      "A full audit of how your business runs today",
-      "A prioritized map of your highest-value AI use cases",
+      "Plain-English AI training for you and your team (Academy)",
+      "A full audit + ranked roadmap of your highest-value AI use cases",
+      "Systems, workflows, and prompts installed — and improved every month (Implementations)",
     ],
     href: "/ai-implementation",
     linkLabel: "Explore the Learning Hub",
@@ -156,34 +156,103 @@ export const modules = {
     {
       id: "ai-receptionist",
       icon: "headset" as const,
-      name: "AI Receptionist",
+      name: "Atlas Receptionist",
       blurb:
         "Captures missed calls, answers common questions, qualifies leads, routes conversations, and helps book appointments — day or night.",
     },
     {
       id: "ads-booking-system",
       icon: "megaphone" as const,
-      name: "Ads + Booking",
+      name: "Atlas Lead Engine",
       blurb:
-        "Turns paid traffic into booked opportunities with landing pages, forms, follow-up, and a clean appointment flow.",
+        "Turns ads and traffic into booked opportunities with landing pages, forms, follow-up, and a clean appointment flow.",
     },
     {
       id: "local-visibility",
       icon: "map-pin" as const,
-      name: "Local Visibility",
+      name: "Atlas Local Trust",
       blurb:
         "Improves your Google Business Profile, reviews, citations, and the trust signals that win nearby customers.",
     },
     {
       id: "full-growth-system",
       icon: "network" as const,
-      name: "Full Growth System",
+      name: "Atlas Command Center",
       blurb:
-        "Connects visibility, lead capture, follow-up, booking, and reviews into one system — with your leads tracked in one CRM and a simple monthly summary of your leads and follow-up.",
+        "Your dashboards, client portal, and internal Atlas tools — reporting, roadmap tracking, and the systems that run your operation, in one place.",
     },
   ],
   footnote:
     "Full detail for each module lives on the services page — the audit tells us which ones your business actually needs.",
+};
+
+// Monthly AI Operations — the recurring engine. Setup is the start; this is what
+// the ongoing retainer ("Atlas AI Operations") delivers every month. Positioned
+// as ongoing AI operations, not generic "support".
+export const monthlyOps = {
+  kicker: "Monthly AI Operations",
+  heading: "Setup is the start, not the finish line.",
+  intro:
+    "Once your systems are live, Atlas becomes your outsourced AI department. Every month we keep them working, your team supported, and your roadmap moving — ongoing AI operations, not one-and-done setup.",
+  items: [
+    {
+      title: "Monthly AI strategy call",
+      body: "What's working, what's next, and the decisions to make — in plain English.",
+    },
+    {
+      title: "Troubleshooting & upkeep",
+      body: "When a tool, prompt, or workflow breaks or drifts, we fix and tune it.",
+    },
+    {
+      title: "New tools & models",
+      body: "“Here's what just launched, whether it matters to you, and how to use it.”",
+    },
+    {
+      title: "Fresh training & prompt updates",
+      body: "New lessons and prompt-library updates as your tools and team evolve.",
+    },
+    {
+      title: "Roadmap & opportunity tracker",
+      body: "A living roadmap and a running backlog of AI opportunities, prioritized.",
+    },
+    {
+      title: "Scoped builds when they fit",
+      body: "New systems and Atlas apps, scoped properly — never unlimited, never surprise work.",
+    },
+  ],
+  note: "Your outsourced AI department — practical, accountable, and always improving.",
+};
+
+// Why Businesses Stay — the ethical-retention ("ethical stickiness") story.
+// Clients stay because the relationship keeps improving the business, never
+// because they're locked in. Mirrors the Trust section's two-column shape.
+export const whyStay = {
+  kicker: "Why Businesses Stay",
+  heading: "We earn the relationship every month.",
+  intro:
+    "AI doesn't hold still. New tools and models land constantly, your team keeps needing support, and new opportunities keep appearing. We're the partner who understands how your business runs and keeps AI useful, safe, and current — without the hype, and without locking you in.",
+  reasons: [
+    {
+      title: "AI keeps changing",
+      body: "Someone has to translate new models and tools into “does this matter to you, and how.”",
+    },
+    {
+      title: "Your team keeps growing",
+      body: "Questions, retraining, and new hires never stop — we're there for them.",
+    },
+    {
+      title: "One partner who knows your business",
+      body: "We understand your workflows, team, and goals better than any replacement could.",
+    },
+    {
+      title: "You own everything",
+      body: "Your accounts, data, and documentation are yours. You can leave anytime — you stay because it's worth it.",
+    },
+  ],
+  ethic: {
+    heading: "Sticky, the honest way.",
+    body: "We become hard to replace by making your business genuinely better month after month — never by trapping you, hiding how things work, or holding your data hostage.",
+  },
 };
 
 export const process = {
