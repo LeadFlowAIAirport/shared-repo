@@ -32,7 +32,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: {
     default:
-      "Atlas Leads — AI Business Education + Implementation for Local Businesses",
+      "Atlas Leads — Your AI Implementation Partner for Local Businesses",
     template: "%s · Atlas Leads",
   },
   description:

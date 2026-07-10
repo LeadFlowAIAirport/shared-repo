@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI Business Education + Implementation for local businesses — a strategic AI partnership, plus the implementation modules we switch on inside it: AI receptionist, ads + booking, local visibility, and a full growth system.",
+    "Atlas AI Academy / Atlas Implementations for local businesses — one AI partnership, plus the systems we switch on inside it: Atlas Receptionist, Atlas Lead Engine, Atlas Local Trust, and Atlas Command Center.",
 };
 
 export default function ServicesPage() {

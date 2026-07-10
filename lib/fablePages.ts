@@ -25,11 +25,11 @@ const MICROLINE = ["Free", "15–30 minutes", "Plain English", "No obligation"];
 export const servicesPage = {
   hero: {
     eyebrow: "Services",
-    headlinePre: "One flagship engagement. Five ",
+    headlinePre: "One flagship relationship. Four ",
     headlineAccent: "practical",
-    headlinePost: " modules.",
+    headlinePost: " systems.",
     intro:
-      "Atlas Leads isn't five separate services. It's one AI Business Education + Implementation engagement — we teach you where AI fits, audit how your business runs, then switch on the modules the audit shows will actually help.",
+      "Atlas Leads isn't five separate services. It's one relationship — Atlas AI Academy / Atlas Implementations — where we teach you where AI fits, audit how your business runs, install the systems that help, and keep improving them month after month.",
     primaryCta: BOOK_CTA,
     secondaryCta: { label: "See how it works", href: "/how-it-works" },
     microline: ["Education first", "Modules when they fit", "Built for local businesses"],
@@ -37,22 +37,22 @@ export const servicesPage = {
 
   flagship: {
     kicker: "The Flagship",
-    heading: "AI Business Education + Implementation.",
+    heading: "Atlas AI Academy / Atlas Implementations.",
     id: "ai-business-enablement",
-    tag: "The engagement",
-    what: "Our flagship engagement — a strategic partnership that takes you from “AI is confusing” to “AI is working in my business.” We teach your team, audit your operations, map your highest-value use cases, then implement the practical systems that run them.",
+    tag: "The core relationship",
+    what: "Our flagship — the core operating relationship. Atlas AI Academy teaches you and your team to understand and use AI with confidence; Atlas Implementations installs the workflows, prompts, policies, and systems that make it useful. Then we keep improving it, month after month.",
     whoFor:
       "Local business owners who want a serious partner to bring AI into their operations — not another tool to figure out on their own.",
     problem:
       "AI could save you hours every week, but the path from hype to working systems isn't obvious — and trial-and-error is expensive in time you don't have.",
     howAI:
-      "A structured engagement: plain-English education for you and your team, a full audit of how your business runs, a prioritized map of high-value AI use cases, then hands-on implementation and support.",
+      "A two-stage engagement: an intensive setup — plain-English training, a full audit, a ranked AI roadmap, your AI policy and prompt library, and your first working systems — then an ongoing monthly relationship that troubleshoots, trains, updates, and improves as AI changes.",
     gets: [
-      "Plain-English AI education for you and your team",
-      "A full audit of how your business runs today",
-      "A prioritized map of your highest-value AI use cases",
-      "Hands-on implementation of the systems that deliver them",
-      "Ongoing strategy and support as you adopt AI — without the confusion",
+      "Plain-English AI training for you and your team (Atlas AI Academy)",
+      "A full audit of how your business runs, and a ranked AI roadmap",
+      "A business AI policy and a prompt library your team actually uses",
+      "Practical systems and workflows installed and running (Atlas Implementations)",
+      "One partner keeping it current and improving — month after month",
     ],
     link: { label: "Explore the Learning Hub", href: "/ai-implementation" },
   },
@@ -66,7 +66,7 @@ export const servicesPage = {
       {
         id: "ai-receptionist",
         icon: "headset" as const,
-        name: "AI Receptionist",
+        name: "Atlas Receptionist",
         what: "An AI front desk that answers calls, texts, and form fills, qualifies the lead, and books the appointment, day or night.",
         whoFor: "Businesses missing calls, texts, or after-hours leads while they're busy on the job.",
         problem: "Calls go to voicemail and after-hours leads go cold while you're on a job.",
@@ -82,8 +82,8 @@ export const servicesPage = {
       {
         id: "ads-booking-system",
         icon: "megaphone" as const,
-        name: "Ads + Booking",
-        what: "A focused ad-to-booking funnel that turns paid traffic into qualified, ready-to-book conversations.",
+        name: "Atlas Lead Engine",
+        what: "A focused ad-to-booking engine that turns paid traffic and inquiries into qualified, ready-to-book conversations.",
         whoFor: "Businesses running ads, or about to, that want more booked jobs from the same spend.",
         problem: "Ads bring clicks, but generic pages and slow follow-up waste the spend.",
         howAI:
@@ -98,7 +98,7 @@ export const servicesPage = {
       {
         id: "local-visibility",
         icon: "map-pin" as const,
-        name: "Local Visibility",
+        name: "Atlas Local Trust",
         what: "Systems that keep your Google Business Profile, reviews, and local search presence working for you.",
         whoFor: "Local businesses that want to show up, look trustworthy, and win nearby customers.",
         problem: "Nearby customers find other companies first, and reviews dry up.",
@@ -114,17 +114,17 @@ export const servicesPage = {
       {
         id: "full-growth-system",
         icon: "network" as const,
-        name: "Full Growth System",
-        what: "Every piece connected into one AI-powered system for leads, booking, follow-up, reviews, and CRM updates.",
-        whoFor: "Businesses ready to connect everything into one system instead of piecing tools together.",
-        problem: "Point solutions don't talk to each other, so opportunities still slip through.",
+        name: "Atlas Command Center",
+        what: "Your dashboards, client portal, and internal Atlas tools — reporting, roadmap tracking, and the systems that run your operation, in one place.",
+        whoFor: "Owners who want one clear place to see what's working, track the roadmap, and run the business.",
+        problem: "Tools and data are scattered — no single place to see performance, progress, or what's next.",
         howAI:
-          "Lead capture, the AI receptionist, ads and booking, follow-up, and local visibility run as one workflow — with your team trained to operate it.",
+          "Atlas builds the dashboards, portal, and internal tools (Atlas apps) that surface your leads, follow-up, reviews, roadmap, and AI systems in one operating view — updated as we improve things.",
         gets: [
-          "One connected system instead of scattered tools",
-          "Lead capture through to a booked job",
-          "Automated follow-up, reviews, and CRM updates",
-          "Team training so the system actually sticks",
+          "One place to see leads, follow-up, and reviews",
+          "Your AI roadmap and opportunity tracker, visible",
+          "Internal Atlas tools and apps built for your workflows",
+          "Reporting that shows what's actually working",
         ],
       },
     ],
@@ -139,38 +139,38 @@ export const servicesPage = {
       {
         problem: "Calls get missed while you're on a job",
         detail: "Voicemail loses the customer to whoever answers next.",
-        modules: [{ name: "AI Receptionist", href: "#ai-receptionist" }],
+        modules: [{ name: "Atlas Receptionist", href: "#ai-receptionist" }],
       },
       {
         problem: "Follow-up is slow or forgotten",
         detail: "Quotes and inquiries go quiet because nobody has time to chase them.",
         modules: [
-          { name: "AI Receptionist", href: "#ai-receptionist" },
-          { name: "Ads + Booking", href: "#ads-booking-system" },
+          { name: "Atlas Receptionist", href: "#ai-receptionist" },
+          { name: "Atlas Lead Engine", href: "#ads-booking-system" },
         ],
       },
       {
         problem: "Leads don't turn into booked conversations",
         detail: "Interest comes in, but there's no clean path to a time on your calendar.",
         modules: [
-          { name: "Ads + Booking", href: "#ads-booking-system" },
-          { name: "AI Receptionist", href: "#ai-receptionist" },
+          { name: "Atlas Lead Engine", href: "#ads-booking-system" },
+          { name: "Atlas Receptionist", href: "#ai-receptionist" },
         ],
       },
       {
         problem: "Weak presence in local search",
         detail: "Nearby customers find other companies first, and reviews dry up.",
-        modules: [{ name: "Local Visibility", href: "#local-visibility" }],
+        modules: [{ name: "Atlas Local Trust", href: "#local-visibility" }],
       },
       {
         problem: "Systems are scattered across tools",
         detail: "Leads, follow-up, booking, and reviews live in different places — or nowhere.",
-        modules: [{ name: "Full Growth System", href: "#full-growth-system" }],
+        modules: [{ name: "Atlas Command Center", href: "#full-growth-system" }],
       },
       {
         problem: "AI feels confusing to adopt",
         detail: "You know it matters but don't know where to start — or what to skip.",
-        modules: [{ name: "AI Business Education", href: "#ai-business-enablement" }],
+        modules: [{ name: "Atlas AI Academy", href: "#ai-business-enablement" }],
       },
     ],
   },
@@ -300,15 +300,15 @@ export const howItWorksPage = {
     kicker: "After the Audit",
     heading: "Then we recommend — honestly.",
     body: [
-      "Depending on what the audit shows, we might recommend education first, a single automation, the AI receptionist, ads + booking, local visibility work, or the full growth system. We start from the highest-value opportunity — not the biggest package.",
+      "Depending on what the audit shows, we might recommend starting with Academy training, a single automation, Atlas Receptionist, Atlas Lead Engine, Atlas Local Trust, or your Atlas Command Center. We start from the highest-value opportunity — not the biggest package.",
       "And if the honest answer is that something isn't worth doing, or that you can handle it yourself, we'll tell you that too.",
     ],
     outcomes: [
-      { name: "AI Business Education", href: "/ai-implementation" },
-      { name: "AI Receptionist", href: "/services#ai-receptionist" },
-      { name: "Ads + Booking", href: "/services#ads-booking-system" },
-      { name: "Local Visibility", href: "/services#local-visibility" },
-      { name: "Full Growth System", href: "/services#full-growth-system" },
+      { name: "Atlas AI Academy", href: "/ai-implementation" },
+      { name: "Atlas Receptionist", href: "/services#ai-receptionist" },
+      { name: "Atlas Lead Engine", href: "/services#ads-booking-system" },
+      { name: "Atlas Local Trust", href: "/services#local-visibility" },
+      { name: "Atlas Command Center", href: "/services#full-growth-system" },
     ],
     honesty:
       "No guaranteed jobs, revenue, or lead volume — we won't pretend otherwise. What you get is a clear picture and systems set up properly.",
@@ -418,7 +418,7 @@ export const bookPage = {
 
 export const aiLearningPage = {
   hero: {
-    eyebrow: "AI Learning",
+    eyebrow: "Atlas AI Academy",
     headlinePre: "Learn where AI fits ",
     headlineAccent: "before",
     headlinePost: " you implement it.",
@@ -503,7 +503,7 @@ export const aiLearningPage = {
       },
       {
         title: "Choose the right modules",
-        body: "Only the systems the map justifies — AI receptionist, ads + booking, local visibility, or the full system. Sometimes none yet.",
+        body: "Only the systems the map justifies — Atlas Receptionist, Atlas Lead Engine, Atlas Local Trust, or your Atlas Command Center. Sometimes none yet.",
       },
       {
         title: "Launch, test, and improve",
@@ -534,7 +534,7 @@ export const aiLearningPage = {
     kicker: "Where It Leads",
     heading: "Learning that connects to real systems.",
     intro:
-      "The education isn't an end in itself. AI Business Education is the layer you're reading about — these are the implementation modules it switches on when your audit shows they'll help. By then, you'll already understand why they work.",
+      "The education isn't an end in itself. Atlas AI Academy is the layer you're reading about — these are the systems Atlas Implementations switches on when your audit shows they'll help. By then, you'll already understand why they work.",
     servicesLink: { label: "See how the modules fit inside the engagement", href: "/services" },
   },
 

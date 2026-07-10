@@ -23,9 +23,9 @@ import {
  */
 
 export const metadata: Metadata = {
-  title: "AI Business Education + Implementation",
+  title: "Atlas AI Academy / Atlas Implementations",
   description:
-    "The Atlas Leads learning hub for local business owners. Plain-English mini lessons on where AI fits, plus the implementation roadmap and systems — AI receptionist, ads + booking, local visibility, and a full growth system — that save time and book more appointments.",
+    "The Atlas Leads AI academy for local business owners. Plain-English mini lessons on where AI fits, plus the implementation roadmap and systems — Atlas Receptionist, Atlas Lead Engine, Atlas Local Trust, and Atlas Command Center — that save time and improve daily operations.",
 };
 
 export default function AiImplementationPage() {

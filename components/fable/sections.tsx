@@ -10,6 +10,7 @@ import {
   MapPin,
   Megaphone,
   Network,
+  RefreshCw,
   Search,
   Users,
   Wrench,
@@ -26,9 +27,11 @@ import {
   hero,
   mission,
   modules,
+  monthlyOps,
   problem,
   process as processContent,
   trust,
+  whyStay,
 } from "@/lib/homeContent";
 
 /* ------------------------------- Primitives ------------------------------- */
@@ -331,12 +334,51 @@ export function ModulesSection() {
   );
 }
 
+/* --------------------------- Monthly AI Operations ------------------------- */
+
+export function MonthlyOpsSection() {
+  return (
+    <Shell id="monthly-ai-operations">
+      <Kicker index="04" label={monthlyOps.kicker} />
+      <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
+        <Reveal>
+          <h2 className={`fbl-display text-ink ${HEADING_SIZE}`}>{monthlyOps.heading}</h2>
+        </Reveal>
+        <Reveal delay={80}>
+          <p className="max-w-md text-slate">{monthlyOps.intro}</p>
+        </Reveal>
+      </div>
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {monthlyOps.items.map((it, i) => (
+          <Reveal key={it.title} delay={i * 70}>
+            <div className="fbl-card fbl-card-hover flex h-full flex-col p-6">
+              <div className="flex items-center justify-between">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                  <RefreshCw className="size-5" aria-hidden />
+                </span>
+                <span className="fbl-mono text-xs text-slate/50">{String(i + 1).padStart(2, "0")}</span>
+              </div>
+              <h3 className="mt-5 text-lg font-bold text-ink">{it.title}</h3>
+              <p className="mt-2 text-[15px] text-slate">{it.body}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      <Reveal delay={120}>
+        <p className="mt-9 max-w-2xl border-l-2 border-accent pl-5 font-medium text-ink">
+          {monthlyOps.note}
+        </p>
+      </Reveal>
+    </Shell>
+  );
+}
+
 /* -------------------------------- Process --------------------------------- */
 
 export function ProcessSection() {
   return (
     <Shell id="process">
-      <Kicker index="04" label={processContent.kicker} />
+      <Kicker index="05" label={processContent.kicker} />
       <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
         <Reveal>
           <h2 className={`fbl-display text-ink ${HEADING_SIZE}`}>{processContent.heading}</h2>
@@ -372,6 +414,52 @@ export function ProcessSection() {
           {processContent.closing}
         </p>
       </Reveal>
+    </Shell>
+  );
+}
+
+/* ---------------------------- Why Businesses Stay -------------------------- */
+
+export function WhyStaySection() {
+  return (
+    <Shell id="why-stay" deep>
+      <Kicker index="06" label={whyStay.kicker} />
+      <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-6">
+          <Reveal>
+            <h2 className={`fbl-display text-ink ${HEADING_SIZE}`}>{whyStay.heading}</h2>
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="mt-5 text-slate">{whyStay.intro}</p>
+          </Reveal>
+          <ul className="mt-8">
+            {whyStay.reasons.map((r, i) => (
+              <li key={r.title} className={i > 0 ? "border-t border-white/7" : ""}>
+                <Reveal delay={i * 60}>
+                  <div className="flex gap-4 py-4.5">
+                    <Check className="mt-1 size-5 shrink-0 text-accent" aria-hidden />
+                    <div>
+                      <h3 className="font-bold text-ink">{r.title}</h3>
+                      <p className="mt-1 text-[15px] text-slate">{r.body}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="lg:col-span-6">
+          <Reveal delay={120} variant="scale">
+            <div className="fbl-card fbl-reg p-8 sm:p-10">
+              <span className="fbl-mono text-[10px] font-medium uppercase tracking-[0.2em] text-accent">
+                Ethical stickiness
+              </span>
+              <h3 className="fbl-display mt-4 text-2xl text-ink">{whyStay.ethic.heading}</h3>
+              <p className="mt-4 text-slate">{whyStay.ethic.body}</p>
+            </div>
+          </Reveal>
+        </div>
+      </div>
     </Shell>
   );
 }
@@ -412,7 +500,7 @@ export function MissionSection() {
 export function TrustSection() {
   return (
     <Shell id="trust" deep>
-      <Kicker index="05" label={trust.kicker} />
+      <Kicker index="07" label={trust.kicker} />
       <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-6">
           <Reveal>
@@ -462,7 +550,7 @@ export function TrustSection() {
 export function FaqSection() {
   return (
     <Shell id="faq">
-      <Kicker index="06" label={faq.kicker} />
+      <Kicker index="08" label={faq.kicker} />
       <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
@@ -512,7 +600,7 @@ export function FinalCtaSection() {
       />
       <div className="relative mx-auto w-full max-w-(--container-site) px-5 py-24 text-center sm:px-8 md:py-32">
         <Reveal>
-          <Kicker index="07" label={finalCta.kicker} center />
+          <Kicker index="09" label={finalCta.kicker} center />
         </Reveal>
         <Reveal delay={70}>
           <h2 className="fbl-display mx-auto mt-7 max-w-3xl text-[clamp(2.4rem,5.4vw,4.1rem)] text-ink">
