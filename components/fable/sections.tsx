@@ -221,22 +221,43 @@ export function ApproachSection() {
         <div className="space-y-4 lg:col-span-7">
           {approach.steps.map((s, i) => {
             const Icon = APPROACH_ICONS[s.icon];
+            const cardInner = (
+              <>
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                  <Icon className="size-5" aria-hidden />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="font-bold text-ink">{s.title}</h3>
+                    <span className="fbl-mono text-xs text-slate/50">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-[15px] text-slate">{s.body}</p>
+                  {s.href && (
+                    <span className="fbl-mono mt-3 inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
+                      Learn more
+                      <ArrowUpRight
+                        className="size-3.5 transition-transform duration-200 ease-out-quint group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+                        aria-hidden
+                      />
+                    </span>
+                  )}
+                </div>
+              </>
+            );
             return (
               <Reveal key={s.title} delay={i * 70}>
-                <div className="fbl-card fbl-card-hover flex items-start gap-5 p-6">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
-                    <Icon className="size-5" aria-hidden />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-bold text-ink">{s.title}</h3>
-                      <span className="fbl-mono text-xs text-slate/50">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <p className="mt-1.5 text-[15px] text-slate">{s.body}</p>
-                  </div>
-                </div>
+                {s.href ? (
+                  <Link
+                    href={s.href}
+                    className="fbl-card fbl-card-hover group flex items-start gap-5 p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  >
+                    {cardInner}
+                  </Link>
+                ) : (
+                  <div className="fbl-card flex items-start gap-5 p-6">{cardInner}</div>
+                )}
               </Reveal>
             );
           })}

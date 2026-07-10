@@ -192,7 +192,7 @@ export const home = {
     heading: "See how AI fits into a real local business",
     intro:
       "Short video walkthroughs of how Atlas Leads teaches, builds, and trains your team on AI systems, from the first call to a booked job. AI education, implementation, and automation explained clearly.",
-    note: "Video walkthroughs coming soon. We'll add each one here as it's ready.",
+    note: "New walkthroughs are added here as we release them.",
     // To put a video live, change that category's `video: null` to a source,
     // e.g. `video: { embedUrl: "https://www.youtube.com/embed/XXXX" }` or
     // `video: { videoSrc: "/videos/ai-receptionist.mp4", posterSrc: "/videos/ai-receptionist.jpg" }`.
@@ -453,7 +453,7 @@ export const aiImplementation = {
   lessonsIntro:
     "Short, practical lessons that show local business owners where AI fits and what it changes day to day. Watch them in order or jump to what matters most — each one ends with a few clear takeaways.",
   lessonsNote:
-    "Videos are being recorded now — each lesson below will play right here as soon as it's ready.",
+    "New lessons are added here as we publish them — each card shows what it covers.",
   lessons: [
     {
       number: 1,

@@ -7,6 +7,7 @@ import {
   SvcFlagshipSection,
   SvcHero,
   SvcModulesSection,
+  SvcSystemsSection,
 } from "@/components/fable/servicesSections";
 
 /**
@@ -36,6 +37,7 @@ export default function ServicesPage() {
         <SvcFlagshipSection />
         <SvcModulesSection />
         <SvcFitSection />
+        <SvcSystemsSection />
         <SvcCtaBand />
       </div>
     </div>

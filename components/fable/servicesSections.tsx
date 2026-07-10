@@ -1,12 +1,16 @@
 import Link from "next/link";
 import {
   ArrowUpRight,
+  CalendarCheck,
   Check,
   GraduationCap,
   Headset,
+  LineChart,
   MapPin,
   Megaphone,
   Network,
+  PhoneCall,
+  Star,
   type LucideIcon,
 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
@@ -21,13 +25,20 @@ import { servicesPage } from "@/lib/fablePages";
    #local-visibility, #full-growth-system) — next.config.ts redirects and the
    AI Learning hub deep-link to them. */
 
-const { hero, flagship, modules, fit, cta } = servicesPage;
+const { hero, flagship, modules, fit, systems, cta } = servicesPage;
 
 const MODULE_ICONS: Record<string, LucideIcon> = {
   headset: Headset,
   megaphone: Megaphone,
   "map-pin": MapPin,
   network: Network,
+};
+
+const SYSTEMS_ICONS: Record<string, LucideIcon> = {
+  phone: PhoneCall,
+  calendar: CalendarCheck,
+  star: Star,
+  chart: LineChart,
 };
 
 /** Mono field label used inside detail cards ("WHO IT'S FOR", etc.). */
@@ -223,6 +234,80 @@ export function SvcFitSection() {
           ))}
         </ul>
       </div>
+    </Shell>
+  );
+}
+
+/* 04 — The concrete systems, grouped into four practical buckets. Answers
+   "what can AtlasLeads actually set up for my business?" without touching the
+   load-bearing module anchors above. */
+export function SvcSystemsSection() {
+  return (
+    <Shell id="systems">
+      <Kicker index="04" label={systems.kicker} />
+      <Reveal>
+        <h2 className={`fbl-display mt-8 max-w-3xl text-ink ${HEADING_SIZE}`}>
+          {systems.heading}
+        </h2>
+      </Reveal>
+      <Reveal delay={80}>
+        <p className="mt-5 max-w-2xl text-slate">{systems.intro}</p>
+      </Reveal>
+
+      <div className="mt-10 grid gap-5 lg:grid-cols-2">
+        {systems.buckets.map((b, i) => {
+          const Icon = SYSTEMS_ICONS[b.icon];
+          return (
+            <Reveal key={b.id} delay={(i % 2) * 60}>
+              <div className="fbl-card fbl-card-hover flex h-full flex-col p-7 sm:p-8">
+                <div className="flex items-center gap-4">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="fbl-display text-xl text-ink">{b.name}</h3>
+                </div>
+
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {b.includes.map((s) => (
+                    <li
+                      key={s}
+                      className="fbl-mono rounded-full border border-line bg-white/3 px-2.5 py-1 text-[10px] uppercase tracking-[0.1em] text-slate"
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 space-y-4">
+                  <div>
+                    <FieldLabel>What it does</FieldLabel>
+                    <p className="mt-1.5 text-[15px] text-slate">{b.what}</p>
+                  </div>
+                  <div>
+                    <FieldLabel>Why it matters</FieldLabel>
+                    <p className="mt-1.5 text-[15px] text-slate">{b.why}</p>
+                  </div>
+                  <div>
+                    <FieldLabel>What you get</FieldLabel>
+                    <ul className="mt-2 space-y-2">
+                      {b.gets.map((g) => (
+                        <li key={g} className="flex gap-2.5">
+                          <Check className="mt-0.5 size-4.5 shrink-0 text-accent" aria-hidden />
+                          <span className="text-sm text-ink/85">{g}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+
+      <Reveal delay={100}>
+        <p className="fbl-mono mt-8 text-xs text-slate/70">{systems.footnote}</p>
+      </Reveal>
     </Shell>
   );
 }
