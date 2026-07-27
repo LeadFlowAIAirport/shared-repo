@@ -1,37 +1,40 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens — "Atlas Leads" (dark green-black AI agency)
-   Near-black charcoal-green canvas, bright/neon green brand accent, a softer
-   secondary green for gradient depth, and a lime "signal" for opportunity/lead
-   moments. All color in OKLCH. Brand = black + green; no blue/violet/amber.
+   Design tokens — "Atlas Leads" (light navy-blue AI agency)
+   White canvas with brand-navy (#031D38, from the AtlasLeads "A" logo) text
+   and feature bands, the exact logo blues (#0876D1 / #0753A4) for CTAs,
+   links, gradients, and accents, and a cyan "signal" for opportunity/lead
+   moments. Brand = navy + blue on white; no green/violet/amber.
 
    Token names are kept STABLE (paper/mist/ink/slate/line/accent/signal) so the
-   whole component library keeps compiling — their MEANINGS are dark-native:
-     paper  = base dark surface       ink    = primary (near-white) TEXT
-     mist   = elevated dark panel      slate  = muted green-gray text
-     line   = hairline on dark         accent = bright green (brand)
-   Extra tokens: `on-accent` (near-black text that sits ON a green fill),
-   `violet` (legacy name, now the soft secondary green), `surface-deep`
-   (deepest band), `brand-green` (bright highlight green).
---------------------------------------------------------------------------- */
+   whole component library keeps compiling:
+     paper  = base light surface      ink    = primary (navy) TEXT
+     mist   = light blue-gray panel    slate  = secondary blue-gray text
+     line   = hairline on light        accent = brand bright blue
+   Extra tokens: `on-accent` (white text that sits ON a blue fill), `violet`
+   (legacy name, now the deep gradient blue), `surface-deep` (the navy feature
+   band), `brand-green` (legacy name, now the deep-blue highlight).
+
+   Sections on the navy band surface re-declare this palette dark-native —
+   see the "Navy bands" section at the end of this file. */
 @theme {
-  --color-paper: oklch(0.175 0.013 158); /* base surface — dark charcoal-green */
-  --color-surface-deep: oklch(0.135 0.014 158); /* deepest band (CTA / spotlight) */
-  --color-mist: oklch(0.225 0.016 160); /* elevated panel/card — alternating sections */
-  --color-ink: oklch(0.97 0.004 160); /* primary TEXT — near white (#F5F7F5) */
-  --color-slate: oklch(0.75 0.018 168); /* secondary text — muted green-gray */
-  --color-line: oklch(0.33 0.022 160); /* hairline borders on dark — green-tinted */
+  --color-paper: #ffffff; /* base surface — white canvas */
+  --color-surface-deep: #031d38; /* navy feature band (CTA / spotlight) — brand navy */
+  --color-mist: #f1f6fb; /* elevated panel/card — alternating sections */
+  --color-ink: #031d38; /* primary TEXT — brand navy */
+  --color-slate: #3d5a78; /* secondary text — blue-gray */
+  --color-line: #d7e3ef; /* hairline borders on light */
 
-  --color-accent: oklch(0.78 0.19 153); /* bright green — the brand color, CTAs, links, marks */
-  --color-accent-hover: oklch(0.84 0.18 153); /* brighter green — hover */
-  --color-on-accent: oklch(0.16 0.02 155); /* near-black — text/icons that sit ON a green fill */
-  --color-violet: oklch(0.7 0.14 168); /* soft secondary green — paired with accent in gradients */
+  --color-accent: #0876d1; /* exact brand bright blue — CTAs, links, marks */
+  --color-accent-hover: #0753a4; /* deep blue — hover (darkens on light surfaces) */
+  --color-on-accent: #ffffff; /* white — text/icons that sit ON a blue fill */
+  --color-violet: #0753a4; /* exact deep blue — paired with accent in gradients */
 
-  --color-brand-green: oklch(0.88 0.19 158); /* bright highlight green — emphasis marks, success */
+  --color-brand-green: #0753a4; /* deep blue — emphasis marks, success, link hovers */
 
-  --color-signal: oklch(0.86 0.2 135); /* lime — opportunity/urgency marks (green, not amber) */
-  --color-signal-soft: oklch(0.42 0.11 150); /* deep green fill (near-white text sits on it) */
+  --color-signal: #0e9be0; /* cyan-blue — opportunity/urgency marks */
+  --color-signal-soft: #d8ecfb; /* light blue chip fill (navy ink text sits on it) */
 
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-bricolage), var(--font-public-sans), ui-sans-serif, sans-serif;
@@ -87,10 +90,10 @@
     color: inherit;
   }
 
-  /* Selection picks up the brand glow. */
+  /* Selection picks up the brand blue. */
   ::selection {
-    background: color-mix(in oklab, var(--color-accent) 35%, transparent);
-    color: white;
+    background: color-mix(in oklab, var(--color-accent) 22%, transparent);
+    color: #031d38;
   }
 }
 
@@ -105,22 +108,24 @@
     background-color: var(--color-surface-deep);
   }
 
-  /* Frosted-glass panel — the core surface of the dark UI. */
+  /* Frosted-glass panel — a translucent white surface with a navy hairline.
+     Inside navy bands it reverts to the dark-native white-alpha treatment
+     (see "Navy bands" at the end of this file). */
   .glass {
-    background-color: color-mix(in oklab, white 4%, transparent);
-    border: 1px solid color-mix(in oklab, white 10%, transparent);
+    background-color: color-mix(in oklab, white 72%, transparent);
+    border: 1px solid color-mix(in oklab, #031d38 10%, transparent);
     backdrop-filter: blur(14px) saturate(1.2);
     -webkit-backdrop-filter: blur(14px) saturate(1.2);
   }
   .glass-strong {
-    background-color: color-mix(in oklab, white 7%, transparent);
-    border: 1px solid color-mix(in oklab, white 14%, transparent);
+    background-color: color-mix(in oklab, white 86%, transparent);
+    border: 1px solid color-mix(in oklab, #031d38 14%, transparent);
     backdrop-filter: blur(18px) saturate(1.3);
     -webkit-backdrop-filter: blur(18px) saturate(1.3);
   }
 
-  /* Green gradient fill (CTAs, accents) — bright green into the soft secondary
-     green. Carries dark `on-accent` text/icons, never white. */
+  /* Blue gradient fill (CTAs, accents) — brand bright blue into the deep
+     blue. Carries white `on-accent` text/icons. */
   .bg-grad-accent {
     background-image: linear-gradient(
       110deg,
@@ -129,18 +134,18 @@
     );
   }
 
-  /* Emphasis color for hero/step highlights — solid bright green (no clipped
-     gradient text). Pairs with the dark canvas to draw the eye. */
+  /* Emphasis color for hero/step highlights — solid bright blue (no clipped
+     gradient text). Pairs with the dark navy canvas to draw the eye. */
   .text-grad {
     color: var(--color-accent);
   }
 
   /* Brand glow shadows — used on the primary CTA and focal cards. */
   .shadow-glow {
-    box-shadow: 0 10px 34px -10px color-mix(in oklab, var(--color-accent) 60%, transparent);
+    box-shadow: 0 10px 30px -10px color-mix(in oklab, var(--color-accent) 38%, transparent);
   }
   .shadow-glow-strong {
-    box-shadow: 0 14px 48px -8px color-mix(in oklab, var(--color-accent) 70%, transparent);
+    box-shadow: 0 14px 40px -8px color-mix(in oklab, var(--color-accent) 48%, transparent);
   }
 
   /* Hairline gradient divider. */
@@ -149,9 +154,20 @@
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in oklab, white 18%, transparent),
+      color-mix(in oklab, var(--hairline) 16%, transparent),
       transparent
     );
+  }
+
+  /* Wrapper for the raster "A" logo mark. Transparent on light surfaces (the
+     mark's navy artwork reads directly on white); inside navy bands it gains
+     a white plate so the mark stays visible (see "Navy bands" below). Sizes
+     come from the AtlasLogo component as CSS vars. */
+  .atlas-chip {
+    display: inline-flex;
+    background-color: transparent;
+    padding: 0;
+    border-radius: var(--chip-r, 0);
   }
 
   /* Fine film grain for the background atmosphere (kept in CSS so the SVG data
@@ -350,4 +366,94 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* ------------------------------- Navy bands -------------------------------- */
+/* Sections on the brand-navy surface (`bg-surface-deep`, plus the legacy
+   `bg-ink` remap) re-declare the palette dark-native, so everything inside a
+   band — text, links, cards, chips, the logo plate — renders with the same
+   verified dark-surface colors without any per-component branching. The
+   accent inside bands is a lighter tint of the brand blue (#3399ED) so small
+   text keeps ≥4.5:1 contrast on the navy.
+
+   --hairline / --tintbase re-base the components' `border-white/N` and
+   `bg-white/N` utilities (rules below): navy-based on light surfaces, back to
+   white-based inside bands. These rules are unlayered on purpose so they win
+   over the layered Tailwind utilities. */
+
+:root {
+  --hairline: #031d38;
+  --tintbase: #031d38;
+  --logo-word-color: #031d38;
+}
+
+:is(.bg-ink, [class*="surface-deep"]) {
+  --color-paper: #031d38;
+  --color-surface-deep: #031d38;
+  --color-mist: #0a2b4c;
+  --color-ink: #f5f8fc;
+  --color-slate: #a9bfd6;
+  --color-line: #1b4066;
+  --color-accent: #3399ed;
+  --color-accent-hover: #5fb0f1;
+  --color-on-accent: #031d38;
+  --color-violet: #2389de;
+  --color-brand-green: #66b5f2;
+  --color-signal: #45c4ff;
+  --color-signal-soft: #0a4478;
+  --logo-word-color: #ffffff;
+  --hairline: #ffffff;
+  --tintbase: #ffffff;
+}
+
+/* Semi-opaque navy panels (hero system view, media badges) lose their depth
+   when composited over white — render them near-solid so they stay crisp. */
+.bg-surface-deep\/60,
+.bg-surface-deep\/70 {
+  background-color: color-mix(in oklab, var(--color-surface-deep) 94%, transparent);
+}
+
+/* White-alpha hairlines/tints, re-based on --hairline / --tintbase. Same
+   formula Tailwind emits, with the base color made band-adaptive. */
+.border-white\/5 { border-color: color-mix(in oklab, var(--hairline) 5%, transparent); }
+.border-white\/6 { border-color: color-mix(in oklab, var(--hairline) 6%, transparent); }
+.border-white\/7 { border-color: color-mix(in oklab, var(--hairline) 7%, transparent); }
+.border-white\/8 { border-color: color-mix(in oklab, var(--hairline) 8%, transparent); }
+.border-white\/10 { border-color: color-mix(in oklab, var(--hairline) 10%, transparent); }
+.md\:border-white\/10 { border-color: color-mix(in oklab, var(--hairline) 10%, transparent); }
+.border-white\/12 { border-color: color-mix(in oklab, var(--hairline) 12%, transparent); }
+.border-white\/15 { border-color: color-mix(in oklab, var(--hairline) 15%, transparent); }
+.hover\:border-white\/20:hover { border-color: color-mix(in oklab, var(--hairline) 20%, transparent); }
+.hover\:border-white\/25:hover { border-color: color-mix(in oklab, var(--hairline) 25%, transparent); }
+.hover\:border-white\/40:hover { border-color: color-mix(in oklab, var(--hairline) 40%, transparent); }
+
+.bg-white\/2 { background-color: color-mix(in oklab, var(--tintbase) 2%, transparent); }
+.bg-white\/3 { background-color: color-mix(in oklab, var(--tintbase) 3%, transparent); }
+.bg-white\/4 { background-color: color-mix(in oklab, var(--tintbase) 4%, transparent); }
+.bg-white\/10 { background-color: color-mix(in oklab, var(--tintbase) 10%, transparent); }
+.bg-white\/\[0\.025\] { background-color: color-mix(in oklab, var(--tintbase) 2.5%, transparent); }
+.bg-white\/\[0\.03\] { background-color: color-mix(in oklab, var(--tintbase) 3%, transparent); }
+.bg-white\/\[0\.04\] { background-color: color-mix(in oklab, var(--tintbase) 4%, transparent); }
+.hover\:bg-white\/5:hover { background-color: color-mix(in oklab, var(--tintbase) 5%, transparent); }
+.hover\:bg-white\/10:hover { background-color: color-mix(in oklab, var(--tintbase) 10%, transparent); }
+.hover\:bg-white\/\[0\.08\]:hover { background-color: color-mix(in oklab, var(--tintbase) 8%, transparent); }
+
+/* Dark-native restores inside navy bands. */
+:is(.bg-ink, [class*="surface-deep"]) .glass {
+  background-color: color-mix(in oklab, white 4%, transparent);
+  border-color: color-mix(in oklab, white 10%, transparent);
+}
+:is(.bg-ink, [class*="surface-deep"]) .glass-strong {
+  background-color: color-mix(in oklab, white 7%, transparent);
+  border-color: color-mix(in oklab, white 14%, transparent);
+}
+:is(.bg-ink, [class*="surface-deep"]) ::selection {
+  background: color-mix(in oklab, var(--color-accent) 35%, transparent);
+  color: white;
+}
+
+/* Logo plate: white behind the navy mark inside bands only. */
+:is(.bg-ink, [class*="surface-deep"]) .atlas-chip {
+  background-color: #ffffff;
+  padding: var(--chip-pad, 0);
 }

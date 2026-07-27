@@ -1,90 +1,94 @@
 import type { CSSProperties } from "react";
 
 /**
- * Atlas Leads logo — "Apex" direction.
+ * Atlas Leads logo — the "A" summit mark.
  *
- * The Apex mark is recreated cleanly as inline SVG from the brand guide (a
- * stroked "A": two legs rising to a peak, plus a crossbar set just above center
- * so the lower counter reads as a forward-pointing arrow). No dependency on the
- * Claude Design `dc-import` runtime.
+ * The mark is the isolated "A" symbol from the AtlasLeads brand artwork
+ * (navy legs, bright-blue inner peak, blue swoosh), served as a transparent
+ * PNG at /brand/atlas-mark.png. On the site's light surfaces the bare mark
+ * renders directly; inside navy bands the `.atlas-chip` wrapper gains a small
+ * white rounded plate (the favicon treatment) so the navy artwork stays
+ * visible — both handled in CSS, see "Navy bands" in globals.css.
  *
- * Variants: horizontal (icon + wordmark), stacked (icon over wordmark, optional
- * "Lead Generation" descriptor), icon (mark only). Tones cover the brand's
- * required treatments: full color, reversed-for-dark, one-color white/black.
- * The wordmark is Space Grotesk per the guide; "Leads" carries the green accent.
+ * Variants: horizontal (mark + wordmark), stacked (mark over wordmark,
+ * optional "Lead Generation" descriptor), icon (mark only). The wordmark
+ * stays website text (Space Grotesk); "Leads" carries the blue accent. The
+ * raster mark keeps its own brand colors in every tone — tones only change
+ * the wordmark and chip treatment.
  *
- * Accessibility: when the wordmark text is visible it is the accessible name, so
- * the mark is `aria-hidden`. The icon-only variant has no visible text, so the
- * mark itself is labelled `role="img" aria-label="Atlas Leads"`.
+ * Accessibility: when the wordmark text is visible it is the accessible name,
+ * so the mark is decorative (empty alt). The icon-only variant labels the
+ * mark itself.
  */
 
 type Variant = "horizontal" | "stacked" | "icon";
 type Tone = "onDark" | "brand" | "white" | "black";
 
-type ToneColors = { leg: string; bar: string; atlas: string; leads: string };
+type ToneColors = { atlas: string; leads: string; chip: boolean };
 
 const TONES: Record<Tone, ToneColors> = {
-  // Reversed for the site's dark surfaces: white legs + green bar; white "Atlas",
-  // green "Leads". Greens use the site token so the logo matches every accent.
+  // Surface-adaptive default: navy "Atlas" + brand-blue "Leads" with a bare
+  // mark on light surfaces; inside navy bands --logo-word-color and the
+  // .atlas-chip rules flip to white text with the white mark plate.
   onDark: {
-    leg: "#FFFFFF",
-    bar: "var(--color-accent)",
-    atlas: "#FFFFFF",
+    atlas: "var(--logo-word-color, #031D38)",
     leads: "var(--color-accent)",
+    chip: true,
   },
-  // Full color on light surfaces (brand guide).
-  brand: { leg: "#0C5A3A", bar: "#2EDB82", atlas: "#0B130E", leads: "#0C5A3A" },
-  // One-color treatments.
-  white: { leg: "#FFFFFF", bar: "#FFFFFF", atlas: "#FFFFFF", leads: "#FFFFFF" },
-  black: { leg: "#0B130E", bar: "#0B130E", atlas: "#0B130E", leads: "#0B130E" },
+  // Full color on light surfaces — the exact logo brand blues.
+  brand: { atlas: "#031D38", leads: "#0876D1", chip: false },
+  // One-color wordmark treatments (the raster mark keeps its artwork colors).
+  white: { atlas: "#FFFFFF", leads: "#FFFFFF", chip: true },
+  black: { atlas: "#031D38", leads: "#031D38", chip: false },
 };
 
 const BRAND_FONT =
   'var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif';
 
-/** The Apex mark on a 0 0 32 32 unit grid. Stroke is set via style so CSS vars
- *  (e.g. the green bar) resolve; presentation attributes wouldn't. */
-function ApexMark({
-  leg,
-  bar,
+/** Intrinsic size of /brand/atlas-mark.png — keeps the rendered aspect true. */
+const MARK_W = 745;
+const MARK_H = 645;
+
+/** The "A" mark; `size` is the mark height in px. `chip` wraps it on a white
+ *  rounded plate so the navy artwork stays visible on dark surfaces. */
+function AtlasMark({
   size,
+  chip,
   decorative = true,
 }: {
-  leg: string;
-  bar: string;
   size: number;
+  chip: boolean;
   decorative?: boolean;
 }) {
-  const stroke = Math.max(3.2, 32 * 0.125); // ~one unit on the grid
+  const w = Math.round(size * (MARK_W / MARK_H));
+  const img = (
+    // Static 745px transparent PNG — plain <img> keeps it off the image
+    // optimizer; sizes are explicit so nothing stretches.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/brand/atlas-mark.png"
+      alt={decorative ? "" : "Atlas Leads"}
+      width={MARK_W}
+      height={MARK_H}
+      style={{ width: w, height: size, display: "block" }}
+    />
+  );
+  if (!chip) return img;
+  const pad = Math.round(size * 0.16);
+  // Plate styling lives on .atlas-chip (globals.css) so the light theme can
+  // drop the plate on light surfaces; sizes pass through as CSS vars.
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 32 32"
-      fill="none"
-      shapeRendering="geometricPrecision"
-      aria-hidden={decorative || undefined}
-      role={decorative ? undefined : "img"}
-      aria-label={decorative ? undefined : "Atlas Leads"}
-      focusable="false"
-      style={{ display: "block" }}
+    <span
+      className="atlas-chip"
+      style={
+        {
+          "--chip-pad": `${pad}px`,
+          "--chip-r": `${Math.round((size + pad * 2) * 0.24)}px`,
+        } as CSSProperties
+      }
     >
-      {/* Legs → peak */}
-      <path
-        d="M5 27 L16 5 L27 27"
-        style={{
-          stroke: leg,
-          strokeWidth: stroke,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-        }}
-      />
-      {/* Crossbar (sits just above optical center) */}
-      <path
-        d="M10.3 16.5 H21.7"
-        style={{ stroke: bar, strokeWidth: stroke, strokeLinecap: "round" }}
-      />
-    </svg>
+      {img}
+    </span>
   );
 }
 
@@ -127,7 +131,7 @@ export default function AtlasLogo({
   if (variant === "icon") {
     return (
       <span className={className} style={{ display: "inline-flex" }}>
-        <ApexMark leg={c.leg} bar={c.bar} size={size} decorative={false} />
+        <AtlasMark size={size} chip={c.chip} decorative={false} />
       </span>
     );
   }
@@ -135,7 +139,7 @@ export default function AtlasLogo({
   if (variant === "stacked") {
     return (
       <span className={`inline-flex flex-col items-center ${className}`}>
-        <ApexMark leg={c.leg} bar={c.bar} size={size} />
+        <AtlasMark size={size} chip={c.chip} />
         <span className="mt-2 flex flex-col items-center">
           {wordmark}
           {tagline && (
@@ -164,7 +168,7 @@ export default function AtlasLogo({
       className={`inline-flex items-center ${className}`}
       style={{ gap: Math.round(size * 0.36) }}
     >
-      <ApexMark leg={c.leg} bar={c.bar} size={size} />
+      <AtlasMark size={size} chip={c.chip} />
       {wordmark}
     </span>
   );

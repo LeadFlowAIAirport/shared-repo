@@ -33,7 +33,7 @@ export default function Header() {
       <div
         className={`mx-auto flex h-14 w-full max-w-(--container-site) items-center justify-between gap-4 rounded-full px-3 pl-5 transition-all duration-300 ${
           scrolled
-            ? "glass-strong shadow-[0_10px_40px_-12px_rgba(0,0,0,0.6)]"
+            ? "glass-strong shadow-[0_10px_36px_-14px_rgba(3,29,56,0.25)]"
             : "glass"
         }`}
       >
@@ -91,7 +91,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="animate-menu-in mx-auto mt-2 w-full max-w-(--container-site) overflow-hidden rounded-3xl border border-white/12 bg-[color-mix(in_oklab,var(--color-paper)_92%,transparent)] shadow-[0_22px_55px_-12px_rgba(0,0,0,0.75)] backdrop-blur-xl md:hidden">
+        <div className="animate-menu-in mx-auto mt-2 w-full max-w-(--container-site) overflow-hidden rounded-3xl border border-white/12 bg-[color-mix(in_oklab,var(--color-paper)_92%,transparent)] shadow-[0_22px_55px_-12px_rgba(3,29,56,0.28)] backdrop-blur-xl md:hidden">
           <nav
             className="flex flex-col gap-1 p-3"
             aria-label="Mobile"

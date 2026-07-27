@@ -43,8 +43,8 @@
 /* --------------------------------- Chrome --------------------------------- */
 
 .fable .fbl-ribbon {
-  background: color-mix(in oklab, var(--color-accent) 10%, var(--color-surface-deep));
-  border-bottom: 1px solid color-mix(in oklab, var(--color-accent) 22%, transparent);
+  background: color-mix(in oklab, var(--color-accent) 8%, var(--color-paper));
+  border-bottom: 1px solid color-mix(in oklab, var(--color-accent) 25%, transparent);
 }
 
 /* -------------------------------- Buttons --------------------------------- */
@@ -103,7 +103,7 @@
 
 .fable .fbl-btn-ghost {
   border: 1px solid var(--color-line);
-  background: color-mix(in oklab, white 4%, transparent);
+  background: color-mix(in oklab, var(--tintbase) 4%, transparent);
   color: var(--color-ink);
 }
 .fable .fbl-btn-ghost:hover {
@@ -117,19 +117,27 @@
 .fable .fbl-card {
   position: relative;
   border-radius: 1.25rem;
-  border: 1px solid color-mix(in oklab, white 9%, transparent);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, white 5%, transparent),
-    color-mix(in oklab, white 2%, transparent)
-  );
+  border: 1px solid color-mix(in oklab, #031d38 10%, transparent);
+  background: #ffffff;
+  box-shadow: 0 10px 30px -18px rgba(3, 29, 56, 0.16);
   transition:
     transform 0.3s var(--ease-out-quint),
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-/* Green hairline shine along the top edge — brightens on hover. */
+/* Inside navy bands the card reverts to the dark-native glass gradient. */
+.fable :is(.bg-ink, [class*="surface-deep"]) .fbl-card {
+  border-color: color-mix(in oklab, white 9%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, white 5%, transparent),
+    color-mix(in oklab, white 2%, transparent)
+  );
+  box-shadow: none;
+}
+
+/* Blue hairline shine along the top edge — brightens on hover. */
 .fable .fbl-card::before {
   content: "";
   position: absolute;
